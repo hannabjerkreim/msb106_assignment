@@ -11,12 +11,12 @@ Assignment Spring 2024**
 
 **Hanna Sundal Bjerkreim, Ingrid Strømme og Emilie Hansen Sørhaug**
 
-The objective of this assignment is to provide a understanding of some of the potential drivers influencing urban-rural divide in Europe.
-We will explore the impact of factors defining this division, like local labour market conditions, affect patterns of population distribution and job creation across different European landscapes.
+The aim of this assignment is to provide an understanding of some of the potential drivers contributing to the urban-rural divide in Europe.
+We will delve into the influence of factors shaping this division, such as local labour market conditions, affect patterns of population distribution and job creation across different European landscapes.
 
 ## Part 1: Data Collection and Initial Analysis
 
-The first part will present an overview of population growth dynamics in various European regions, establishing a solid context for the advanced analyses that follow.
+The first part presents an overview of the data collection process, followed by an analysis of the population growth dynamics in various European regions.
 
 ### Task 1 -- Data Gathering
 
@@ -25,7 +25,7 @@ The first part will present an overview of population growth dynamics in various
 ## Part 2: Advanced Analysis - Understanding the Impact of Economic Factors on Population Growth
 
 In the second part, we will extend the data collected in the first part by incorporating additional economic factors.
-Our analysis will delve into how these factors correlate with population growth in different regions, utilizing the classification methodology detailed in Chapter 5 of Andersson, Håkansson, and Thorsen (2023).
+Our analysis will focus on how these factors correlate with population growth in different regions, employing the classification methodology detailed in Chapter 5 of Andersson, Håkansson, and Thorsen (2023).
 
 ### Task 1 - Gathering Additional Data
 
