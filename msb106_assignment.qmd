@@ -1,0 +1,36 @@
+---
+title: "msb106_assignment"
+format: html
+editor: visual
+---
+
+# Evolving Landscapes: Analysing the Dynamics of Urban and Rural Development in Europe
+
+**MSB106 Anvendt by- og regionaløkonomi\
+Assignment Spring 2024**
+
+**Hanna Sundal Bjerkreim, Ingrid Strømme og Emilie Hansen Sørhaug**
+
+The objective of this assignment is to provide a understanding of some of the potential drivers influencing urban-rural divide in Europe.
+We will explore the impact of factors defining this division, like local labour market conditions, affect patterns of population distribution and job creation across different European landscapes.
+
+## Part 1: Data Collection and Initial Analysis
+
+The first part will present an overview of population growth dynamics in various European regions, establishing a solid context for the advanced analyses that follow.
+
+### Task 1 -- Data Gathering
+
+### Task 2 -- Data Analysis
+
+## Part 2: Advanced Analysis - Understanding the Impact of Economic Factors on Population Growth
+
+In the second part, we will extend the data collected in the first part by incorporating additional economic factors.
+Our analysis will delve into how these factors correlate with population growth in different regions, utilizing the classification methodology detailed in Chapter 5 of Andersson, Håkansson, and Thorsen (2023).
+
+### Task 1 - Gathering Additional Data
+
+### Task 2 - Application of Classification Methodology
+
+### Task 3 - Analysis and Visualization
+
+### Task 4 - Interpretation and Relation to Course Literature
