@@ -14,11 +14,57 @@ Assignment Spring 2024**
 The aim of this assignment is to provide an understanding of some of the potential drivers contributing to the urban-rural divide in Europe.
 We will delve into the influence of factors shaping this division, such as local labour market conditions, affect patterns of population distribution and job creation across different European landscapes.
 
+```{r}
+#| label: setup 
+#| output: false
+#| message: false
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(ggplot2)
+```
+
 ## Part 1: Data Collection and Initial Analysis
 
 The first part presents an overview of the data collection process, followed by an analysis of the population growth dynamics in various European regions.
 
 ### Task 1 -- Data Gathering
+
+```{r}
+data <- read_csv("ilc_lvho01__custom_9371289_linear.csv", 
+    locale = locale(date_names = "nb", encoding = "ISO-8859-1"))
+View(ilc_lvho01_custom_9371289_linear)
+```
+
+```{r}
+columns_to_remove <- c("DATAFLOW", "LAST UPDATE", "freq", "incgrp", "building", "unit", "OBS_FLAG")
+data <- data[, !(names(data) %in% columns_to_remove)]
+```
+
+```{r}
+# Endre verdier i kolonnen "deg_urb"
+data <- data %>% 
+  mutate(deg_urb = case_when(
+    deg_urb == "DEG1" ~ "Cities",
+    deg_urb == "DEG2" ~ "Towns/Suburbs",
+    deg_urb == "DEG3" ~ "Rural areas",
+    TRUE ~ deg_urb  # Hvis ingen av de over er oppfylt, behold eksisterende verdi
+  ))
+```
+
+```{r}
+print(unique(data$deg_urb))
+```
+
+```{r}
+cities_plot <- data |>
+  filter(deg_urb == "Cities") |>
+  ggplot(aes(x = "TIME_PERIOD", y = "OBS_VALUE")) +
+  geom_line() +
+  labs(title = "Population Growth Trends in Cities",
+       x = "Year",
+       y = "Population Growth")
+```
 
 ### Task 2 -- Data Analysis
 
