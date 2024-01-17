@@ -46,12 +46,37 @@ data <- data %>%
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
-    deg_urb == "DEG3" ~ "Rural areas",
-    TRUE ~ deg_urb  # Hvis ingen av de over er oppfylt, behold eksisterende verdi
+    deg_urb == "DEG3" ~ "Rural areas"
   ))
 ```
 
 ### Task 2 -- Data Analysis
+
+```{r}
+# Installer ggplot2 hvis du ikke har det installert
+install.packages("ggplot2")
+
+# Last inn ggplot2-pakken
+library(ggplot2)
+```
+
+```{r}
+# Assuming you have a column named "population_growth" and "country" in your dataset
+
+# Filter data for "Cities" and create a plot with lines for each country
+cities_plot <- data |> 
+  filter(deg_urb == "Cities") |> 
+  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth Trends in Cities by Country",
+       x = "Year",
+       y = "Population Growth",
+       color = "Country")
+
+# Display the plot for "Cities"
+print(cities_plot)
+
+```
 
 ## Part 2: Advanced Analysis - Understanding the Impact of Economic Factors on Population Growth
 
