@@ -42,7 +42,6 @@ data <- data[, !(names(data) %in% columns_to_remove)]
 ```
 
 ```{r}
-# Endre verdier i kolonnen "deg_urb"
 data <- data %>% 
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
@@ -50,20 +49,6 @@ data <- data %>%
     deg_urb == "DEG3" ~ "Rural areas",
     TRUE ~ deg_urb  # Hvis ingen av de over er oppfylt, behold eksisterende verdi
   ))
-```
-
-```{r}
-print(unique(data$deg_urb))
-```
-
-```{r}
-cities_plot <- data |>
-  filter(deg_urb == "Cities") |>
-  ggplot(aes(x = "TIME_PERIOD", y = "OBS_VALUE")) +
-  geom_line() +
-  labs(title = "Population Growth Trends in Cities",
-       x = "Year",
-       y = "Population Growth")
 ```
 
 ### Task 2 -- Data Analysis
