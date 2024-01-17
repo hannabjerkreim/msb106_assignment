@@ -53,17 +53,6 @@ data <- data %>%
 ### Task 2 -- Data Analysis
 
 ```{r}
-# Installer ggplot2 hvis du ikke har det installert
-install.packages("ggplot2")
-
-# Last inn ggplot2-pakken
-library(ggplot2)
-```
-
-```{r}
-# Assuming you have a column named "population_growth" and "country" in your dataset
-
-# Filter data for "Cities" and create a plot with lines for each country
 cities_plot <- data |> 
   filter(deg_urb == "Cities") |> 
   ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
@@ -73,10 +62,179 @@ cities_plot <- data |>
        y = "Population Growth",
        color = "Country")
 
-# Display the plot for "Cities"
 print(cities_plot)
-
 ```
+
+```{r}
+cities_mt_plot <- data |>
+  filter(deg_urb == "Cities", geo == "MT") |>
+  ggplot(aes(x = "TIME_PERIOD", y = "OBS_VALUE")) +
+  geom_line() +
+  labs(title = "Population Growth in Cities (MT)",
+       x = "Year",
+       y = "Population Growth")
+```
+
+```{r}
+selected_countries <- c("MT", "LU", "NO", "EE")
+selected_data <- subset(data, deg_urb == "Cities" & geo %in% selected_countries)
+
+# Lag linjediagram
+selected_cities <- ggplot(selected_data, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth in Cities by Selected Countries",
+       x = "Time Period",
+       y = "Population Growth",
+       color = "Country")
+
+# Vis linjediagrammet
+print(selected_cities)
+```
+
+Linjediagrammet illustrerer befolkningsveksttrender i byområder ("Cities") for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
+Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.
+
+**Luxemburg (LU)\
+**Luxembourg opprettholdt en stabil befolkningsvekst rundt 48 fra 2003 til 2010.
+Imidlertid opplevde landet en markant nedgang fra det høyeste nivået i 2003 til det laveste i 2015, med verdier som falt fra 48 til 13.
+Fra 2015 økte befolkningsveksten gradvis, men nådde kun 19.7 i 2022.
+
+**Norge (NO)\
+**Norge viste lignende stabilitet, med en konstant befolkningsvekst rundt 50 fram til 2013.
+Etter dette opplevde landet en nedgang, nådde 27.1 i 2015.
+Fra 2015 økte befolkningsveksten gradvis, nådde 30.8 i 2020.
+
+**Estland (EE)\
+**Estland holdt seg relativt stabil fra 2003 til 2017 med en befolkningsvekst rundt 40.
+Fra 2017 økte veksten betydelig, nådde 61 i 2019, før den igjen sank til 44 i 2022.\
+
+
+**Malta (MT)\
+**Malta opprettholdt en stabil befolkningsvekst rundt 90 helt fram til 2022, da det skjedde en betydelig nedgang til 47.2, som representerer en markant reduksjon i befolkningsveksten.
+
+Denne beskrivelsen gir en overordnet forståelse av befolkningsveksttrender for hvert av de utvalgte landene og markerer de viktigste endringene og utviklingene over tidsperioden.
+
+```{r}
+towns_suburbs_plot <- data |> 
+  filter(deg_urb == "Towns/Suburbs") |> 
+  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth Trends in Towns and Suburbs by Country",
+       x = "Year",
+       y = "Population Growth",
+       color = "Country")
+
+print(towns_suburbs_plot)
+```
+
+```{r}
+selected_countries_2 <- c("MT", "LU", "NO", "EE")
+subset_towns <- subset(data, deg_urb == "Towns/Suburbs" & geo %in% selected_countries_2)
+
+selected_towns <- ggplot(subset_towns, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth in Towns and Suburbs by Selected Countries",
+       x = "Time Period",
+       y = "Population Growth",
+       color = "Country")
+
+print(selected_towns)
+```
+
+Linjediagrammet gir et innblikk i befolkningsveksttrender i byområder og forsteder ("Towns/Suburbs") for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
+Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.\
+
+
+**Luxembourg (LU)\
+**Luxembourg viser relativt jevn befolkningsvekst fra 2003 med en verdi på 32.2.
+Det er en gradvis økning opp til 48 i 2020, som representerer en slak vekst i byområder og forsteder.
+
+**Norway (NO)\
+**Norge har en stabil vekst fra 2003 til 2015, med verdier som ligger mellom 16-18.
+I 2015 opplever landet en drastisk økning til 39.9, og dette fortsetter med 40.3 i 2016.
+I årene videre synker veksten litt før den øker igjen, og i 2022 har den en verdi på 42.´
+
+**Estonia (EE)\
+**Estland viser lave befolkningsvekstverdier fra 2003 med en verdi på 1.1 og holder seg relativt lavt frem til 2011.
+Fra 2013 begynner det å ta seg opp, med en topp på 17.
+Deretter faller veksten betydelig i 2018 med en verdi på 8.3, før den igjen øker til 20.2 i 2022.
+
+**Malta (MT)\
+**Malta holder seg relativt stabil fra 2003 til 2020, med verdier rundt 10.
+I 2021 øker veksten til 47.6, som representerer en betydelig endring i befolkningsveksten i byområder og forsteder.
+
+```{r}
+rural_plot <- data |> 
+  filter(deg_urb == "Rural areas") |> 
+  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth Trends in Rural areas by Country",
+       x = "Year",
+       y = "Population Growth",
+       color = "Country")
+
+print(rural_plot)
+```
+
+```{r}
+selected_countries_3 <- c("MT", "LU", "NO", "EE")
+subset_rural <- subset(data, deg_urb == "Rural areas" & geo %in% selected_countries_3)
+
+selected_rural <- ggplot(subset_rural, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
+  geom_line() +
+  labs(title = "Population Growth in Rural areas by Selected Countries",
+       x = "Time Period",
+       y = "Population Growth",
+       color = "Country")
+
+print(selected_rural)
+```
+
+Linjediagrammet gir en oversikt over befolkningsveksttrender i rurale områder for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
+Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.
+
+**Luxembourg (LU)**\
+Luxembourg har en stabil vekst i rurale områder fra 2003 til 2011, med verdier rundt 20.
+I 2012 øker veksten betydelig opp til 46 og fortsetter å vokse frem til 2016.
+Etter dette avtar veksten, og i 2022 ligger den på 32.9.
+
+**Norway (NO)**\
+Norge viser stabil vekst i rurale områder nesten hele tidsperioden fra 2003 til 2022, med verdier rundt 30.\
+
+
+**Estonia (EE)**\
+Estland har sine høyeste verdier i 2004 med en verdi på 52.7.
+I 2012 synker veksten ned til 41.1 og ligger rundt denne verdien frem til 2018.
+Deretter går den ytterligere ned med en verdi på 31.8.
+
+**Malta (MT)\
+**Malta har svært lave verdier i rurale områder, varierte fra 0.1 på det laveste til 3.3 på det høyeste gjennom årene fra 2003 til 2022.
+
+Denne beskrivelsen gir en oversikt over befolkningsveksttrender i rurale områder for hvert av de utvalgte landene, og den fremhever de viktigste endringene og utviklingene over tidsperioden.
+
+**Oppsummering**
+
+I Norge har befolkningsveksttrender i byområder vist en moderat og stabil økning, med en avtagende trend fra 2013.
+Forsteder og byer har opplevd både stabilitet og markante økninger, spesielt i perioden 2015-2016.
+I rurale områder har befolkningsveksten variert, med relativt stabil vekst til 2011, etterfulgt av en markant økning i 2012 og senere en avtagende trend frem til 2022.
+Disse forskjellene reflekterer komplekse faktorer som urbanisering, migrasjonsmønstre og regionale økonomiske forhold, og gir et detaljert bilde av befolkningsdynamikken i ulike områder i landet.\
+
+
+I Estland har befolkningsveksten i byområder vært relativt stabil, med en jevn økning til 2017, etterfulgt av en betydelig økning i 2019 før det faller igjen i 2022.
+Forsteder og byer har vist en stabil utvikling, men med markante økninger i 2013 og 2022.
+I rurale områder har befolkningsveksten variert, med en topp i 2004 og senere nedganger, spesielt i 2012 og 2018.
+
+Luxembourgs byområder har opplevd relativt stabil vekst frem til 2010, etterfulgt av en markant nedgang i 2015 og gradvis økning etter det. Forsteder og byer har hatt stabil vekst til 2015, deretter en økning før en mindre nedgang og videre vekst til 2022.
+I rurale områder har Luxembourg hatt stabil vekst til 2011, en markant økning i 2012 og fortsatt vekst frem til 2016 før det stabiliserer seg.\
+
+
+Malta har opplevd relativt stabil befolkningsvekst i byområder, med en nedgang i 2022.
+Forsteder og byer viste stabilitet til 2020, etterfulgt av en markant økning i 2021.
+I rurale områder har Malta hatt svært lave verdier for befolkningsvekst gjennom perioden, med små variasjoner.\
+
+
+Samlet sett viser disse oppsummeringene at befolkningsveksttrender varierer betydelig mellom landene, med forskjeller i mønster og intensitet i de ulike områdene.
+Urbanisering, økonomiske forhold og regionale variasjoner spiller en rolle i å forme disse dynamikkene.
 
 ## Part 2: Advanced Analysis - Understanding the Impact of Economic Factors on Population Growth
 
