@@ -310,6 +310,8 @@ Urbanisering, økonomiske forhold og regionale variasjoner spiller en rolle i å
 In the second part, we will extend the data collected in the first part by incorporating additional economic factors.
 Our analysis will focus on how these factors correlate with population growth in different regions, employing the classification methodology detailed in Chapter 5 of Andersson, Håkansson, and Thorsen (2023).
 
+### Task 1 - Gathering Additional Data
+
 ```{r}
 data1 <- arbeidskraft <- read_csv("arbeidskraft.csv") |> 
   select(arbeidsvekst = OBS_VALUE, geo, age, deg_urb, TIME_PERIOD)
@@ -363,8 +365,6 @@ join1 <- join |>
 maindata <- join1 |> 
   left_join(data, join_by(geo, TIME_PERIOD, deg_urb))
 ```
-
-### Task 1 - Gathering Additional Data
 
 ### Task 2 - Application of Classification Methodology
 
