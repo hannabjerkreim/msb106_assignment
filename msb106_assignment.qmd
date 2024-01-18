@@ -167,54 +167,12 @@ rural_plot <- data |>
 print(rural_plot)
 ```
 
-Linjediagrammet gir en oversikt over befolkningsveksttrender i rurale områder for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
-Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.
+## Del 2: Avansert analyse - Forstå virkningen av økonomiske faktorer på befolkningsvekst
 
-**Luxembourg (LU)**\
-Luxembourg har en stabil vekst i rurale områder fra 2003 til 2011, med verdier rundt 20.
-I 2012 øker veksten betydelig opp til 46 og fortsetter å vokse frem til 2016.
-Etter dette avtar veksten, og i 2022 ligger den på 32.9.
+I den andre delen vil vi utvide dataene som er samlet inn i den første delen ved å inkludere flere økonomiske faktorer.
+Vår analyse vil fokusere på hvordan disse faktorene korrelerer med befolkningsvekst i ulike regioner, ved å bruke klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
 
-**Norway (NO)**\
-Norge viser stabil vekst i rurale områder nesten hele tidsperioden fra 2003 til 2022, med verdier rundt 30.\
-
-**Estonia (EE)**\
-Estland har sine høyeste verdier i 2004 med en verdi på 52.7.
-I 2012 synker veksten ned til 41.1 og ligger rundt denne verdien frem til 2018.
-Deretter går den ytterligere ned med en verdi på 31.8.
-
-**Malta (MT)\
-**Malta har svært lave verdier i rurale områder, varierte fra 0.1 på det laveste til 3.3 på det høyeste gjennom årene fra 2003 til 2022.
-
-Denne beskrivelsen gir en oversikt over befolkningsveksttrender i rurale områder for hvert av de utvalgte landene, og den fremhever de viktigste endringene og utviklingene over tidsperioden.
-
-**Oppsummering**
-
-I Norge har befolkningsveksttrender i byområder vist en moderat og stabil økning, med en avtagende trend fra 2013.
-Forsteder og byer har opplevd både stabilitet og markante økninger, spesielt i perioden 2015-2016.
-I rurale områder har befolkningsveksten variert, med relativt stabil vekst til 2011, etterfulgt av en markant økning i 2012 og senere en avtagende trend frem til 2022.
-Disse forskjellene reflekterer komplekse faktorer som urbanisering, migrasjonsmønstre og regionale økonomiske forhold, og gir et detaljert bilde av befolkningsdynamikken i ulike områder i landet.\
-
-I Estland har befolkningsveksten i byområder vært relativt stabil, med en jevn økning til 2017, etterfulgt av en betydelig økning i 2019 før det faller igjen i 2022.
-Forsteder og byer har vist en stabil utvikling, men med markante økninger i 2013 og 2022.
-I rurale områder har befolkningsveksten variert, med en topp i 2004 og senere nedganger, spesielt i 2012 og 2018.
-
-Luxembourgs byområder har opplevd relativt stabil vekst frem til 2010, etterfulgt av en markant nedgang i 2015 og gradvis økning etter det. Forsteder og byer har hatt stabil vekst til 2015, deretter en økning før en mindre nedgang og videre vekst til 2022.
-I rurale områder har Luxembourg hatt stabil vekst til 2011, en markant økning i 2012 og fortsatt vekst frem til 2016 før det stabiliserer seg.\
-
-Malta har opplevd relativt stabil befolkningsvekst i byområder, med en nedgang i 2022.
-Forsteder og byer viste stabilitet til 2020, etterfulgt av en markant økning i 2021.
-I rurale områder har Malta hatt svært lave verdier for befolkningsvekst gjennom perioden, med små variasjoner.\
-
-Samlet sett viser disse oppsummeringene at befolkningsveksttrender varierer betydelig mellom landene, med forskjeller i mønster og intensitet i de ulike områdene.
-Urbanisering, økonomiske forhold og regionale variasjoner spiller en rolle i å forme disse dynamikkene.
-
-## Part 2: Advanced Analysis - Understanding the Impact of Economic Factors on Population Growth
-
-In the second part, we will extend the data collected in the first part by incorporating additional economic factors.
-Our analysis will focus on how these factors correlate with population growth in different regions, employing the classification methodology detailed in Chapter 5 of Andersson, Håkansson, and Thorsen (2023).
-
-### Task 1 - Gathering Additional Data
+### Oppgave 1 -- Innsamling av tilleggsdata
 
 ```{r}
 data1 <- arbeidskraft <- read_csv("arbeidskraft.csv") |> 
@@ -270,7 +228,7 @@ maindata <- join1 |>
   left_join(data, join_by(geo, TIME_PERIOD, deg_urb))
 ```
 
-### Task 2 - Application of Classification Methodology
+### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
 
 ```{r}
 maindata <- maindata %>%
@@ -309,7 +267,7 @@ maindata <- maindata %>%
   )
 ```
 
-### Task 3 - Analysis and Visualization
+### Oppgave 3 - Analyse og visualisering
 
 ```{r}
 # Lag stolpediagram
@@ -341,10 +299,10 @@ maindata %>%
   theme_minimal()
 ```
 
-```{}
+```         
 ```
 
-```{}
+```         
 ```
 
-### Task 4 - Interpretation and Relation to Course Literature
+### Oppgave 4 - Tolking og forhold til kurslitteratur
