@@ -390,6 +390,33 @@ maindata <- maindata %>%
   )
 ```
 
+```{r}
+maindata <- maindata %>%
+  mutate(classification_nr = case_when(
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "1",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "2",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "3",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "4",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8",
+    TRUE ~ "unknown")
+  )
+```
+
 ### Task 3 - Analysis and Visualization
+
+box plot
+
+city, town, rural area på y-aksen
+
+gruppeinndelingen på x-aksen
+
+pop op y-aksen
+
+gupper på x-aksen
+
+corralation - how likely to be in group 1 etc.
 
 ### Task 4 - Interpretation and Relation to Course Literature
