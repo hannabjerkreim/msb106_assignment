@@ -43,6 +43,7 @@ data <- data[, !(names(data) %in% columns_to_remove)]
 
 ```{r}
 data <- data %>% 
+  filter(geo != "LV") |> 
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
@@ -51,6 +52,80 @@ data <- data %>%
 ```
 
 ### Task 2 -- Data Analysis
+
+```{r}
+data %>%
+  group_by(deg_urb, TIME_PERIOD) %>%
+  summarise(mean_value = mean(OBS_VALUE)) %>%
+  ggplot(aes(x = TIME_PERIOD, y = mean_value, color = deg_urb)) +
+  geom_line() +
+  labs(title = "Gjennomsnittlig Befolkningsvekst etter Område",
+       x = "År",
+       y = "Gjennomsnittlig Befolkningsvekst",
+       color = "Område") +
+  theme_minimal()
+
+```
+
+**Cities**
+
+```{r}
+deg1_data <- data |> 
+  filter(deg_urb == "Cities")
+
+summary(deg1_data$OBS_VALUE)
+```
+
+```{r}
+standardavvik_deg1 <- sd(deg1_data$OBS_VALUE)
+
+# Vis resultatet
+print(standardavvik_deg1)
+
+```
+
+Gjennomnsittlig befolkningsvekst i "Cities" er 40,01 for perioden 2003-2022.
+Modellen over viser hvordan gjennomsnittet har utviklet seg for disse årene.
+Det er stor variasjon gjennom årene med et standardavvik på 13.91.
+
+**"Towns and Suburbs"**
+
+```{r}
+deg3_data <- data |> 
+  filter(deg_urb == "Rural areas")
+
+summary(deg3_data$OBS_VALUE)
+```
+
+```{r}
+standardavvik_deg2 <- sd(deg2_data$OBS_VALUE)
+
+# Vis resultatet
+print(standardavvik_deg2)
+```
+
+Gjennonsnittlig befolkningsvekst for "Towns and Suburbs" er på 27,23.
+Det er stor variasjon også i denne område typen hvor den laveste verdien er 0.00 og høyeste er 55.30.
+Standardavviket viser også til at det har vært en stor variasjon, med en verdi på 12.43.
+
+**Rural areas**
+
+```{r}
+deg3_data <- data |> 
+  filter(deg_urb == "Rural areas")
+
+summary(deg3_data$OBS_VALUE)
+```
+
+```{r}
+standardavvik_deg3 <- sd(deg3_data$OBS_VALUE)
+
+# Vis resultatet
+print(standardavvik_deg3)
+```
+
+Gjennomsnittet i "Rural areas" er på 32,76 i perioden 2003-2022, hvor spredningen går fra 0.00 til 66.60.
+Her ser vi altså en større spredning enn Towns og Suburbs som også foklarer et høyere standardavvik på 14,52
 
 ```{r}
 cities_plot <- data |> 
@@ -237,17 +312,18 @@ Our analysis will focus on how these factors correlate with population growth in
 
 ```{r}
 data1 <- arbeidskraft <- read_csv("arbeidskraft.csv") |> 
-  select(arbeidsvekst = OBS_VALUE, geo, deg_urb, TIME_PERIOD)
+  select(arbeidsvekst = OBS_VALUE, geo, age, deg_urb, TIME_PERIOD)
 
 data2 <- arbeidsledighet1 <- read_csv("arbeidsledighet1.csv") |> 
-  select(arbeidsledig = OBS_VALUE, geo, deg_urb, TIME_PERIOD)
+  select(arbeidsledig = OBS_VALUE, geo,age, deg_urb, TIME_PERIOD)
 
 data3 <- huspris <- read_csv("huspris.csv") |> 
   select(huspris = OBS_VALUE, geo, deg_urb, TIME_PERIOD)
 ```
 
 ```{r}
-arbeidsvekst <- data1 %>%
+arbeidsvekst <- data1 |>
+  filter(age == "Y15-64") |>
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
@@ -258,6 +334,7 @@ arbeidsvekst <- data1 %>%
 
 ```{r}
 arbeidsledige <- data2 |> 
+  filter(age == "Y15-64") |>
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
