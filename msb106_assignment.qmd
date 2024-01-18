@@ -4,15 +4,15 @@ format: html
 editor: visual
 ---
 
-# Evolving Landscapes: Analysing the Dynamics of Urban and Rural Development in Europe
+# Evolving Landscapes: Analysere dynamikken i by- og bygdeutvikling i Europa
 
 **MSB106 Anvendt by- og regionaløkonomi\
 Assignment Spring 2024**
 
 **Hanna Sundal Bjerkreim, Ingrid Strømme og Emilie Hansen Sørhaug**
 
-The aim of this assignment is to provide an understanding of some of the potential drivers contributing to the urban-rural divide in Europe.
-We will delve into the influence of factors shaping this division, such as local labour market conditions, affect patterns of population distribution and job creation across different European landscapes.
+Målet med denne oppgaven er å gi en forståelse av noen av de potensielle driverne som bidrar til skillet mellom by og land i Europa.
+Vi vil fordype oss i påvirkningen av faktorer som former denne inndelingen, som lokale arbeidsmarkedsforhold, påvirker mønstre for befolkningsfordeling og jobbskaping på tvers av ulike europeiske landskap.
 
 ```{r}
 #| label: setup 
@@ -24,16 +24,15 @@ library(dplyr)
 library(ggplot2)
 ```
 
-## Part 1: Data Collection and Initial Analysis
+## Del 1: Datainnsamling og innledende analyse
 
-The first part presents an overview of the data collection process, followed by an analysis of the population growth dynamics in various European regions.
+Den første delen presenterer en oversikt over datainnsamlingsprosessen, etterfulgt av en analyse av befolkningsvekstdynamikken i ulike europeiske regioner.
 
-### Task 1 -- Data Gathering
+### Oppgave 1 -- Datainnsamling
 
 ```{r}
 data <- read_csv("ilc_lvho01__custom_9371289_linear.csv", 
     locale = locale(date_names = "nb", encoding = "ISO-8859-1"))
-View(ilc_lvho01_custom_9371289_linear)
 ```
 
 ```{r}
@@ -51,7 +50,9 @@ data <- data %>%
   ))
 ```
 
-### Task 2 -- Data Analysis
+### Oppgave 2 - Data analyse
+
+**tesk....**
 
 ```{r}
 data %>%
@@ -141,54 +142,6 @@ print(cities_plot)
 ```
 
 ```{r}
-cities_mt_plot <- data |>
-  filter(deg_urb == "Cities", geo == "MT") |>
-  ggplot(aes(x = "TIME_PERIOD", y = "OBS_VALUE")) +
-  geom_line() +
-  labs(title = "Population Growth in Cities (MT)",
-       x = "Year",
-       y = "Population Growth")
-```
-
-```{r}
-selected_countries <- c("MT", "LU", "NO", "EE")
-selected_data <- subset(data, deg_urb == "Cities" & geo %in% selected_countries)
-
-# Lag linjediagram
-selected_cities <- ggplot(selected_data, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth in Cities by Selected Countries",
-       x = "Time Period",
-       y = "Population Growth",
-       color = "Country")
-
-# Vis linjediagrammet
-print(selected_cities)
-```
-
-Linjediagrammet illustrerer befolkningsveksttrender i byområder ("Cities") for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
-Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.
-
-**Luxemburg (LU)\
-**Luxembourg opprettholdt en stabil befolkningsvekst rundt 48 fra 2003 til 2010.
-Imidlertid opplevde landet en markant nedgang fra det høyeste nivået i 2003 til det laveste i 2015, med verdier som falt fra 48 til 13.
-Fra 2015 økte befolkningsveksten gradvis, men nådde kun 19.7 i 2022.
-
-**Norge (NO)\
-**Norge viste lignende stabilitet, med en konstant befolkningsvekst rundt 50 fram til 2013.
-Etter dette opplevde landet en nedgang, nådde 27.1 i 2015.
-Fra 2015 økte befolkningsveksten gradvis, nådde 30.8 i 2020.
-
-**Estland (EE)\
-**Estland holdt seg relativt stabil fra 2003 til 2017 med en befolkningsvekst rundt 40.
-Fra 2017 økte veksten betydelig, nådde 61 i 2019, før den igjen sank til 44 i 2022.\
-
-**Malta (MT)\
-**Malta opprettholdt en stabil befolkningsvekst rundt 90 helt fram til 2022, da det skjedde en betydelig nedgang til 47.2, som representerer en markant reduksjon i befolkningsveksten.
-
-Denne beskrivelsen gir en overordnet forståelse av befolkningsveksttrender for hvert av de utvalgte landene og markerer de viktigste endringene og utviklingene over tidsperioden.
-
-```{r}
 towns_suburbs_plot <- data |> 
   filter(deg_urb == "Towns/Suburbs") |> 
   ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
@@ -202,41 +155,6 @@ print(towns_suburbs_plot)
 ```
 
 ```{r}
-selected_countries_2 <- c("MT", "LU", "NO", "EE")
-subset_towns <- subset(data, deg_urb == "Towns/Suburbs" & geo %in% selected_countries_2)
-
-selected_towns <- ggplot(subset_towns, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth in Towns and Suburbs by Selected Countries",
-       x = "Time Period",
-       y = "Population Growth",
-       color = "Country")
-
-print(selected_towns)
-```
-
-Linjediagrammet gir et innblikk i befolkningsveksttrender i byområder og forsteder ("Towns/Suburbs") for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
-Hver linje representerer et land, og tidsperioden strekker seg fra 2003 til 2022.\
-
-**Luxembourg (LU)\
-**Luxembourg viser relativt jevn befolkningsvekst fra 2003 med en verdi på 32.2.
-Det er en gradvis økning opp til 48 i 2020, som representerer en slak vekst i byområder og forsteder.
-
-**Norway (NO)\
-**Norge har en stabil vekst fra 2003 til 2015, med verdier som ligger mellom 16-18.
-I 2015 opplever landet en drastisk økning til 39.9, og dette fortsetter med 40.3 i 2016.
-I årene videre synker veksten litt før den øker igjen, og i 2022 har den en verdi på 42.´
-
-**Estonia (EE)\
-**Estland viser lave befolkningsvekstverdier fra 2003 med en verdi på 1.1 og holder seg relativt lavt frem til 2011.
-Fra 2013 begynner det å ta seg opp, med en topp på 17.
-Deretter faller veksten betydelig i 2018 med en verdi på 8.3, før den igjen øker til 20.2 i 2022.
-
-**Malta (MT)\
-**Malta holder seg relativt stabil fra 2003 til 2020, med verdier rundt 10.
-I 2021 øker veksten til 47.6, som representerer en betydelig endring i befolkningsveksten i byområder og forsteder.
-
-```{r}
 rural_plot <- data |> 
   filter(deg_urb == "Rural areas") |> 
   ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
@@ -247,20 +165,6 @@ rural_plot <- data |>
        color = "Country")
 
 print(rural_plot)
-```
-
-```{r}
-selected_countries_3 <- c("MT", "LU", "NO", "EE")
-subset_rural <- subset(data, deg_urb == "Rural areas" & geo %in% selected_countries_3)
-
-selected_rural <- ggplot(subset_rural, aes(x = TIME_PERIOD, y = OBS_VALUE, group = geo, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth in Rural areas by Selected Countries",
-       x = "Time Period",
-       y = "Population Growth",
-       color = "Country")
-
-print(selected_rural)
 ```
 
 Linjediagrammet gir en oversikt over befolkningsveksttrender i rurale områder for utvalgte land: Luxembourg (LU), Norway (NO), Estonia (EE), and Malta (MT).
