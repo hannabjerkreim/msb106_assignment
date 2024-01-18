@@ -91,10 +91,10 @@ Det er stor variasjon gjennom årene med et standardavvik på 13.91.
 **"Towns and Suburbs"**
 
 ```{r}
-deg3_data <- data |> 
-  filter(deg_urb == "Rural areas")
+deg2_data <- data |> 
+  filter(deg_urb == "Towns/Suburbs")
 
-summary(deg3_data$OBS_VALUE)
+summary(deg2_data$OBS_VALUE)
 ```
 
 ```{r}
