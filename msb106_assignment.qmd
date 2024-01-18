@@ -368,6 +368,28 @@ maindata <- join1 |>
 
 ### Task 2 - Application of Classification Methodology
 
+```{r}
+maindata <- maindata %>%
+  group_by(geo, TIME_PERIOD) %>%
+  mutate(arb.ledig.geo.mean = mean(arbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mena = mean(arbeidsvekst, na.rm = TRUE))
+
+```
+
+```{r}
+maindata <- maindata %>%
+  mutate(classification = case_when(
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "1.høy arbeisledighet, høy arbeidsvekst, høy huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "2.høy arbeisledighet, høy arbeidsvekst, lav huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "3.høy arbeisledighet, lav arbeidsvekst, høy huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "4.høy arbeisledighet, lav arbeidsvekst, lav huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5.lav arbeisledighet, høy arbeidsvekst, høy huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6.lav arbeisledighet, høy arbeidsvekst, lav huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7.lav arbeisledighet, lav arbeidsvekst, høy huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8. lav arbeisledighet, lav arbeidsvekst, lav huspris",
+    TRUE ~ "unknown")
+  )
+```
+
 ### Task 3 - Analysis and Visualization
 
 ### Task 4 - Interpretation and Relation to Course Literature
