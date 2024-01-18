@@ -407,16 +407,40 @@ maindata <- maindata %>%
 
 ### Task 3 - Analysis and Visualization
 
-box plot
+```{r}
+# Lag stolpediagram
+stolpediagram <- ggplot(maindata, aes(x = as.factor(classification_nr), fill = deg_urb)) +
+  geom_bar(position = "dodge", stat = "count") +
+  labs(title = "Stolpediagram basert på Classification_nr og deg_urb",
+       x = "classification_nr",
+       y = "Antall") +
+  theme_minimal()
 
-city, town, rural area på y-aksen
+# Vis stolpediagrammet
+print(stolpediagram)
+```
 
-gruppeinndelingen på x-aksen
+Utvikling:
 
-pop op y-aksen
+```{r}
+maindata %>%
+  group_by(classification_nr, TIME_PERIOD) %>%
+  mutate(realtive_growth = OBS_VALUE / first(OBS_VALUE) * 100) %>%
+  ungroup()
 
-gupper på x-aksen
+  ggplot(aes(x = TIME_PERIOD, y = mean_value, color = as.character(classification_nr))) +
+  geom_line() +
+  labs(title = "Gjennomsnittlig Observed Value etter Classification Number",
+       x = "Time Period",
+       y = "Gjennomsnittlig Observed Value",
+       color = "Classification Number") +
+  theme_minimal()
+```
 
-corralation - how likely to be in group 1 etc.
+```{}
+```
+
+```{}
+```
 
 ### Task 4 - Interpretation and Relation to Course Literature
