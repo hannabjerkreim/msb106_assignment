@@ -248,11 +248,11 @@ print(rural_plot)
 ## Del 2: Avansert analyse - Virkningen av økonomiske faktorer på befolkningsvekst
 
 I denne delen av oppgaven skal vi utvide dataene som vi samlet inn i den første delen ved å inkludere flere økonomiske faktorer.
-Vår analyse vil fokusere på hvordan disse faktorene korrelerer med befolkningsvekst i ulike regioner, ved å bruke klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
+Vår analyse vil fokusere på hvordan disse faktorene korrelerer med befolkningsvekst i ulike regioner, ved å bruke klassifiseringsmetodikken til Andersson, Håkansson og Thorsen (2023).
 
 ### Oppgave 1 -- Innsamling av tilleggsdata
 
-Vi brukte tre forskjellige datasett ved innkludering av flere økonomiske faktorer i vårt opprinnelige datasett fra første del av oppgaven.
+Vi brukte tre forskjellige datasett ved innkludering av flere økonomiske faktorer i vårt opprinnelige datasett.
 Vi lastet ned data for de tre økonomiske faktorene arbeidsvekst, arbeidsledighet og boligpris fra Eurostat.
 Dataene er hentet fra perioden 2003 til 2022 og innkluderer de samme landene og urbaniseringsgradene som for befolkningsdataene.
 Datasettet for arbeidsvekst heter *"Employment rates by sex, age, educational attainment level, citizenship and degree of urbanisation",* og datasettet for arbeidsledighet har navnet *"Unemployment rates by sex, age and degree of urbanisation (%)"* .
@@ -320,6 +320,21 @@ maindata <- join1 |>
 
 ### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
 
+Vi skal videre i analysen benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
+Klassifiseringen er basert på de tre kriteriene arbeidsledighet (U), arbeidsvekst (△E) og huspris (H).
+Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
+
+1.  høy U, høy △E, høy H
+2.  høy U, høy △E, lav H
+3.  høy U, lav △E, høy H
+4.  høy U, lav △E, lav H
+5.  lav U, høy △E, høy H
+6.  lav U, høy △E, lav H
+7.  lav U, lav △E, høy H
+8.  lav U, lav △E, høy H
+
+Lave verdier indikerer at kriteriet er lavere enn gjennomsnittet, mens høye verdier indikerer at kriteriet er høyere en gjennomsnittet.
+
 ```{r}
 #| echo: false
 maindata <- maindata %>%
@@ -362,8 +377,12 @@ maindata <- maindata %>%
 
 ### Oppgave 3 - Analyse og visualisering
 
+@fig-stolpediagram viser ....
+
 ```{r}
 #| echo: false
+#| label: fig-stolpediagram
+#| fig-cap: "Stolpediagram basert på klassifiseringe og regioninndeling."
 # Lag stolpediagram
 stolpediagram <- ggplot(maindata, aes(x = as.factor(classification_nr), fill = deg_urb)) +
   geom_bar(position = "dodge", stat = "count") +
