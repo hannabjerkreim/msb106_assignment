@@ -429,7 +429,7 @@ maindata %>%
 
 ```
 
-Hva forteller diagrammene oss....🤔
+Hva forteller diagrammene oss....
 
 **Tekst om hvorfor vi har valgt Spania, Italia og Frankriket**
 
@@ -453,5 +453,7 @@ maindata %>%
 ```
 
 Hva forteller diagrammene oss....🤔
+
+F
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
