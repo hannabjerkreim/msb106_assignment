@@ -80,7 +80,7 @@ I perioden etter 2011 er det tydelig at folk dras mot tettsteder og forsteder og
 
 data %>%
   group_by(deg_urb, TIME_PERIOD) %>%
-  summarise(mean_value = mean(OBS_VALUE)) %>%
+  summarise(mean_value = HEADOBS_VALUE)) %>%
   ggplot(aes(x = TIME_PERIOD, y = mean_value, color = deg_urb)) +
   geom_line() +
   labs(x = "År",
@@ -109,7 +109,7 @@ summary_deg1 <- subset_deg1 %>%
   summarise(
     min = min(OBS_VALUE),
     median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
+    mean = HEADOBS_VALUE),
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
@@ -147,7 +147,7 @@ summary_deg2 <- subset_deg2 %>%
   summarise(
     min = min(OBS_VALUE),
     median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
+    mean = HEADOBS_VALUE),
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
@@ -182,7 +182,7 @@ summary_deg3 <- subset_deg3 %>%
   summarise(
     min = min(OBS_VALUE),
     median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
+    mean = HEADOBS_VALUE),
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
@@ -339,7 +339,7 @@ Lave verdier indikerer at kriteriet er lavere enn gjennomsnittet, mens høye ver
 #| echo: false
 maindata <- maindata %>%
   group_by(geo, TIME_PERIOD) %>%
-  mutate(arb.ledig.geo.mean = mean(arbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mena = mean(arbeidsvekst, na.rm = TRUE))
+  mutate(arb.ledig.geo.mean = HEADarbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mena = mean(arbeidsvekst, na.rm = TRUE))
 
 ```
 
@@ -408,8 +408,6 @@ maindata %>%
   theme_minimal()
 ```
 
-**Tekst om hvorfor vi har valgt Norge, Svergie og Danmark osv....**
-
 ```{r}
 library(ggplot2)
 
@@ -429,17 +427,13 @@ maindata %>%
 
 ```
 
-Hva forteller diagrammene oss....
-
-**Tekst om hvorfor vi har valgt Spania, Italia og Frankriket**
-
 ```{r}
 library(ggplot2)
 
 maindata %>%
   filter(geo %in% c("ES", "IT", "FR")) %>%
   group_by(geo, classification_nr, TIME_PERIOD) %>%
-  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
+  summarise(mean_value = HEADOBS_VALUE, na.rm = TRUE)) %>%
   mutate(demeaned_value = mean_value / first(mean_value)) %>%
   ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = classification_nr)) +
   geom_line() +
@@ -451,9 +445,5 @@ maindata %>%
   facet_wrap(~geo, scales = "free_y")
 
 ```
-
-Hva forteller diagrammene oss....🤔
-
-F
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
