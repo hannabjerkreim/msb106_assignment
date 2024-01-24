@@ -425,7 +425,7 @@ maindata %>%
   theme_minimal() +
   facet_wrap(~geo, scales = "free_y")
 
-<<<<<<< HEAD
+
 ```
 
 ```{r}
@@ -446,17 +446,6 @@ maindata %>%
   facet_wrap(~geo, scales = "free_y")
 
 ```
-=======
-1.  Lagen en tilsvarene tabell som i artikkelen hvor vi ser på antall cities, towns og rural i hver kattegori, totalt befolkning frem til 2023, gjennomsnittelig arbeidsleidighet, Gjennomsnittlig prosent sysselsettingsvekst og Gjennomsnittlig boligpris per kvadratmeter.
-    (vet ikke hvorfor de bare har tatt for 2013?) Til slutt i tabellen har de "Gjennomsnittlig verdi av sentralitetsindeksen, 2017"... som jeg ikke helt vet hva er.
 
-2.  Videre prøver vi igjen å lage en tilsvarende figur som figur 11 i artikkelen som viser prosentvis befolkningsvekst for alle kommunene innen hver kategori.
-    ....
-    hva betyr "Igjen er tidsseriene skalert med faktorer som definerer befolkningen til å være 100 i 1970."
-
-3.  Artikkelen har også laget en figur (figur 12) der informasjonen forsøker å forklare hoveddrivkreftene bak befolkningsveksten i ulike kategorier.
-    I denne sammenheng er det også interessant å studere utviklingen i antall jobber per arbeidstaker i forhold til informasjon om endringer i pendling, men dette overlates til fremtidig forskning.
-    - Videre kan vi da sammenligne og lese av figurene som for eksempel "*Legg også merke til at både kategoriene 4 og 8 har opplevd en reduksjon i antall jobber per innbygger over tid. Dette bidrar til den ugunstige befolkningsutviklingen for disse to kategoriene av perifere og etterhengende kommuner. En rimelig hypotese er imidlertid at den høyere arbeidsledigheten i kategori 4 reflekterer at kommuner i denne kategorien i gjennomsnitt har flere lokale fasiliteter enn det som er tilfelle for kommuner i kategori 8. Dette gjør arbeidstakere mer tilbakeholdne med å flytte, til tross for en ugunstig arbeidsmarkedssituasjon. De to kategoriene av kommuner har omtrent samme ugunstige befolkningsutvikling og omtrent samme ugunstige utvikling i antall jobber per arbeidstaker. Derfor kan den høye arbeidsledigheten i kategori 4-områder motvirkes av en høyere tilgang på lokale fasiliteter i disse områdene*."
->>>>>>> 06c1d9ac5ba2b66cba58eb10dade39770a2bfe38
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
