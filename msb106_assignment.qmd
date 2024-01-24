@@ -354,9 +354,9 @@ maindata <- maindata %>%
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5.lav arbeisledighet, høy arbeidsvekst, høy huspris",
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6.lav arbeisledighet, høy arbeidsvekst, lav huspris",
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7.lav arbeisledighet, lav arbeidsvekst, høy huspris",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8. lav arbeisledighet, lav arbeidsvekst, lav huspris",
-    TRUE ~ "unknown")
-  )
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8. lav arbeisledighet, lav arbeidsvekst, lav huspris")
+  )  %>%
+  filter(!is.na(classification))
 ```
 
 ```{r}
@@ -370,9 +370,9 @@ maindata <- maindata %>%
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5",
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6",
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8",
-    TRUE ~ "unknown")
-  )
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8")
+  )  %>%
+  filter(!is.na(classification)) 
 ```
 
 ### Oppgave 3 - Analyse og visualisering
@@ -408,19 +408,50 @@ maindata %>%
   theme_minimal()
 ```
 
+**Tekst om hvorfor vi har valgt Norge, Svergie og Danmark osv....**
+
 ```{r}
+library(ggplot2)
+
 maindata %>%
-  filter(geo == "DE") %>%
-  group_by(classification_nr, TIME_PERIOD) %>%
+  filter(geo %in% c("DK", "NO", "SE")) %>%
+  group_by(geo, classification_nr, TIME_PERIOD) %>%
   summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
-    mutate(demeaned_value = mean_value/first(mean_value)) %>%
+  mutate(demeaned_value = mean_value / first(mean_value)) %>%
   ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = classification_nr)) +
   geom_line() +
   geom_point() +
   labs(x = "År",
        y = "Gjennomsnittlig Befolkningsvekst",
        color = "Regioner") +
-  theme_minimal()
+  theme_minimal() +
+  facet_wrap(~geo, scales = "free_y")
+
 ```
+
+Hva forteller diagrammene oss....🤔
+
+**Tekst om hvorfor vi har valgt Spania, Italia og Frankriket**
+
+```{r}
+library(ggplot2)
+
+maindata %>%
+  filter(geo %in% c("ES", "IT", "FR")) %>%
+  group_by(geo, classification_nr, TIME_PERIOD) %>%
+  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
+  mutate(demeaned_value = mean_value / first(mean_value)) %>%
+  ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = classification_nr)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "År",
+       y = "Gjennomsnittlig Befolkningsvekst",
+       color = "Regioner") +
+  theme_minimal() +
+  facet_wrap(~geo, scales = "free_y")
+
+```
+
+Hva forteller diagrammene oss....🤔
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
