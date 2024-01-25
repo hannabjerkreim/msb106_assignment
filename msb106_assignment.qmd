@@ -377,7 +377,8 @@ maindata <- maindata %>%
 
 ### Oppgave 3 - Analyse og visualisering
 
-@fig-stolpediagram viser ....
+@fig-stolpediagram viser en oversikt over hvordan den gjennomsnittlige befolkningsveksten utvikler seg i perioden 2003 - 2022, inndelt etter klassifiseringene under oppgave 2.
+Stolpediagrammet er delt inn etter urbaniseringsgradene "Cities", "Towns/Suburbs" og "Rural areas".
 
 ```{r}
 #| echo: false
@@ -395,7 +396,29 @@ stolpediagram <- ggplot(maindata, aes(x = as.factor(classification_nr), fill = d
 print(stolpediagram)
 ```
 
+Forklar
+
 ```{r}
+stolpediagram_facet <- ggplot(filter(maindata, geo %in% c("NO", "SE", "DK")), aes(x = as.factor(classification_nr), fill = deg_urb)) +
+  geom_bar(position = "dodge", stat = "count") +
+  labs(title = "Stolpediagram basert på Classification_nr og deg_urb",
+       x = "classification_nr",
+       y = "Antall") +
+  theme_minimal() +
+  facet_wrap(~ geo, scales = "free_y")
+
+# Vis stolpediagrammet med faceting
+print(stolpediagram_facet)
+
+```
+
+I @fig-linjediagram får vi en oversikt over utviklingen av den gjennomsnittlige befolkningsveksten i de forksjellige urbaniseringsgradene.
+Her er alle landene innkludert.
+
+```{r}
+#| echo: false
+#| label: fig-linjediagram
+#| fig-cap: "Linjediagram basert på urbaniseringsgrad og gjennomsnittlig befolkningsvekst"
 maindata %>%
   group_by(classification_nr, TIME_PERIOD) %>%
   summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
@@ -408,8 +431,14 @@ maindata %>%
   theme_minimal()
 ```
 
+Videre har vi valgt å se på to forksjellige grupper av land.
+Herav tre land fra skandinavia; Danmark, Norge og Sverige, og tre land fra sør i Europa; Spania, Frankriket og Italia.
+Begge gruppene har geografisk nærhet.
+
 ```{r}
-library(ggplot2)
+#| echo: false
+#| label: fig-skandinavia
+#| fig-cap: "Gjennomnittlig befolkningsvekst i skandinavia"
 
 maindata %>%
   filter(geo %in% c("DK", "NO", "SE")) %>%
@@ -429,7 +458,9 @@ maindata %>%
 ```
 
 ```{r}
-library(ggplot2)
+#| echo: false
+#| label: fig-syden
+#| fig-cap: "Gjennomnittlig befolkningsvekst i syden"
 
 maindata %>%
   filter(geo %in% c("ES", "IT", "FR")) %>%
@@ -448,3 +479,6 @@ maindata %>%
 ```
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
+
+-   Snakke litt om sentralisering og urbanisering og hvorfor dette er relevant for oppgaven
+-   Se på be
