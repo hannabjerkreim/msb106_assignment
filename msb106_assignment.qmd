@@ -457,27 +457,6 @@ maindata %>%
 
 ```
 
-```{r}
-#| echo: false
-#| label: fig-syden
-#| fig-cap: "Gjennomnittlig befolkningsvekst i syden"
-
-maindata %>%
-  filter(geo %in% c("ES", "IT", "FR")) %>%
-  group_by(geo, classification_nr, TIME_PERIOD) %>%
-  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
-  mutate(demeaned_value = mean_value / first(mean_value)) %>%
-  ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = classification_nr)) +
-  geom_line() +
-  geom_point() +
-  labs(x = "År",
-       y = "Gjennomsnittlig Befolkningsvekst",
-       color = "Regioner") +
-  theme_minimal() +
-  facet_wrap(~geo, scales = "free_y")
-
-```
-
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
 -   Snakke litt om sentralisering og urbanisering og hvorfor dette er relevant for oppgaven
