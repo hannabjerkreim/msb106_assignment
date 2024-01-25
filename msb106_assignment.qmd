@@ -435,8 +435,9 @@ maindata %>%
 ```
 
 Videre har vi valgt å se på to forksjellige grupper av land.
-Herav tre land fra skandinavia; Danmark, Norge og Sverige, og tre land fra sør i Europa; Spania, Frankriket og Italia.
-Begge gruppene har geografisk nærhet.
+Herav tre land fra skandinavia; Danmark, Norge og Sverige.
+
+Disse diagrammene gir oss et bedre bilde av hvordan befolkningsveksten i de ulike regioner (1-8) har utviklet seg over tid, og det er med på å gir rom for en mer detaljert forståelse av de underliggende faktorene som påvirker befolkningsendringene.
 
 ```{r}
 #| echo: false
@@ -459,6 +460,49 @@ maindata %>%
 
 
 ```
+
+## Forklaring av de ulike diagrammene: 
+
+**Fra Danmark ser vi befolkningsutviklingen for regionene 3, 6 og 1 i diagrammet:**
+
+-   Region nr6 \"l*av U, høy △E, lav H*\" har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
+    Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
+    I år 2015 har nok regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
+
+-   Region nr3, klassifisert som "*høy U, lav △E, høy H*" viser en relativt stabil utvikling gjennom årene.
+    Gjennomsnittlig befolkningsvekst økte moderat fra omtrent 1 til 1,15.
+    Dette indikerer at til tross for høy arbeidsledighet, begrenset arbeidsvekst og høye huspriser, opplevde regionen en moderat økning i befolkningsveksten.
+    Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring
+
+-   For region nr1, klassifisert som "*høy U, høy △E, høy H*" har vi bare observasjoner for perioden rundt 2010 til ca.
+    2016.
+    I løpet av denne tiden faller gjennomsnittlig befolkningsvekst litt, fra litt over 1 til litt over 0,5.
+    Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
+
+    **Fra Norge ser vi befolkningsutvikling for regionene 3, 4 og 1 i diagrammet:**
+
+    -   Region nr3 "*høy U, lav △E, høy H*" har vi bare observasjon fra 2005 til 2010.
+        Denne holder seg nokså stabilt.
+
+    -   Region nr4, klassifisert som "*høy U, lav △E, lav H*," viser en betydelig økning i gjennomsnittlig befolkningsvekst fra omtrent 1 rundt 2011 til ca.
+        2,5 ved neste observasjon i 2015.
+        Dette nivået opprettholdes deretter i de påfølgende årene.
+        Denne økningen kan tilskrives forbedringer i arbeidsmarkedet, til tross for høy arbeidsledighet, samt lav arbeidsvekst og lave boligpriser som gjør regionen mer attraktiv for tilflytting.
+        Dette kan ha en sammenheng med at region nr1 har en nedgang i gjennomsnittlig befolkningsvekst.
+
+    -   Region nr1 , klassifisert som "høy U, høy △E, høy H," opplever en nedgang i gjennomsnittlig befolkningsvekst fra 1 i 2013 til 0,5 i 2015.
+        Deretter forblir befolkningsveksten stabil på dette lavere nivået i de påfølgende årene.
+        Denne nedgangen kan forklares ut fra karakteristikkene til regionen, inkludert høy arbeidsledighet, høy arbeidsvekst og høye boligpriser
+
+    **Fra Sverige ser vi befolkningsutvikling for regionene 3, 4, 1, 4 og 5 i diagrammet:**
+
+    -   Nr1, 2 og 5 har så og si ingen observasjoner så det er ikke vits å kommentere.
+
+    -   Både region nr 3 (høy U, lav △E, høy H) og 4 (høy U, lav △E, lav H) utvikler seg nokså likt gjennom årene.
+        Begge to starter nokså lavt med en gjennomsnittlig befolkningsvekst på rundt 1, men øker drastisk i årene 2012 ca.
+        fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsnittlig befolkningsvekst på mellom 2,25 - 2,5!
+
+        .....
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
@@ -488,7 +532,8 @@ Dette kan være knyttet til høy arbeidsvekst, urbaniseringstrender og ønsket o
 Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
 Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
 
-I Danmark og Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2. Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
+I Danmark og Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
+Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
 
