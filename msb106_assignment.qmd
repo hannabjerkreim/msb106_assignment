@@ -466,7 +466,6 @@ Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvik
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
 Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner.
-
 Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
 Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
@@ -520,4 +519,3 @@ Teorien hevder at plasseringen av sentrale steder er optimal for å maksimere ti
 Våre funn kan tolkes som om byene (høy arbeidsvekst, arbeidsledighet og huspriser) er plassert strategisk for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
 
 https://snl.no/byregion
-
