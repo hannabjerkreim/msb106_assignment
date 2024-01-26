@@ -22,7 +22,7 @@ library(ggplot2)
 library(flextable)
 ```
 
-Formålet med denne oppgaven er å undersøke og presentere potensielle faktorer som bidrar til skillet mellom urbane og rurale områder i Europa.
+Formålet med denne oppgaven er å presentere og undersøke potensielle faktorer som bidrar til skillet mellom urbane og rurale områder i Europa.
 Vi skal undersøke hvordan arbeidsledighet, arbeidsvekst og boligpris påvirker mønstre for befolkningsfordeling på tvers av ulike europeiske landskap.
 
 ## Del 1: Datainnsamling og innledende analyse
@@ -56,21 +56,23 @@ data <- data |>
 
 ### Oppgave 2 - Data analyse
 
-Vi skal nå analysere befolkningsveksten i ulike europeiske regioner i perioden 2003 til 2022.
+Vi skal videre undersøke befolkningsveksten i ulike europeiske regioner i perioden 2003 til 2022.
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
-Målet er å undersøke utviklingen i hver av disse regioninndelingene og forstå mønstrene i befolkningsvekst over tid.
+Målet er å undersøke befolkningsutviklingen i hver av disse regionsinndelingene og forstå mønstrene for befolkningsvekst over tid.
 
 @fig-gjsnitt-befolkning viser gjennomsittlig befolkningsvekst for "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
-Fra figuren ser vi at "cities" hadde en god befolkningsvekst de to første årene, før det stabiliserte seg og lå på rundt 42% frem til 2011, hvor befolkningen stupte.
+Fra figuren ser vi at "cities" hadde en god befolkningsvekst de to første årene, før det stabiliserte seg og lå på rundt 42,5% frem til 2012, hvor befolkningen stupte ned mot 38%.
 Det var en liten vekst etter dette, før befolkningen igjen sank frem til 2015.
-Etter dette var det en stabil befolkningsvekst i "cities"-regioner frem til 2020, hvor befolkningen igjen sank.
-"Rural areas" hadde også en befolkningsvekst de to første årene, før befolkningen sank relativt jevnt frem til 2011.
-Dette året var det en befolkningsvekst, men i perioden etter ser vi igjen en fallende trend i befolkningsveksten.
-For "towns og suburbs"-regioner ser vi i kontrast til de to andre regioninndelingene en stor nedgang i befolkningen de to første årene.
-Dette kan tyde på at folk flyttet fra tettsteder og forsteder til spesielt byer, men også rurale områder i denne perioden.
-Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden i 2005 og befolkningen øker slakt frem til 2011.
-Videre setter befolkningsveksten fart og øker godt helt frem til 2022, hvor den er på sitt høyeste.
-I perioden etter 2011 er det tydelig at folk dras mot tettsteder og forsteder og flytter bort fra rurale områder, men også fra byene.
+Etter dette var det en stabil befolkningsvekst i "cities"-regioner frem til 2021, hvor befolkningen igjen sank ned til rundt 38%.
+"Rural areas" hadde også en befolkningsvekst de to første årene, men ikke en like stor veskt som "cities"-regionene hadde.
+Fra 2005 og frem til 2011 ser vi en ganske jevn og slak nedgang befolkningen.
+I 2012 var det i kontrast til "cities"-regionene en befolkningsvekst, men denne veksten var kortvarig.
+Vi ser videre en tydlig fallende trend i befolkningsveksten helt frem til 2022, med unntak av en liten vekst i perioden 2014 til 2015.
+De rurale områdene er samlet sett den regionsinndelingen som har opplevd størst nedgang i befolkningsvekst i perioden.
+For "towns and suburbs"-regioner ser vi i kontrast til de to andre regionsinndelingene en stor nedgang i befolkningen de to første årene.
+Dette kan tyde på at folk flyttet fra tettsteder og forsteder til spesielt byer, men også til rurale områder i denne perioden.
+Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden etter 2005 og befolkningen øker slakt frem til 2011.
+Videre setter befolkningsveksten fart og øker betydelig helt frem til 2022, hvor den er på sitt høyeste med en befolkningsvekst på nesten 34%.
 
 ```{r}
 #| echo: false
@@ -90,9 +92,14 @@ data %>%
 
 ```
 
+Det kommer tydlig frem fra @fig-gjsnitt-befolkning at den dominerende befolkningsveksten i perioden etter 2011 har vært konsentrert i "towns and suburbs"-regionene.
+Fra figuren er det tydelig at folk har blitt dratt mot tettsteder og forsteder, og flyttet bort fra byer og rurale områder.
+Dette er i tråd med bud-rente-teorien som fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til arbeidsplasser.
+Dette fører til at områder i utkanten av byer blir attraktive, "towns and surbubs"-regionene kan tilby lavere boligpriser med grei pendleravstand til byene.
+
 **Cities**
 
-@tbl-summary-deg1 gir en oversikt over prosentvis befolkningsveksten i de europeiske "Cities"-regionene i perioden 2003 til 2022.
+TABELLNAVN gir en oversikt over prosentvis befolkningsveksten i de europeiske "Cities"-regionene i perioden 2003 til 2022.
 Tabellen presenterer deskriptiv statistikk som gir innsikt i befolkningsutviklingen i denne perioden.
 
 ```{r}
@@ -113,12 +120,12 @@ summary_deg1 <- subset_deg1 %>%
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
-  ) %>%
-  flextable() |> 
-  width(1, width = 3.5) |> 
+  ) |>
+  flextable() |>
+  width(1, width = 3.5) |>
   width(2, width = 1.5)
 
-summary_deg1
+print(summary_deg1)
 ```
 
 Den laveste registrerte befolkningsveksten i en "Cities"-region er 13%, mens den høyeste befolkningsveksten er betydelig større, med en maksimal verdi på 90.4%.
@@ -131,7 +138,7 @@ Variansen er beregnet til 195.97, noe som indikerer en stor spreding i befolknin
 
 **Towns and Suburbs**
 
-Deskriptiv statistikk for den prosentvise befolkningsveksten i "towns and suburbs" er presentert i @tbl-summary-deg2.
+Deskriptiv statistikk for den prosentvise befolkningsveksten i "towns and suburbs" er presentert i TABELLNAVN
 
 ```{r}
 #| echo: false
@@ -151,12 +158,12 @@ summary_deg2 <- subset_deg2 %>%
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
-  ) %>%
-  flextable() |> 
-  width(1, width = 3.5) |> 
+  ) |>
+  flextable() |>
+  width(1, width = 3.5) |>
   width(2, width = 1.5)
 
-summary_deg2
+print(summary_deg2)
 ```
 
 Variasjonen i befolkningsveksten blant "towns and suburbs"-regionene er betydelig, med lavest verdi på 0% og høyeste verdi på 55.3%.Medianen ligger på 29.5% og den gjennomsnittlige befolkningsveksten på 27.32%.
@@ -166,7 +173,7 @@ Denne verdien reflekterer stor variasjonen i befolkningsvekst blant "Towns and S
 
 **Rural areas**
 
-@tbl-summary-deg3 gir en oversikt over deskriptiv statistikk for befolkningsveksten i "rural areas".
+TABELLNAVN gir en oversikt over deskriptiv statistikk for befolkningsveksten i "rural areas".
 
 ```{r}
 #| echo: false
@@ -186,12 +193,12 @@ summary_deg3 <- subset_deg3 %>%
     max = max(OBS_VALUE),
     variance = var(OBS_VALUE),
     std.dev = sd(OBS_VALUE)
-  ) %>%
+  ) |>
   flextable() |> 
-  width(1, width = 3.5) |> 
+  width(1, width = 3.5) |>
   width(2, width = 1.5)
 
-summary_deg3
+print(summary_deg3)
 ```
 
 Den laveste registrerte befolkningsveksten i en "Rural areas"-region er 0.1%, mens den høyeste er 66.6%.
@@ -199,7 +206,6 @@ Dette indikerer en betydelig variasjon i befolkningsveksten blant regionene.
 Medianen ligger på 33% og gjennomsnittet på 32,51%.
 Standardavviket ligger på 14.71% og variansen på 216,36%.
 
-\
 \
 GRAFER FOR LANDENE:
 
@@ -461,11 +467,11 @@ maindata %>%
 
 ```
 
-## Forklaring av de ulike diagrammene: 
+## Forklaring av de ulike diagrammene:
 
 **Fra Danmark ser vi befolkningsutviklingen for regionene 3, 6 og 1 i diagrammet:**
 
--   Region nr6 \"l*av U, høy △E, lav H*\" har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
+-   Region nr6 "l*av U, høy △E, lav H*" har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
     Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
     I år 2015 har nok regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
 
@@ -475,9 +481,8 @@ maindata %>%
     Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring
 
 -   For region nr1, klassifisert som "*høy U, høy △E, høy H*" har vi bare observasjoner for perioden rundt 2010 til ca.
-    2016.
-    I løpet av denne tiden faller gjennomsnittlig befolkningsvekst litt, fra litt over 1 til litt over 0,5.
-    Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
+
+    2016. I løpet av denne tiden faller gjennomsnittlig befolkningsvekst litt, fra litt over 1 til litt over 0,5. Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
 
     **Fra Norge ser vi befolkningsutvikling for regionene 3, 4 og 1 i diagrammet:**
 
