@@ -27,7 +27,7 @@ Vi skal undersøke hvordan arbeidsledighet, arbeidsvekst og boligpris påvirker 
 
 ## Del 1: Datainnsamling og innledende analyse
 
-Den første delen av oppgaven gir en gjennomgang av prosessen for innhenting av data, etterfulgt av en analyse av befolkningsveksten i ulike europeiske regioner.
+Den første delen av oppgaven gir en gjennomgang av prosessen for innhenting av data, etterfulgt av en analyse av befolkningsutviklingen i ulike europeiske regioner.
 
 ### Oppgave 1 -- Datainnsamling
 
@@ -56,9 +56,9 @@ data <- data |>
 
 ### Oppgave 2 - Data analyse
 
-Vi skal videre undersøke befolkningsveksten i ulike europeiske regioner i perioden 2003 til 2022.
+Vi skal nå se på befolkningsutviklingen i ulike europeiske regioner i perioden 2003 til 2022.
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
-Målet er å undersøke befolkningsutviklingen i hver av disse regionsinndelingene og forstå mønstrene for befolkningsvekst over tid.
+Målet er å undersøke befolkningsutviklingen i hver av disse regioninndelingene og forstå mønstrene for befolkningsvekst over tid.
 
 @fig-gjsnitt-befolkning viser gjennomsittlig befolkningsvekst for "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
 Fra figuren ser vi at "cities" hadde en god befolkningsvekst de to første årene, før det stabiliserte seg og lå på rundt 42,5% frem til 2012, hvor befolkningen stupte ned mot 38%.
@@ -78,7 +78,7 @@ Videre setter befolkningsveksten fart og øker betydelig helt frem til 2022, hvo
 #| echo: false
 #| message: false
 #| label: fig-gjsnitt-befolkning
-#| fig-cap: "Gjennomsnittlig befolkningsvekst i perioden 2003-2022 fordelt på regioninndelingen cities, towns/suburbs og rural areas."
+#| fig-cap: "Gjennomsnittlig befolkningsvekst i perioden 2003-2022 fordelt på urbaniseringsgradene; cities, towns/suburbs, rural areas."
 
 data %>%
   group_by(deg_urb, TIME_PERIOD) %>%
@@ -87,7 +87,7 @@ data %>%
   geom_line() +
   labs(x = "År",
        y = "Gjennomsnittlig Befolkningsvekst",
-       color = "Regioner") +
+       color = "Urbaniseringsgrad") +
   theme_minimal()
 
 ```
@@ -97,183 +97,111 @@ Fra figuren er det tydelig at folk har blitt dratt mot tettsteder og forsteder, 
 Dette er i tråd med bud-rente-teorien som fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til arbeidsplasser.
 Dette fører til at områder i utkanten av byer blir attraktive, "towns and surbubs"-regionene kan tilby lavere boligpriser med grei pendleravstand til byene.
 
-**Cities**
-
-TABELLNAVN gir en oversikt over prosentvis befolkningsveksten i de europeiske "Cities"-regionene i perioden 2003 til 2022.
-Tabellen presenterer deskriptiv statistikk som gir innsikt i befolkningsutviklingen i denne perioden.
+@tbl-summary-degurb presenterer en oversikt over deskriptive statistikker for befolkningsutviklingen i tidsrommet 2003 til 2022, kategorisert etter de tre ulike urbaniseringsgradene "Cities", "Towns and suburbs" og "Rural areas".
+Denne oversikten gir et innblikk i variasjonene i befolkningen gjennom statistiske mål som minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
 
 ```{r}
 #| echo: false
 subset_deg1 <- data |> 
   filter(deg_urb == "Cities")
-```
 
-```{r}
-#| echo: false
-#| label: tbl-summary-deg1
-#| tbl-cap: "Deskriptiv statistikk for befolkning i `Cities´-regioner"
-summary_deg1 <- subset_deg1 %>%
-  summarise(
-    min = min(OBS_VALUE),
-    median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
-    max = max(OBS_VALUE),
-    variance = var(OBS_VALUE),
-    std.dev = sd(OBS_VALUE)
-  ) |>
-  flextable() |>
-  width(1, width = 3.5) |>
-  width(2, width = 1.5)
-
-print(summary_deg1)
-```
-
-Den laveste registrerte befolkningsveksten i en "Cities"-region er 13%, mens den høyeste befolkningsveksten er betydelig større, med en maksimal verdi på 90.4%.
-Dette indikerer en betydelig variasjon i befolkningsveksten blant regionene.
-Medianen ligger på 39.5%, noe som indikerer at halvparten av regionene opplever en befolkningsvekst under denne verdien, mens den andre halvparten har en høyere vekst.
-Gjennomsnittlig befolkningsvekst i"Cities"-regionene er 40.16%.
-Standardavviket, som er 13.99%, indikerer spredningen av individuelle verdier rundt gjennomsnittet.
-Dette antyder at det er stor variasjon i befolkningsveksten, og at noen "cities"-regioner skiller seg betydelig ut fra gjennomsnittet.
-Variansen er beregnet til 195.97, noe som indikerer en stor spreding i befolkningsvekst blant "cities"-regionene.
-
-**Towns and Suburbs**
-
-Deskriptiv statistikk for den prosentvise befolkningsveksten i "towns and suburbs" er presentert i TABELLNAVN
-
-```{r}
-#| echo: false
 subset_deg2 <- data |> 
   filter(deg_urb == "Towns/Suburbs")
-```
 
-```{r}
-#| echo: false
-#| label: tbl-summary-deg2
-#| tbl-cap: "Deskriptiv statistikk for befolkning i `Towns and Suburbs´-regioner"
-summary_deg2 <- subset_deg2 %>%
-  summarise(
-    min = min(OBS_VALUE),
-    median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
-    max = max(OBS_VALUE),
-    variance = var(OBS_VALUE),
-    std.dev = sd(OBS_VALUE)
-  ) |>
-  flextable() |>
-  width(1, width = 3.5) |>
-  width(2, width = 1.5)
-
-print(summary_deg2)
-```
-
-Variasjonen i befolkningsveksten blant "towns and suburbs"-regionene er betydelig, med lavest verdi på 0% og høyeste verdi på 55.3%.Medianen ligger på 29.5% og den gjennomsnittlige befolkningsveksten på 27.32%.
-Standardavviket, som er 11.78%, antyder variasjon i befolkningsvekst, og at noen regioner skiller seg betydelig ut fra gjennomsnittet.
-Variansen er beregnet til 138.83%.
-Denne verdien reflekterer stor variasjonen i befolkningsvekst blant "Towns and Suburbs"-regionene.
-
-**Rural areas**
-
-TABELLNAVN gir en oversikt over deskriptiv statistikk for befolkningsveksten i "rural areas".
-
-```{r}
-#| echo: false
 subset_deg3 <- data |> 
   filter(deg_urb == "Rural areas")
 ```
 
 ```{r}
 #| echo: false
-#| label: tbl-summary-deg3
-#| tbl-cap: "Deskriptiv statistikk for befolkning i `Rural areas´-regioner"
+summary_deg1 <- subset_deg1 %>%
+  summarise(
+    min = sprintf("%.2f", min(OBS_VALUE)),
+    median = sprintf("%.2f", median(OBS_VALUE)),
+    mean = sprintf("%.2f", mean(OBS_VALUE)),
+    max = sprintf("%.2f", max(OBS_VALUE)),
+    variance = sprintf("%.2f", var(OBS_VALUE)),
+    std.dev = sprintf("%.2f", sd(OBS_VALUE))
+  ) 
+
+summary_deg2 <- subset_deg2 %>%
+  summarise(
+    min = sprintf("%.2f", min(OBS_VALUE)),
+    median = sprintf("%.2f", median(OBS_VALUE)),
+    mean = sprintf("%.2f", mean(OBS_VALUE)),
+    max = sprintf("%.2f", max(OBS_VALUE)),
+    variance = sprintf("%.2f", var(OBS_VALUE)),
+    std.dev = sprintf("%.2f", sd(OBS_VALUE))
+  )
+
 summary_deg3 <- subset_deg3 %>%
   summarise(
-    min = min(OBS_VALUE),
-    median = median(OBS_VALUE),
-    mean = mean(OBS_VALUE),
-    max = max(OBS_VALUE),
-    variance = var(OBS_VALUE),
-    std.dev = sd(OBS_VALUE)
-  ) |>
-  flextable() |> 
-  width(1, width = 3.5) |>
+    min = sprintf("%.2f", min(OBS_VALUE)),
+    median = sprintf("%.2f", median(OBS_VALUE)),
+    mean = sprintf("%.2f", mean(OBS_VALUE)),
+    max = sprintf("%.2f", max(OBS_VALUE)),
+    variance = sprintf("%.2f", var(OBS_VALUE)),
+    std.dev = sprintf("%.2f", sd(OBS_VALUE))
+  )
+```
+
+```{r}
+#| echo: false
+#| label: tbl-summary-degurb
+#| tbl-cap: "Deskriptiv statistikk for befolkningsutviklingen i de tre urbaniseringsgradene: cities, towns/suburbs, rural areas."
+summary_degurb <- bind_rows(
+  mutate(summary_deg1, region = "Cities"),
+  mutate(summary_deg2, region = "Towns/Suburbs"),
+  mutate(summary_deg3, region = "Rural Areas")
+) %>%
+  select(region, everything()
+) %>%
+  flextable() |>
+  width(1, width = 3.5) |> 
   width(2, width = 1.5)
 
-print(summary_deg3)
+summary_degurb
 ```
 
-Den laveste registrerte befolkningsveksten i en "Rural areas"-region er 0.1%, mens den høyeste er 66.6%.
-Dette indikerer en betydelig variasjon i befolkningsveksten blant regionene.
-Medianen ligger på 33% og gjennomsnittet på 32,51%.
-Standardavviket ligger på 14.71% og variansen på 216,36%.
+Fra @tbl-summary-degurb ser vi at "cities"-regionene har en høy og variasjonsrik befolkning som varierer fra et minimum på 13.00% til et maksimum på 90.40%.
+Medianen for "cities"-regionene ligger på 39.50% og gjennomsnittet på 40.16%, med en varians på 195.97% og et standardavvik på 14.00%.
+Innenfor urbaniseringsgraden "Towns and suburbs" spenner befolkningen fra 0.00% til 55.30%, med en median på 29.50%.
+Gjennomsnittet ligger på 27.32%, og variasjonen er reflektert gjennom en varians på 138.83% og et standardavvik på 11.78%.
+For regionene som tilhører "rural areas" varierte befolkningen fra et minimum på 0.10% til et maksimum på 66.60%.
+Medianverdien ligger på 33.00%, mens gjennomsnittet ligger på 32.51%.
+Variansen ligger på 216.36% og standardavviket på 14.71%.
 
-\
-GRAFER FOR LANDENE:
-
-```{r}
-#| echo: false
-cities_plot <- data |> 
-  filter(deg_urb == "Cities") |> 
-  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth Trends in Cities by Country",
-       x = "Year",
-       y = "Population Growth",
-       color = "Country")
-
-print(cities_plot)
-```
-
-```{r}
-#| echo: false
-towns_suburbs_plot <- data |> 
-  filter(deg_urb == "Towns/Suburbs") |> 
-  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth Trends in Towns and Suburbs by Country",
-       x = "Year",
-       y = "Population Growth",
-       color = "Country")
-
-print(towns_suburbs_plot)
-```
-
-```{r}
-#| echo: false
-rural_plot <- data |> 
-  filter(deg_urb == "Rural areas") |> 
-  ggplot(aes(x = TIME_PERIOD, y = OBS_VALUE, color = geo)) +
-  geom_line() +
-  labs(title = "Population Growth Trends in Rural areas by Country",
-       x = "Year",
-       y = "Population Growth",
-       color = "Country")
-
-print(rural_plot)
-```
+"Cities"-regionene har høyest gjennomsnitt og median blant de tre regioninndelingene, noe som indikerer høyere befolkningsandel sammenlignet med "towns/suburbs" og "rural areas".
+I tråd med bud-rente-teorien forventes høy befolkningstetthet nær bykjernen, noe som gjenspeiles i de høye befolkningsprosentene for "cities"-regionene.
+"Towns and suburbs"-regionene viser moderat befolkningsprosent, mens "rural areas"-regionene har de laveste befolkningsprosentene.
+Dette viser hvordan befolkningen fordeler seg basert på avstand fra bykjernen.
+Det forventes høy befolkningstetthet nærmere sentrum på grunn av økt tilgjengelighet til tjenester, arbeidsplasser og andre urbane fasiliteter.
+"Rural areas" og "cities" viser høyere variabilitet (indikert av standardavvik og varians) sammenlignet med "towns/suburbs".
+Dette antyder mer markante forskjeller i befolkningsprosentene innenfor "rural areas" og "cities".\
 
 ## Del 2: Avansert analyse - Virkningen av økonomiske faktorer på befolkningsvekst
 
-I denne delen av oppgaven skal vi utvide dataene som vi samlet inn i den første delen ved å inkludere flere økonomiske faktorer.
-Vår analyse vil fokusere på hvordan disse faktorene korrelerer med befolkningsvekst i ulike regioner, ved å bruke klassifiseringsmetodikken til Andersson, Håkansson og Thorsen (2023).
+I denne delen av oppgaven skal vi utvide dataene som vi samlet inn i den første delen av oppgaven ved å inkludere flere økonomiske faktorer.
+Analysen vil fokusere på hvordan arbeidsledighet, arbeidsvekst og huspris påvirker befolkningsveksten i ulike regioner, ved bruk av klassifiseringsmetodikken til Andersson, Håkansson og Thorsen (2023).
 
 ### Oppgave 1 -- Innsamling av tilleggsdata
 
 Vi brukte tre forskjellige datasett ved innkludering av flere økonomiske faktorer i vårt opprinnelige datasett.
 Vi lastet ned data for de tre økonomiske faktorene arbeidsvekst, arbeidsledighet og boligpris fra Eurostat.
 Dataene er hentet fra perioden 2003 til 2022 og innkluderer de samme landene og urbaniseringsgradene som for befolkningsdataene.
-Datasettet for arbeidsvekst heter *"Employment rates by sex, age, educational attainment level, citizenship and degree of urbanisation",* og datasettet for arbeidsledighet har navnet *"Unemployment rates by sex, age and degree of urbanisation (%)"* .
+Datasettet for arbeidsvekst heter *"Employment rates by sex, age, educational attainment level, citizenship and degree of urbanisation",* mens datasettet for arbeidsledighet har navnet *"Unemployment rates by sex, age and degree of urbanisation (%)"* .
 Datasettet som gir informasjon om boligpris heter "*Housing cost overburden rate by degree of urbanisation - EU-SILC survey***".** Alle de tre datasettene oppgir de økonomiske faktorene i prosent.
 
 ```{r}
 #| echo: false
 #| message: false
-data1 <- arbeidskraft <- read_csv("arbeidskraft.csv") |> 
+data1 <- read_csv("arbeidskraft.csv") |> 
   select(arbeidsvekst = OBS_VALUE, geo, age, deg_urb, TIME_PERIOD)
 
-data2 <- arbeidsledighet1 <- read_csv("arbeidsledighet1.csv") |> 
+data2 <- read_csv("arbeidsledighet1.csv") |> 
   select(arbeidsledig = OBS_VALUE, geo,age, deg_urb, TIME_PERIOD)
 
-data3 <- huspris <- read_csv("huspris.csv") |> 
+data3 <- read_csv("huspris.csv") |> 
   select(huspris = OBS_VALUE, geo, deg_urb, TIME_PERIOD)
 ```
 
@@ -281,29 +209,32 @@ data3 <- huspris <- read_csv("huspris.csv") |>
 #| echo: false
 arbeidsvekst <- data1 |>
   filter(age == "Y15-64") |>
+  filter(!(geo %in% c("LV", "MK", "HR", "RO", "RS", "CH", "AL", "IS"))) |>
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
     deg_urb == "DEG3" ~ "Rural Areas",
-    TRUE ~ as.character(deg_urb)  # Beholder andre verdier uendret
+    TRUE ~ as.character(deg_urb)
   ))
 ```
 
 ```{r}
 #| echo: false
-arbeidsledige <- data2 |> 
+arbeidsledig <- data2 |> 
   filter(age == "Y15-64") |>
+  filter(!(geo %in% c("LV", "MK", "HR", "RO", "RS", "CH", "AL", "IS"))) |>
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
     deg_urb == "DEG3" ~ "Rural Areas",
-    TRUE ~ as.character(deg_urb)  # Beholder andre verdier uendret
+    TRUE ~ as.character(deg_urb) 
   ))
 ```
 
 ```{r}
 #| echo: false
 huspris <- data3 |> 
+  filter(!(geo %in% c("LV", "MK", "HR", "RO", "RS", "CH", "AL", "IS"))) |>
   mutate(deg_urb = case_when(
     deg_urb == "DEG1" ~ "Cities",
     deg_urb == "DEG2" ~ "Towns/Suburbs",
@@ -315,19 +246,20 @@ huspris <- data3 |>
 ```{r}
 #| echo: false
 join <- arbeidsvekst |> 
-  left_join(arbeidsledige, join_by(geo, TIME_PERIOD, deg_urb))
+  left_join(arbeidsledig, join_by(geo, TIME_PERIOD, deg_urb))
 
 join1 <- join |> 
   left_join(huspris, join_by(geo, TIME_PERIOD, deg_urb))
 
 maindata <- join1 |> 
-  left_join(data, join_by(geo, TIME_PERIOD, deg_urb))
+  left_join(data, join_by(geo, TIME_PERIOD, deg_urb)) |>
+  select(geo, deg_urb, TIME_PERIOD, OBS_VALUE, arbeidsledig, arbeidsvekst, huspris)
 ```
 
 ### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
 
 Vi skal videre i analysen benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
-Klassifiseringen er basert på de tre kriteriene arbeidsledighet (U), arbeidsvekst (△E) og huspris (H).
+Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
 Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 1.  høy U, høy △E, høy H
@@ -340,12 +272,13 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 8.  lav U, lav △E, høy H
 
 Lave verdier indikerer at kriteriet er lavere enn gjennomsnittet, mens høye verdier indikerer at kriteriet er høyere en gjennomsnittet.
+Klassifiseringen skal brukes til å senere diskutere urbaniserings og sentraliseringstendenser i de europeiske regionene.
 
 ```{r}
 #| echo: false
 maindata <- maindata %>%
   group_by(geo, TIME_PERIOD) %>%
-  mutate(arb.ledig.geo.mean = mean(arbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mena = mean(arbeidsvekst, na.rm = TRUE))
+  mutate(arb.ledig.geo.mean = mean(arbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mean = mean(arbeidsvekst, na.rm = TRUE))
 
 ```
 
@@ -353,14 +286,14 @@ maindata <- maindata %>%
 #| echo: false
 maindata <- maindata %>%
   mutate(classification = case_when(
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "1.høy arbeisledighet, høy arbeidsvekst, høy huspris",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "2.høy arbeisledighet, høy arbeidsvekst, lav huspris",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "3.høy arbeisledighet, lav arbeidsvekst, høy huspris",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "4.høy arbeisledighet, lav arbeidsvekst, lav huspris",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5.lav arbeisledighet, høy arbeidsvekst, høy huspris",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6.lav arbeisledighet, høy arbeidsvekst, lav huspris",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7.lav arbeisledighet, lav arbeidsvekst, høy huspris",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8. lav arbeisledighet, lav arbeidsvekst, lav huspris")
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "1.høy arbeisledighet, høy arbeidsvekst, høy huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "2.høy arbeisledighet, høy arbeidsvekst, lav huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "3.høy arbeisledighet, lav arbeidsvekst, høy huspris",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "4.høy arbeisledighet, lav arbeidsvekst, lav huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "5.lav arbeisledighet, høy arbeidsvekst, høy huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "6.lav arbeisledighet, høy arbeidsvekst, lav huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "7.lav arbeisledighet, lav arbeidsvekst, høy huspris",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "8. lav arbeisledighet, lav arbeidsvekst, lav huspris")
   )  %>%
   filter(!is.na(classification))
 ```
@@ -369,22 +302,21 @@ maindata <- maindata %>%
 #| echo: false
 maindata <- maindata %>%
   mutate(classification_nr = case_when(
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "1",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "2",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "3",
-    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "4",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "5",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "6",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris > huspris.geo.mean ~ "7",
-    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mena & huspris <= huspris.geo.mean ~ "8")
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "1",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "2",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "3",
+    arbeidsledig > arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "4",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "5",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst > arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "6",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris > huspris.geo.mean ~ "7",
+    arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "8")
   )  %>%
   filter(!is.na(classification)) 
 ```
 
 ### Oppgave 3 - Analyse og visualisering
 
-@fig-stolpediagram viser en oversikt over hvordan den gjennomsnittlige befolkningsveksten utvikler seg i perioden 2003 - 2022, inndelt etter klassifiseringene under oppgave 2.
-Stolpediagrammet er delt inn etter urbaniseringsgradene "Cities", "Towns/Suburbs" og "Rural areas".
+@fig-stolpediagram visualiserer hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
