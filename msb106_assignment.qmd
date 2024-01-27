@@ -279,7 +279,6 @@ Klassifiseringen skal brukes til å senere diskutere urbaniserings og sentralise
 maindata <- maindata %>%
   group_by(geo, TIME_PERIOD) %>%
   mutate(arb.ledig.geo.mean = mean(arbeidsledig, na.rm = TRUE), huspris.geo.mean = mean(huspris, na.rm = TRUE), arb.vekst.geo.mean = mean(arbeidsvekst, na.rm = TRUE))
-
 ```
 
 ```{r}
@@ -312,6 +311,11 @@ maindata <- maindata %>%
     arbeidsledig <= arb.ledig.geo.mean & arbeidsvekst <= arb.vekst.geo.mean & huspris <= huspris.geo.mean ~ "8")
   )  %>%
   filter(!is.na(classification)) 
+```
+
+```{r}
+maindata <- maindata %>%
+  select(geo, deg_urb, TIME_PERIOD, OBS_VALUE, arbeidsledig, arbeidsvekst, huspris, arb.ledig.geo.mean, arb.vekst.geo.mean, huspris.geo.mean, classification_nr, classification)
 ```
 
 ### Oppgave 3 - Analyse og visualisering
