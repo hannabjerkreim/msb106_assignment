@@ -73,7 +73,7 @@ De rurale områdene er generelt sett den regioninndelingen som har opplevd stør
 #| echo: false
 #| message: false
 #| label: fig-gjsnitt-befolkning
-#| fig-cap: "Relativ gjennomsnittlig befolkningsvekst i perioden 2003-2022 fordelt på urbaniseringsgradene; cities, towns/suburbs, rural areas."
+#| fig-cap: "Relativ befolkningsvekst i perioden 2003-2022 fordelt på urbaniseringsgradene; cities, towns/suburbs, rural areas."
 
 data %>%
   group_by(deg_urb, TIME_PERIOD) %>%
@@ -82,7 +82,7 @@ data %>%
   ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = deg_urb)) +
   geom_line() +
   labs(x = "År",
-       y = "Gjennomsnittlig Befolkningsvekst",
+       y = "Relativ befolkningsvekst",
        color = "Urbaniseringsgrad") +
   theme_minimal()
 
@@ -272,6 +272,7 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 8.  lav U, lav △E, høy H
 
 Lave verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er høyere en landsgjennomsnittet.
+Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde.
 Klassifiseringen skal videre brukes til å diskutere urbaniserings- og sentraliseringstendenser i de europeiske regionene.
 
 ```{r}
@@ -321,32 +322,46 @@ maindata <- maindata %>%
 
 ### Oppgave 3 - Analyse og visualisering
 
+#### Sammenligning av klassifiseringsmetodikk og befolkningsvekst
+
+Vi skal undersøke om klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) er forskjellig fra den oprinnelige regioninndelingen "cities", "towns/suburbs" og "rural areas".
+Vi skal studere om befolkningsmønstrene er forskjellig mellom disse klassifiseringene av regioner.
+
 @fig-stolpediagram visualiserer hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
 #| message: false
 #| label: fig-stolpediagram
-#| fig-cap: "Stolpediagram basert på klassifiseringe og regioninndeling."
-# Lag stolpediagram
+#| fig-cap: "Urbaniseringsgradene cities, towns/suburbs og rural areas fordelt på kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023)."
 stolpediagram <- ggplot(maindata, aes(x = as.factor(classification_nr), fill = deg_urb)) +
   geom_bar(position = "dodge", stat = "count") +
-  labs(title = "Stolpediagram basert på Classification_nr og deg_urb",
-       x = "classification_nr",
-       y = "Antall") +
+  labs(x = "Kategori",
+       y = "Antall",
+       fill = "Urbaniseringsgrad") +
   theme_minimal()
 
 # Vis stolpediagrammet
 print(stolpediagram)
 ```
 
-I @fig-linjediagram får vi en oversikt over utviklingen av den gjennomsnittlige befolkningsveksten i de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2002 til 2023.
+Fra @fig-stolpediagram ser vi at "cities"-regionene fordeler seg hovedsakelig på kategori 1, 3 og 5.
+Kategori 1 med høy arbeidsledighet, høy arbeidsvekst og høye boligpriser representerer typiske vekstmotorer i økonomien.
+Kategori 3 har høy arbeidsledighet, lav arbeidsvekst og høye boligpriser.
+Kategori 5 representerer regioner uten store økonomiske utfordringer med lav arbeisledighet, høy arbeidsvekt og høye boligpriser.
+Kategori 1, 3 og 5 finnes i sentrale områder.
+Fra @fig-stolpediagram ligger kategori 4 og 8 hovedsakelig i mer rurale områder, med lave boligpriser og en uheldig utvikling i antall arbeidsplasser.
+Kategori 4 er typisk utsatte områder med høy arbeidsledighet, lav arbeidsvekst og lave boligpriser.
+Kategori 8 har lav arbeidsledighet, lav arbeidsvektst og høye boligproser.
+Kategori 6 med lav arbeidsledighet, høy arbeidsvekst og lave boligpriser har også et flertall av "rural-areas"-regioner, men "towns/suburbs"-regionene er også høyt representert i denne kategorien.
+Towns/suburbs"-regionene er også sterkt representert i kategori 4. Det kommer tydlig frem fra figuren at både kategori 2 og 7 har svært få observasjoner.
 
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 #| label: fig-linjediagram
-#| fig-cap: "Linjediagram basert på urbaniseringsgrad og gjennomsnittlig befolkningsvekst"
+#| fig-cap: "Relativ befolkningsvekst i kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2003 til 2022"
 maindata %>%
   group_by(classification_nr, TIME_PERIOD) %>%
   summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
@@ -354,27 +369,60 @@ maindata %>%
   ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = classification_nr)) +
   geom_line() +
   labs(x = "År",
-       y = "Gjennomsnittlig Befolkningsvekst",
-       color = "Regioner") +
+       y = "Relativ befolkningsvekst",
+       color = "Kategori") +
   theme_minimal()
 ```
 
-Videre har vi valgt å se på to forksjellige grupper av land.
-Herav tre land fra skandinavia; Danmark, Norge og Sverige.
-Disse diagrammene gir oss et bedre bilde av hvordan befolkningsveksten i de ulike regionene (1-8) har utviklet seg over tid, og det er med på å gi rom for en mer detaljert forståelse av de underliggende faktorene som påvirker befolkningsendringene.
+I @fig-linjediagram får vi en oversikt over utviklingen av den gjennomsnittlige befolkningsveksten i de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2002 til 2023.
+Som vi tidligere har nevnt er det svært få observasjoner i kategori 2 og 7.
+I @fig-linjediagram er ikke kategori 7 representert i det hele tatt, mens linjen til kategori 2 er oppstykket og manglende på grunn av de få observasjonene.
+Det vil ikke bli lagt særlig vekt på disse to kategoriene videre.
+Kategori 1 som hovedsakelig inneholder "cities"-regioner og er karakterisert høy arbeidsledighet, høy arbeidsvekt og høye boligpriser er representert med den røde linjen i diagrammet.
+Linjen viser en synkende befolkningsvekst over perioden.
+Dette mønsteret ligner på utviklingen vi ser for "cities"-regioner i figuren fra første del av oppgaven (@fig-gjsnitt-befolkning).
+Vi kan ikke trekke samme parallell for kategori 3 og 5, som også hovedsaklig består av "cities"-regioner.
+Kategori 3 og 5 har i motsetning til kategori 1 ikke en synkende befolkningsvekst i perioden.
+I kategori 6 som er sterkt representert av både "rural areas"-regioner og "towns/suburbs"-regioner kan vi se en økende trend i løpet av perioden, på samme måte som vi ser en befolkningsvekst i "towns/suburbs"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
+Dette styrker poenget om bud-rente-teorien som tidligere omtalt.
+Bud-rente-teorien fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til byene, noe som fører til at "towns og suburbs"-regionene blir attraktive.
+Fra @fig-linjediagram ser vi at kategori 8, som hovedsaklig inneholder "rural areas"-regioner, har betydelig variasjon i befolkningsvekst i perioden.
+Dette er den kategorien som er oppe i høyeste maksimumsverdier for befolkningsvekst.
+Vi vet at kategori 8 også inneholder "towns og suburbs"-regioner og det kan spekuleres i om disse er med på å dra opp befolkningstallene i denne kategorien.
 
-@fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) i Danmark, Norge og Sverige.
+#### Befolkningsutvikling i skandinavia
+
+Videre har vi valgt å se nærmere på befolkningsutviklingen i de skandinaviske landene Danmark, Norge og Sverige.
+Vi skal se på hvordan befolkningsveksten i de ulike klassifiseringskategoriene (1-8) har utviklet seg over tid for å få en mer detaljert forståelse av de underliggende faktorene som påvirker befolkningsendringene.
+Norge, Sverige og Danmark deler mange likheter når det gjelder for eksempel kultur, historie og geografi, noe som kan gjøre det lettere å sammenligne og trekke paraleller.
+Norge, Sverige og Danmark er velstående økonomier med sterke veldferdssystemer, noe som potensielt kan ha påvirket befolkningsutviklingen på andre måter enn land med mindre økonomisk stabilitet.
+Norge, Sverige og Danmark er kjent for å praktisere en skandinavisk velferdsmodell som inkluderer likhet i tilgang til tjenester som helsevesen og utdanning.
+I tillegg til mange likheter, har også disse landene sine egne særtrekk.
+Å se nærmere på befolkningsutviklingen i disse tre landene gir muligheten til å identifisere felles trender, men også ulikheter i befolkningsmønster.
+
+@fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) i de skandinaviske landene Danmark, Norge og Sverige.
+
+Kort beskrivelse av hva vi ser i stolpediagrammet:
+
+I Danmark ser vi ....
+
+I Norge ser vi ...
+
+I Sverige ser vi ...
+
+Samlet sett i Skandinavia ser vi ...
 
 ```{r}
 #| echo: false
 #| message: false
 #| label: fig-stolpediagram2
-#| fig-cap: "Stolpediagram basert på klassifiseringe og regioninndeling i Danmark, Norge og Sverige."
+#| fig-cap: "Urbaniseringsgradene cities, towns/suburbs og rural areas fordelt på kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) for Danmark, Norge og Sverige."
+
 stolpediagram_facet <- ggplot(filter(maindata, geo %in% c("NO", "SE", "DK")), aes(x = as.factor(classification_nr), fill = deg_urb)) +
   geom_bar(position = "dodge", stat = "count") +
-  labs(title = "Stolpediagram basert på Classification_nr og deg_urb i Danmark, Norge og Sverige ",
-       x = "classification_nr",
-       y = "Antall") +
+  labs(x = "Kategori",
+       y = "Antall",
+       fill = "Urbaniseringsgrad") +
   theme_minimal() +
   facet_wrap(~ geo, scales = "free_y")
 
@@ -383,13 +431,14 @@ print(stolpediagram_facet)
 
 ```
 
-@fig-skandinavia viser gjennomsnittlig befolkningsvekst i de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2002 til 2023 for Danmark, Norge og Sverige.
+@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinaviske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 #| label: fig-skandinavia
-#| fig-cap: "Gjennomnittlig befolkningsvekst i skandinavia"
+#| fig-cap: "Relativ befolkningsvekst i kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2003 til 2022 for Danmark, Norge og Sverige"
 
 maindata %>%
   filter(geo %in% c("DK", "NO", "SE")) %>%
@@ -400,15 +449,13 @@ maindata %>%
   geom_line() +
   geom_point() +
   labs(x = "År",
-       y = "Gjennomsnittlig Befolkningsvekst",
-       color = "Regioner") +
+       y = "Relativ befolkningsvekst",
+       color = "Kategori") +
   theme_minimal() +
   facet_wrap(~geo, scales = "free_y")
 
 
 ```
-
-## Forklaring av de ulike diagrammene:
 
 **Fra Danmark ser vi befolkningsutviklingen for regionene 3, 6 og 1 i diagrammet:**
 
@@ -510,3 +557,15 @@ Teorien hevder at plasseringen av sentrale steder er optimal for å maksimere ti
 Våre funn kan tolkes som om byene (høy arbeidsvekst, arbeidsledighet og huspriser) er plassert strategisk for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
 
 https://snl.no/byregion
+
+**Befolkningsmønstre**
+
+Oppsummer de observerte mønstrene for befolkningsvekst for de forskjellige klassene av regioner.
+
+#### Literaturintegrasjon
+
+Relater funnene til teorier og begreper diskutert i kurslitteraturen, diskuter hvordan disse teoriene hjelper med å forklare de identifiserte mønstrene.
+
+#### Kritisk evaluering
+
+Vurder funnene kritisk, vurdere eventuelle begrensinger eller alternative forklaringer kurslitteraturen foreslår.
