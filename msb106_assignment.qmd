@@ -558,18 +558,6 @@ Våre funn kan tolkes som om byene (høy arbeidsvekst, arbeidsledighet og huspri
 
 https://snl.no/byregion
 
-**Befolkningsmønstre**
-
-Oppsummer de observerte mønstrene for befolkningsvekst for de forskjellige klassene av regioner.
-
-#### Literaturintegrasjon
-
-Relater funnene til teorier og begreper diskutert i kurslitteraturen, diskuter hvordan disse teoriene hjelper med å forklare de identifiserte mønstrene.
-
-#### Kritisk evaluering
-
-Vurder funnene kritisk, vurdere eventuelle begrensinger eller alternative forklaringer kurslitteraturen foreslår.
-
 # TEST : HØY OG LAV KONJUKTURER
 
 En lavkonjunktur refererer til en økonomisk fase preget av lav økonomisk aktivitet, høy arbeidsledighet og generelt dårlig økonomisk ytelse.
@@ -593,8 +581,6 @@ plot(trend)
 ```
 
 ```{r}
-install.packages("forecast")
-library(forecast)
 # Hvis det er sesongvariasjoner i dataene, kan du bruke sesongjusteringsmetoder som seasonal fra forecast-pakken.
 sesongjustert <- stl(tidsserie_data, s.window = "periodic")
 plot(sesongjustert)
