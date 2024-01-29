@@ -569,3 +569,115 @@ Relater funnene til teorier og begreper diskutert i kurslitteraturen, diskuter h
 #### Kritisk evaluering
 
 Vurder funnene kritisk, vurdere eventuelle begrensinger eller alternative forklaringer kurslitteraturen foreslår.
+
+# TEST : HØY OG LAV KONJUKTURER
+
+En lavkonjunktur refererer til en økonomisk fase preget av lav økonomisk aktivitet, høy arbeidsledighet og generelt dårlig økonomisk ytelse.
+Under en lavkonjunktur er produksjonen og sysselsettingen lavere enn potensialet, og bedrifter opplever ofte redusert etterspørsel etter varer og tjenester.
+Dette kan føre til nedgang i inntektene, økt arbeidsledighet og lavere forbruk.
+
+Høykonjunktur refererer til en økonomisk fase preget av sterk økonomisk aktivitet, lav arbeidsledighet, høy produksjon og generelt positiv økonomisk ytelse.
+Under høykonjunktur er økonomien ofte i god form, og det er høy etterspørsel etter varer og tjenester.
+Bedrifter opplever økt produksjon, høy sysselsetting og generelt gode økonomiske resultater.
+
+```{r}
+# Bruk tidsseriefunksjoner i R, for eksempel ts() for å konvertere dataene til en tidsserieobjekt.
+tidsserie_data <- ts(data$OBS_VALUE, start = c(2003, 1), end = c(2022, 12), frequency = 12)
+
+```
+
+```{r}
+# Utfør en enkel trendanalyse for å identifisere eventuelle langsiktige mønstre i befolkningsveksten.
+trend <- decompose(tidsserie_data)
+plot(trend)
+```
+
+```{r}
+install.packages("forecast")
+library(forecast)
+# Hvis det er sesongvariasjoner i dataene, kan du bruke sesongjusteringsmetoder som seasonal fra forecast-pakken.
+sesongjustert <- stl(tidsserie_data, s.window = "periodic")
+plot(sesongjustert)
+
+```
+
+```{r}
+# Opprett et enkelt tidsserieplot for å visualisere konjunkturutviklingen over tid.
+plot(tidsserie_data, type = "l", main = "Befolkningsvekst over tid", xlab = "År", ylab = "Befolkningsvekst")
+
+```
+
+-\> Basert på visualiseringene og trendanalysen, drøft konjunkturutviklingen og identifiser perioder med økonomisk vekst, nedgang eller stabilitet.
+
+Eksempel:
+
+-   **Høy konjunktur (f.eks., 2005):**
+
+    -   Sterk økonomisk vekst.
+
+    -   Lav arbeidsledighet.
+
+    -   Økt aktivitet på arbeidsmarkedet.
+
+    -   Muligens økning i investeringer og forbruk.
+
+-   **Lav konjunktur (f.eks., 2010):**
+
+    -   Lav eller negativ økonomisk vekst.
+
+    -   Høy arbeidsledighet.
+
+    -   Redusert aktivitet på arbeidsmarkedet.
+
+    -   Muligens nedgang i investeringer og forbruk.
+
+# TEST: SHIFT-SHARE ANALYSE:
+
+-   
+
+    -   Grunntanken er at den regionale vekstraten påvirkes av tre faktorer:
+
+        -   Industristrukturen → sammensetning av næringer
+
+        -   Sektorproduktivitet → produktivitetseffekt
+
+        -   Dynamikken i etterspørsel og forbrukerpreferanser
+
+```{r}
+nasjonal_trend <- maindata %>%
+  group_by(TIME_PERIOD) %>%
+  summarise(nasjonal_vekst = mean(OBS_VALUE))
+
+```
+
+```{r}
+data_med_nasjonal_trend <- maindata %>%
+  left_join(nasjonal_trend, by = "TIME_PERIOD") %>%
+  mutate(regionale_forskjeller = OBS_VALUE - nasjonal_vekst)
+
+```
+
+```{r}
+# Eksempel på sektorvariabel: classification_nr
+classification_trend <- maindata %>%
+  group_by(TIME_PERIOD, classification_nr) %>%
+  summarise(classification_vekst = mean(OBS_VALUE))
+
+data_med_classification_trend <- data_med_nasjonal_trend %>%
+  left_join(classification_trend, by = c("TIME_PERIOD", "classification_nr")) %>%
+  mutate(classification_endringer = OBS_VALUE - classification_vekst)
+
+```
+
+```{r}
+# Eksempel på visualisering (du kan tilpasse dette basert på dine behov)
+ggplot(data_med_classification_trend, aes(x = TIME_PERIOD)) +
+  geom_line(aes(y = nasjonal_vekst, color = "Nasjonal Trend")) +
+  geom_line(aes(y = regionale_forskjeller, color = "Regionale Forskjeller")) +
+  geom_line(aes(y = classification_endringer, color = "classification_endringer")) +
+  labs(title = "Shift-Share Analyse",
+       x = "År",
+       y = "Befolkningsvekst") +
+  theme_minimal()
+
+```
