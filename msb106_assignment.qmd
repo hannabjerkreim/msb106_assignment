@@ -59,27 +59,27 @@ Vi skal nå se på befolkningsutviklingen i ulike europeiske regioner i perioden
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
 Målet er å undersøke befolkningsutviklingen i hver av disse regioninndelingene og forstå mønstrene for befolkningsvekst over tid.
 
-@fig-gjsnitt-befolkning viser gjennomsittlig befolkningsvekst for "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
-Fra figuren ser vi at "cities"-regionene hadde en god befolkningsvekst de to første årene, før det stabiliserte seg og lå på rundt 42,5% frem til 2012.
-I 2012 stupte befolkningen ned mot 38%.
-Det var en liten vekst etter dette, før befolkningen igjen sank frem til 2015.
-Etter dette var det en stabil befolkningsvekst i "cities"-regioner frem til 2021, hvor befolkningen igjen sank ned til rundt 38%.
-"Rural areas" hadde også en befolkningsvekst de to første årene, men ikke en like stor veskt som "cities"-regionene hadde.
-Fra 2005 og frem til 2011 ser vi en ganske jevn og slak nedgang befolkningen for "rural areas"-regionene.
-I 2012 var det i kontrast til "cities"-regionene en befolkningsvekst, men denne veksten var kortvarig.
-Vi ser videre en tydlig fallende trend i befolkningsveksten for "rural areas" helt frem til 2022, med unntak av en liten vekst i perioden 2014 til 2015.
-De rurale områdene er samlet sett den regionsinndelingen som har opplevd størst nedgang i befolkningsvekst i perioden.
+@fig-gjsnitt-befolkning illustrerer den gjennomsittlige befolkningsveksten i "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
+Fra figuren ser vi at "cities"-regionene opplevde en betydelig befolkningsvekst de to første årene, etterfulgt av en relativ stabil vekst frem til 2012.
+I 2012 oppstod en markant nedgang i befolkningen, etterfulgt av en beskjeden økning før en ny nedgang frem til 2015.
+Etter dette var det en stabil befolkningsvekst i "cities"-regionene frem til 2021, hvor befolkningen igjen viste en nedgang.
+"Rural areas"-regionene opplevde også en befolkningsvekst de to første årene, men denne var ikke like betydelig som i "cities"-regionene.
+Fra 2005 til 2011 ser vi en jevn nedgang i befolkningen i "rural areas"-regionene.
+I 2012, i motsetning til "cities"-regionene, var det en vekst i befolkningen, men den var kortvarig.
+Deretter ser vi en tydelig nedadgående trend i befolkningsveksten for "rural areas" helt frem til 2022, med unntak av en liten vekst i perioden 2014 til 2015.
+De rurale områdene er generelt sett den regioninndelingen som har opplevd størst nedgang i befolkningsvekst i perioden.
 
 ```{r}
 #| echo: false
 #| message: false
 #| label: fig-gjsnitt-befolkning
-#| fig-cap: "Gjennomsnittlig befolkningsvekst i perioden 2003-2022 fordelt på urbaniseringsgradene; cities, towns/suburbs, rural areas."
+#| fig-cap: "Relativ gjennomsnittlig befolkningsvekst i perioden 2003-2022 fordelt på urbaniseringsgradene; cities, towns/suburbs, rural areas."
 
 data %>%
   group_by(deg_urb, TIME_PERIOD) %>%
   summarise(mean_value = mean(OBS_VALUE)) %>%
-  ggplot(aes(x = TIME_PERIOD, y = mean_value, color = deg_urb)) +
+  mutate(demeaned_value = mean_value/first(mean_value)) %>%
+  ggplot(aes(x = TIME_PERIOD, y = demeaned_value, color = deg_urb)) +
   geom_line() +
   labs(x = "År",
        y = "Gjennomsnittlig Befolkningsvekst",
@@ -88,15 +88,15 @@ data %>%
 
 ```
 
-I @fig-gjsnitt-befolkning ser vi at "towns and suburbs"-regionene har i kontrast til de to andre regionsinndelingene en stor nedgang i befolkningen de to første årene.
-Dette kan tyde på at folk flyttet fra tettsteder og forsteder til spesielt byer, men også til rurale områder i denne perioden.
-Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden etter 2005 og befolkningen øker slakt frem til 2011.
-Videre setter befolkningsveksten fart og øker betydelig helt frem til 2022, hvor den er på sitt høyeste med en befolkningsvekst på nesten 34%.
+I @fig-gjsnitt-befolkning ser vi at "towns and suburbs"-regionene, i kontrast til de to andre regionsinndelingene, har en betydelig nedgang i befolkningen de to første årene.
+Dette kan tyde på at folk flyttet fra tettsteder og forsteder, spesielt til byer, men også til rurale områder i denne perioden.
+Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden etter 2005 og befolkningen øker gradvis frem til 2011.
+Deretter setter befolkningsveksten fart og øker kraftig helt frem til 2022.
 Det kommer tydlig frem fra @fig-gjsnitt-befolkning at den dominerende befolkningsveksten i perioden etter 2011 har vært konsentrert i "towns and suburbs"-regionene.
-Fra figuren er det tydelig at folk har blitt dratt mot tettsteder og forsteder, og flyttet bort fra byer og rurale områder.
-Dette er i tråd med bud-rente-teorien som fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til arbeidsplasser.
+Figuren viser tydlig at folk har blitt trukket mot tettsteder og forsteder, og flyttet bort fra byer og rurale områder.
+Dette samsvarer med bud-rente-teorien, som fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til arbeidsplasser.
 Dette fører til at områdene i utkanten av byene blir attraktive.
-"Towns and surbubs"-regionene tilbyr lavere boligpriser med grei pendleravstand til byene.
+"Towns and surbubs"-regionene tilbyr lavere boligpriser med akseptabel pendleravstand til byene.
 
 @tbl-summary-degurb presenterer en oversikt over deskriptive statistikker for befolkningsutviklingen i tidsrommet 2003 til 2022, kategorisert etter de tre ulike urbaniseringsgradene "Cities", "Towns and suburbs" og "Rural areas".
 Denne oversikten gir et innblikk i variasjonene i befolkningen gjennom statistiske mål som minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
@@ -172,7 +172,7 @@ For regionene som tilhører "rural areas" varierte befolkningen fra et minimum p
 Medianverdien ligger på 33.00%, mens gjennomsnittet ligger på 32.51%.
 Variansen ligger på 216.36% og standardavviket på 14.71%.
 "Cities"-regionene har høyest median og gjennomsnitt blant de tre regioninndelingene, noe som indikerer høyere befolkningsandel sammenlignet med "towns/suburbs" og "rural areas".
-I tråd med bud-rente-teorien forventes høy befolkningstetthet nær bykjernen, noe som gjenspeiles i de høye befolkningsprosentene for "cities"-regionene.
+Det forventes høy befolkningstetthet nær bykjernen, noe som gjenspeiles i de høye befolkningsprosentene for "cities"-regionene.
 "Towns and suburbs"-regionene viser moderat befolkningsprosent, mens "rural areas"-regionene har de laveste befolkningsprosentene.
 Dette viser hvordan befolkningen fordeler seg basert på avstand fra bykjernen.
 Det forventes høy befolkningstetthet nærmere sentrum på grunn av økt tilgjengelighet til tjenester, arbeidsplasser og andre urbane fasiliteter.
@@ -258,7 +258,7 @@ maindata <- join1 |>
 
 ### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
 
-Vi skal videre benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023) for å omklassifisere regionene basert på tilleggsdataene beskrevet i forrige oppgave .
+Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
 Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
 Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
