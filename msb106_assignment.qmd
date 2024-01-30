@@ -517,6 +517,8 @@ maindata %>%
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
+1.  **Befolningsmønster**
+
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
@@ -566,15 +568,17 @@ Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
 Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
 Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, klasssifisering 8.
 
-Noe vi kan bruke?
-Sentralstedteorien utviklet av Walter Christaller i 1933.
+2.  **Litteratur integrasjon**
 
-Sentralitetsteorien antyder at sentrale steder organiseres hierarkisk.
-Våre observasjoner av urbaniseringskategorier (f.eks., "cities," "towns/suburbs," "rural areas") kan reflektere dette hierarkiet, der byer (kategorier med høy arbeidsvekst, arbeidsledighet og huspriser) har en sentral rolle i økonomien, mens tettsteder og landlige områder har en mer perifer status.
-Teorien hevder at plasseringen av sentrale steder er optimal for å maksimere tilgjengeligheten.
-Våre funn kan tolkes som om byene (høy arbeidsvekst, arbeidsledighet og huspriser) er plassert strategisk for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
+Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
+
+Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
+De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
+Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
 
 https://snl.no/byregion
+
+3.  **Kristisk evaluering**
 
 # TEST : HØY OG LAV KONJUKTURER
 
