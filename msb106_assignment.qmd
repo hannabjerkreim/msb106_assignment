@@ -668,3 +668,5 @@ Eksempel:
     -   Redusert aktivitet på arbeidsmarkedet.
 
     -   Muligens nedgang i investeringer og forbruk.
+
+    gh
