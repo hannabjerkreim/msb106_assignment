@@ -58,6 +58,8 @@ data <- data |>
 Vi skal nå se på befolkningsutviklingen i ulike europeiske regioner i perioden 2003 til 2022.
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
 Målet er å undersøke befolkningsutviklingen i hver av disse regioninndelingene og forstå mønstrene for befolkningsvekst over tid.
+Hypotesen vår et at befolkningsveksten vil utvikle seg i tråd med bud-rente-teorien.
+I følge denne teorien vil befolkningsveksten være konsentrert i tettsteder og forsteder (towns/suburbs) som følge av rimeligere boligpriser kombinert med akseptabel pendleravstand inn til byene. 
 
 @fig-gjsnitt-befolkning illustrerer den gjennomsittlige befolkningsveksten i "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
 Fra figuren ser vi at "cities"-regionene opplevde en betydelig befolkningsvekst de to første årene, etterfulgt av en relativ stabil vekst frem til 2012.
@@ -273,7 +275,6 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 Lave verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er høyere en landsgjennomsnittet.
 Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde.
-Klassifiseringen skal videre brukes til å diskutere urbaniserings- og sentraliseringstendenser i de europeiske regionene.
 
 ```{r}
 #| echo: false
@@ -321,6 +322,8 @@ maindata <- maindata %>%
 ```
 
 ### Oppgave 3 - Analyse og visualisering
+
+Vår hypotese for den videre analysen er at de økonomiske faktorene arbeidsledighet, arbeidsvekst og huspris vil forsterke den tidligere hypotesen vår om at befolkningsveksten utvikles i samsvar med bud-rente-teorien.
 
 #### Sammenligning av klassifiseringsmetodikk og befolkningsvekst
 
@@ -569,6 +572,16 @@ Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststå
 
 **En annen viktig faktor i «cities» er høye boligpriser og høy arbeidsledighet. Urbanisering spiller en sentral rolle, da store byer tiltrekker seg en stor befolkning på grunn av jobbmuligheter, kulturelle aktiviteter og annen infrastruktur. Den resulterende høye befolkningskonsentrasjonen fører imidlertid til økt konkurranse om både jobber og boliger. Urban gentrifisering, hvor økt etterspørsel etter sentralt beliggende boliger fører til økte priser, kan ytterligere bidra til presset på lokale innbyggere, som kan oppleve økonomisk utfordringer i lys av denne dynamikken.**
 
+2.  **Litteratur integrasjon**
+
+Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
+
+Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
+De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
+Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
+
+https://snl.no/byregion
+
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
@@ -583,50 +596,6 @@ Felles for alle disse tre landene er at de opplever en viss grad av sentraliseri
 <https://snl.no/urbanisering>
 
 <https://snl.no/sentralisering>
-
-I @fig-stolpediagram2 ser vi hvordan de 8 ulike klassifiseringene fordeler seg i hvert av landene vi har valgt å se nærmere på.
-Som vi ser i Norge er det tydelig at det er flest observasjoner i klasse 1; høy arbeisledighet, høy arbeidsvekst, høy huspris i kategorien "Cities".
-Dette kan forklares med at det ofte er høy arbeidsledighet i byer da det er mange som bor her.
-Det kan også skyldes strukturelle endringer i økonomien som for eksempel nedleggelse av tradisjonelle sektorer eller teknologisk skifte som reduserer etterspørselen etter arbeidskraft i visse bransjer.
-På lik linje som byer i denne kategorien kan ha høy arbeidsledighet kan denne kategorien samtdig oppleve høy arbeidsvekst, indikert ved økende sysselsettingsmuligheter.
-Dette kan skyldes vekst i sektorer som for eksempel informasjonsteknologi.
-Høyere huspriser i byene kan delvis skyldes stor etterspørsel etter boliger i attraktive byområder.
-Dette kan være knyttet til høy arbeidsvekst, urbaniseringstrender og ønsket om å bo nær jobbmuligheter, kulturelle aktiviteter og andre fasiliteter.
-Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
-Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
-
-I Danmark og Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
-Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
-Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
-Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
-
-Tettsteder "Towns/Suburbs" for Danmark, Norge og Sverige ser vi i @fig-stolpediagram2 er godt fordelt på flere klassifiseringer.
-Felles for Norge og Sverige er at de har mest data innenfor "Towns/Suburbs" på nr 4; høy, arbeisledighet lav arbeidsvekst, lav huspris.
-Danmark har flest observasjoner innenfor denne kategorien som 6; lav arbeisledighet, høy arbeidsvekst, lav huspris.
-Boligkostnader spiller en vesentlig rolle, hvor lavere boligpriser sammenlignet med byområdene tiltrekker mange mennesker til tettsteder og forsteder.
-Dette gir en mulighet til å nyte rimelige boligpriser samtidig som man opprettholder tilgangen til urbane fasiliteter.
-Pendling utgjør en annen viktig faktor, da tettsteder og forsteder ofte gir innbyggerne muligheten til å pendle til byene for arbeid eller andre aktiviteter.
-Dette utgjør et kompromiss mellom å bo i et roligere område og dra nytte av jobbmuligheter og urbane tjenester i byen.
-Arbeidsmuligheter i nærheten er også en betydelig faktor, hvor noen tettsteder og forsteder har egne arbeidsmuligheter, noe som reduserer behovet for pendling til byen og gjør det mer attraktivt å bosette seg i disse områdene- klassifisering 6 (lav arbeidsledighet).
-
-Det er tydelig etter @fig-stolpediagram2 at landlige områder "Rural areas" klassifiseres etter nr 6;lav arbeisledighet, høy arbeidsvekst, lav huspris og 8; lav arbeisledighet, lav arbeidsvekst, lav huspris.
-Lav arbeidsdelighet som er felles for klasse 6 og 8 kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
-Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
-Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
-Dette forklarer videre hvorfor det er lav huspris i disse områdene.
-Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
-Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
-Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, klasssifisering 8.
-
-2.  **Litteratur integrasjon**
-
-Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
-
-Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
-De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
-Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
-
-https://snl.no/byregion
 
 3.  **Kristisk evaluering**
 
