@@ -475,60 +475,55 @@ maindata %>%
 
 ```
 
-**Fra Danmark ser vi befolkningsutviklingen for regionene 3, 6 og 1 i diagrammet:**
+**Fra Danmark** ser vi region 6 som klassifiserer "l*av U, høy △E, lav H*", som har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra ca. 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
+Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
+I år 2015 har sannsynligvis regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
 
--   Region nr6 "l*av U, høy △E, lav H*" har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
-    Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
-    I år 2015 har nok regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
+Region 3, klassifisert som "*høy U, lav △E, høy H*" viser en relativt stabil utvikling gjennom årene.
+Gjennomsnittlig befolkningsvekst økte moderat fra omtrent 1 til 1,15.
+Dette indikerer at til tross for høy arbeidsledighet, begrenset arbeidsvekst og høye huspriser, opplevde regionen en moderat økning i befolkningsveksten.
+Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring
 
--   Region nr3, klassifisert som "*høy U, lav △E, høy H*" viser en relativt stabil utvikling gjennom årene.
-    Gjennomsnittlig befolkningsvekst økte moderat fra omtrent 1 til 1,15.
-    Dette indikerer at til tross for høy arbeidsledighet, begrenset arbeidsvekst og høye huspriser, opplevde regionen en moderat økning i befolkningsveksten.
-    Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring
+For region 1, klassifisert som "*høy U, høy △E, høy H*" har vi bare observasjoner for perioden rundt 2010 til ca.
+2016.
+I løpet av denne tiden faller gjennomsnittlig befolkningsvekst fra litt over 1 til litt over 0,5.
+Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
 
--   For region nr1, klassifisert som "*høy U, høy △E, høy H*" har vi bare observasjoner for perioden rundt 2010 til ca.
+**Fra Norge** ser vi først region 3 "*høy U, lav △E, høy H*" har vi bare observasjon i 2005 og 2010 og her holder den seg nokså stabilt.
 
-    2016. I løpet av denne tiden faller gjennomsnittlig befolkningsvekst litt, fra litt over 1 til litt over 0,5. Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
+Region 4, klassifisert som "*høy U, lav △E, lav H*," viser en betydelig økning i gjennomsnittlig befolkningsvekst fra omtrent 1 rundt 2011 til ca.
+2,5 ved neste observasjon i 2015.
+Dette nivået opprettholdes deretter i de påfølgende årene.
+Denne økningen kan tilskrives forbedringer i arbeidsmarkedet, til tross for høy arbeidsledighet, samt lav arbeidsvekst og lave boligpriser som gjør regionen mer attraktiv for tilflytting.
+Dette kan ha en sammenheng med at region nr1 har en nedgang i gjennomsnittlig befolkningsvekst.
 
-    **Fra Norge ser vi befolkningsutvikling for regionene 3, 4 og 1 i diagrammet:**
+Region 1 , klassifisert som "høy U, høy △E, høy H," opplever en nedgang i gjennomsnittlig befolkningsvekst fra 1 i 2013 til 0,5 i 2015.
+Deretter forblir befolkningsveksten stabil på dette lavere nivået i de påfølgende årene.
+Denne nedgangen kan forklares ut fra karakteristikkene til regionen, inkludert høy arbeidsledighet, høy arbeidsvekst og høye boligpriser.
 
-    -   Region nr3 "*høy U, lav △E, høy H*" har vi bare observasjon fra 2005 til 2010.
-        Denne holder seg nokså stabilt.
+**Fra Svergie** har vi blandt annet region 2 og 5, men disse har så og si ingen observasjoner så det er ikke nødvendig å kommentere.
+Hos region 1 har vi også veldig få observasjoner, men vi ser at denne region starter med en nedgang.
 
-    -   Region nr4, klassifisert som "*høy U, lav △E, lav H*," viser en betydelig økning i gjennomsnittlig befolkningsvekst fra omtrent 1 rundt 2011 til ca.
-        2,5 ved neste observasjon i 2015.
-        Dette nivået opprettholdes deretter i de påfølgende årene.
-        Denne økningen kan tilskrives forbedringer i arbeidsmarkedet, til tross for høy arbeidsledighet, samt lav arbeidsvekst og lave boligpriser som gjør regionen mer attraktiv for tilflytting.
-        Dette kan ha en sammenheng med at region nr1 har en nedgang i gjennomsnittlig befolkningsvekst.
-
-    -   Region nr1 , klassifisert som "høy U, høy △E, høy H," opplever en nedgang i gjennomsnittlig befolkningsvekst fra 1 i 2013 til 0,5 i 2015.
-        Deretter forblir befolkningsveksten stabil på dette lavere nivået i de påfølgende årene.
-        Denne nedgangen kan forklares ut fra karakteristikkene til regionen, inkludert høy arbeidsledighet, høy arbeidsvekst og høye boligpriser
-
-    **Fra Sverige ser vi befolkningsutvikling for regionene 3, 4, 1, 4 og 5 i diagrammet:**
-
-    -   Nr1, 2 og 5 har så og si ingen observasjoner så det er ikke vits å kommentere.
-
-    -   Både region nr 3 (høy U, lav △E, høy H) og 4 (høy U, lav △E, lav H) utvikler seg nokså likt gjennom årene.
-        Begge to starter nokså lavt med en gjennomsnittlig befolkningsvekst på rundt 1, men øker drastisk i årene 2012 ca.
-        fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsnittlig befolkningsvekst på mellom 2,25 - 2,5!
-
-        .....
+Men vi ser derrimot at både region 3 (høy U, lav △E, høy H) og 4 (høy U, lav △E, lav H) utvikler seg nokså likt gjennom årene.
+Begge to starter nokså lavt med en gjennomsnittlig befolkningsvekst på rundt 1, men øker drastisk i årene 2012 ca.
+fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsnittlig befolkningsvekst på mellom 2,25 - 2,5!
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
 1.  **Befolningsmønster**
 
-Generelle mønstre og refleksjoner:
+**Generelle mønstre og refleksjoner fra @fig-skandinavia :**
 
-Økonomiske faktorer: Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
+**Økonomiske faktorer:** Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
 
-År med markert endring: Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
+**År med markert endring:** Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
+[*(var dette det samme som i @fig-gjsnitt-befolkning ???)*]{.underline}
 
-Regionale karakteristika: Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
+**Regionale karakteristika:** Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
 
-I skandinaviske land er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene.
-Region nr1  viser en nedgang i gjennomsnittlig befolkningsvekst, sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser.
+I de skandinaviske landene er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene.
+Region 1 viser en nedgang i gjennomsnittlig befolkningsvekst i alle tre landene.
+Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser.
 Dette antyder at folk kan vise en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.
 Samtidig observeres høy arbeidsvekst i disse regionene, noe som indikerer at det samtidig skapes mange nye jobber.
 Denne tilsynelatende paradoksale situasjonen kan forklares ved at selv om det skapes jobber, kan utfordringer knyttet til høy arbeidsledighet og økte boligpriser dempe den generelle tilflyttingen til byene.
@@ -673,54 +668,3 @@ Eksempel:
     -   Redusert aktivitet på arbeidsmarkedet.
 
     -   Muligens nedgang i investeringer og forbruk.
-
-# TEST: SHIFT-SHARE ANALYSE:
-
--   
-
-    -   Grunntanken er at den regionale vekstraten påvirkes av tre faktorer:
-
-        -   Industristrukturen → sammensetning av næringer
-
-        -   Sektorproduktivitet → produktivitetseffekt
-
-        -   Dynamikken i etterspørsel og forbrukerpreferanser
-
-```{r}
-nasjonal_trend <- maindata %>%
-  group_by(TIME_PERIOD) %>%
-  summarise(nasjonal_vekst = mean(OBS_VALUE))
-
-```
-
-```{r}
-data_med_nasjonal_trend <- maindata %>%
-  left_join(nasjonal_trend, by = "TIME_PERIOD") %>%
-  mutate(regionale_forskjeller = OBS_VALUE - nasjonal_vekst)
-
-```
-
-```{r}
-# Eksempel på sektorvariabel: classification_nr
-classification_trend <- maindata %>%
-  group_by(TIME_PERIOD, classification_nr) %>%
-  summarise(classification_vekst = mean(OBS_VALUE))
-
-data_med_classification_trend <- data_med_nasjonal_trend %>%
-  left_join(classification_trend, by = c("TIME_PERIOD", "classification_nr")) %>%
-  mutate(classification_endringer = OBS_VALUE - classification_vekst)
-
-```
-
-```{r}
-# Eksempel på visualisering (du kan tilpasse dette basert på dine behov)
-ggplot(data_med_classification_trend, aes(x = TIME_PERIOD)) +
-  geom_line(aes(y = nasjonal_vekst, color = "Nasjonal Trend")) +
-  geom_line(aes(y = regionale_forskjeller, color = "Regionale Forskjeller")) +
-  geom_line(aes(y = classification_endringer, color = "classification_endringer")) +
-  labs(title = "Shift-Share Analyse",
-       x = "År",
-       y = "Befolkningsvekst") +
-  theme_minimal()
-
-```
