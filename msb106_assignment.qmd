@@ -544,7 +544,22 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
-1.  **Befolningsmønster**
+#### Befolningsmønster
+
+I første del av oppgaven kommer det tydelig frem at befolkningsveksten i de europeiske regionene i tiden etter 2011 hovedsakelig har vært konsentrert i «towns/suburbs»-regionene.
+Mennesker har i økende grad valgt å bosette seg i disse regionene, samtidig som de har flyttet bort fra «cities» og «rural areas».
+Observasjonene i \@fig-gjsnitt-befolkning stemmer godt overens med hypotesen om at befolkningsutviklingen har endret seg i tråd med bud-rente-teorien.\
+
+\
+I andre del av oppgaven ser vi hvordan befolkningsveksten i Europa har utviklet seg i perioden 2003 til 2011 inndelt etter Andersson, Håkonsen og Thorsens klassifiseringsmetodikk som klassifiserer regionene etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpris.
+Kategori 1, preget av høy arbeidsledighet, høy arbeidsvekst og høye boligpriser viser synkende befolkningsvekst over perioden.
+Dette samsvarer med det generelle mønsteret for «cities»-regionene i \@fig-gjsnitt-befolkning fra første del av oppgaven.
+Kategori 3 og 5, som også hovedsaklig består av «cities»-regioner viser derimot ikke det samme nedgående befolkningsmønsteret.
+I kategori 6, dominert av både «rural areas»- og «towns/suburbs»-regioner observeres en positiv befolkningsvekst i perioden.
+Dette samsvarer med den positive befolkningsveksten i «towns/suburbs»-regionene fra \@fig-gjsnitt-befolkning fra første del i oppgaven.
+Dette forsterker hypotesen vår om at befolkningsveksten utvikles i samsvar med bud-rente-teorien.
+Kategori 8, som hovedsaklig inneholder "rural areas"-regioner har hatt en variert men økende befolkningsvekst i perioden.
+Vi vet at kategori 8 også inneholder "towns og suburbs"-regioner og det kan spekuleres i om disse er med på å dra opp befolkningsveksten i denne kategorien.
 
 **Generelle mønstre og refleksjoner fra @fig-skandinavia :**
 
@@ -572,7 +587,7 @@ Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststå
 
 **En annen viktig faktor i «cities» er høye boligpriser og høy arbeidsledighet. Urbanisering spiller en sentral rolle, da store byer tiltrekker seg en stor befolkning på grunn av jobbmuligheter, kulturelle aktiviteter og annen infrastruktur. Den resulterende høye befolkningskonsentrasjonen fører imidlertid til økt konkurranse om både jobber og boliger. Urban gentrifisering, hvor økt etterspørsel etter sentralt beliggende boliger fører til økte priser, kan ytterligere bidra til presset på lokale innbyggere, som kan oppleve økonomisk utfordringer i lys av denne dynamikken.**
 
-2.  **Litteratur integrasjon**
+#### **Litteratur integrasjon**
 
 Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
 
@@ -597,7 +612,7 @@ Felles for alle disse tre landene er at de opplever en viss grad av sentraliseri
 
 <https://snl.no/sentralisering>
 
-3.  **Kristisk evaluering**
+#### Kristisk evaluering
 
 I vår gjennomførte analyse har vi undersøkt arbeidsvekst, arbeidsledighet og boligpriser fordelt på urbaniseringskategorier i et bredt spekter av forskjellige europeiske land.
 Det er viktig å være bevisst på noen begrensninger og potensielle utfordringer som kan påvirke tolkningen av resultatene vi har fått.
