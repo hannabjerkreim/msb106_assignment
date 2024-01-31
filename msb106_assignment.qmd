@@ -380,7 +380,7 @@ I @fig-linjediagram er ikke kategori 7 representert i det hele tatt, mens linjen
 Det vil ikke bli lagt særlig vekt på disse to kategoriene videre.
 Kategori 1 som hovedsakelig inneholder "cities"-regioner og er karakterisert høy arbeidsledighet, høy arbeidsvekt og høye boligpriser er representert med den røde linjen i diagrammet.
 Linjen viser en synkende befolkningsvekst over perioden.
-Dette mønsteret ligner på utviklingen vi ser for "cities"-regioner i figuren fra første del av oppgaven (@fig-gjsnitt-befolkning).
+Dette mønsteret ligner på utviklingen vi ser for "cities"-regioner i figuren fra første del av oppgaven (@fig-gjsnitt-befolkning) .
 Vi kan ikke trekke samme parallell for kategori 3 og 5, som også hovedsaklig består av "cities"-regioner.
 Kategori 3 og 5 har i motsetning til kategori 1 ikke en synkende befolkningsvekst i perioden.
 I kategori 6 som er sterkt representert av både "rural areas"-regioner og "towns/suburbs"-regioner kan vi se en økende trend i løpet av perioden, på samme måte som vi ser en befolkningsvekst i "towns/suburbs"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
@@ -419,7 +419,7 @@ print(stolpediagram2)
 
 Kort beskrivelse av hva vi ser i stolpediagrammet:
 
-**I Danmark** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
+**I Danmark** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.
 Når det kommer til "Towns/Suburbs" har Danmark flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris.
@@ -449,8 +449,7 @@ Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
 Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
 Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, klasssifisering 8.
 
-**I Sverige** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
-Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
+**I Sverige** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2. Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
 Når det kommer til "Towns/Suburbs" har Sverige flest observasjoner i kategori 4; høy, arbeisledighet lav arbeidsvekst, lav huspris.
@@ -532,7 +531,7 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 **Økonomiske faktorer:** Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
 
 **År med markert endring:** Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
-[*(var dette det samme som i @fig-gjsnitt-befolkning ???)*]{.underline}
+[(var dette det samme som i @fig-gjsnitt-befolkning ???)]{.underline}
 
 **Regionale karakteristika:** Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
 
@@ -578,7 +577,7 @@ Dette kan være knyttet til høy arbeidsvekst, urbaniseringstrender og ønsket o
 Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
 Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
 
-I Danmark og Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
+I Danmark og Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.

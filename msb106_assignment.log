@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.28)  31 JAN 2024 13:05
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.28)  31 JAN 2024 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1295,31 +1295,31 @@ LaTeX Warning: Reference `fig-linjediagram' on page 6 undefined on input line 53
 LaTeX Warning: Reference `fig-linjediagram' on page 6 undefined on input line 543.
 
 
-LaTeX Warning: Reference `fig-gjsnitt-befolkning' on page 6 undefined on input line 552.
+LaTeX Warning: Reference `fig-gjsnitt-befolkning' on page 6 undefined on input line 551.
 
 
-LaTeX Warning: Reference `fig-gjsnitt-befolkning' on page 6 undefined on input line 559.
+LaTeX Warning: Reference `fig-gjsnitt-befolkning' on page 6 undefined on input line 558.
 
 
-LaTeX Warning: Reference `fig-linjediagram' on page 6 undefined on input line 564.
+LaTeX Warning: Reference `fig-linjediagram' on page 6 undefined on input line 563.
 
 [6]
 
-LaTeX Warning: Reference `fig-stolpediagram2' on page 7 undefined on input line 593.
+LaTeX Warning: Reference `fig-stolpediagram2' on page 7 undefined on input line 592.
 
 [7]
 File: msb106_assignment_files/figure-pdf/fig-stolpediagram2-1.pdf Graphic file (type pdf)
 <use msb106_assignment_files/figure-pdf/fig-stolpediagram2-1.pdf>
 
-LaTeX Warning: Reference `fig-stolpediagram2' on page 8 undefined on input line 631.
+LaTeX Warning: Reference `fig-stolpediagram2' on page 8 undefined on input line 630.
 
 [8]
 
-LaTeX Warning: Reference `fig-stolpediagram2' on page 9 undefined on input line 692.
+LaTeX Warning: Reference `fig-stolpediagram2' on page 9 undefined on input line 691.
 
 [9]
 
-LaTeX Warning: Reference `fig-skandinavia' on page 10 undefined on input line 719.
+LaTeX Warning: Reference `fig-skandinavia' on page 10 undefined on input line 718.
 
 File: msb106_assignment_files/figure-pdf/fig-skandinavia-1.pdf Graphic file (type pdf)
 <use msb106_assignment_files/figure-pdf/fig-skandinavia-1.pdf>
@@ -1333,16 +1333,16 @@ Missing character: There is no △ (U+25B3) in font [lmroman10-regular]:mapping=
 Missing character: There is no △ (U+25B3) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no △ (U+25B3) in font [lmroman10-regular]:mapping=tex-text;!
 
-LaTeX Warning: Reference `fig-skandinavia' on page 11 undefined on input line 806.
+LaTeX Warning: Reference `fig-skandinavia' on page 11 undefined on input line 805.
 
 
-LaTeX Warning: Reference `{fig-gjsnitt-befolkning}' on page 11 undefined on input line 815.
+LaTeX Warning: Reference `{fig-gjsnitt-befolkning}' on page 11 undefined on input line 814.
 
 ! Argument of \T@ref has an extra }.
 <inserted text> 
                 \par 
-l.815 Figure~\ref{fig-gjsnitt-befolkning} ???)}}
-                                                 
+l.814 Figure~\ref{fig-gjsnitt-befolkning} ???)}
+                                                
 Here is how much of TeX's memory you used:
  37877 strings out of 476864
  793422 string characters out of 5802419
