@@ -449,7 +449,8 @@ Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
 Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
 Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, klasssifisering 8.
 
-**I Sverige** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2. Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
+**I Sverige** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
+Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
 Når det kommer til "Towns/Suburbs" har Sverige flest observasjoner i kategori 4; høy, arbeisledighet lav arbeidsvekst, lav huspris.
