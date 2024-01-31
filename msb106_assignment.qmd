@@ -490,6 +490,22 @@ maindata %>%
 
 ```
 
+```{r}
+# Antar at datasettet ditt heter main_data
+# Hvis ikke, erstatt main_data med riktig datasett navn
+
+gjennomsnitt_kat6_danmark <- maindata %>%
+  filter(geo == "DK" & classification_nr == 6) %>%
+  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
+  pull(mean_value)
+
+# Skriv ut gjennomsnittet for kategori 6 i Danmark
+print(paste("Gjennomsnitt av observasjoner i kategori 6 for Danmark: ", gjennomsnitt_kat6_danmark))
+
+
+
+```
+
 **Fra Danmark** ser vi region 6 som klassifiserer "l*av U, høy △E, lav H*", som har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra ca. 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
 Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
 I år 2015 har sannsynligvis regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
@@ -532,25 +548,26 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 **Økonomiske faktorer:** Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
 
 **År med markert endring:** Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
-[(var dette det samme som i @fig-gjsnitt-befolkning ???)]{.underline}
+[**(var dette det samme som i @fig-gjsnitt-befolkning ???)**]{.underline}
 
 **Regionale karakteristika:** Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
 
-I de skandinaviske landene er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene.
-Region 1 viser en nedgang i gjennomsnittlig befolkningsvekst i alle tre landene.
-Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser.
-Dette antyder at folk kan vise en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.
-Samtidig observeres høy arbeidsvekst i disse regionene, noe som indikerer at det samtidig skapes mange nye jobber.
-Denne tilsynelatende paradoksale situasjonen kan forklares ved at selv om det skapes jobber, kan utfordringer knyttet til høy arbeidsledighet og økte boligpriser dempe den generelle tilflyttingen til byene.
+**I de skandinaviske landene fra @fig-skandinavia er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene. Region 1, som i Sverige, Danmark og Norge inkludere "cities" som vi kan se i @fig-stolpediagram2, viser en nedgang i gjennomsnittlig befolkningsvekst. Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser. Vi ser en antydning til folk har en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.** Dette fenomenet kan forstås i lys av budrenteteorien, hvor den høye etterspørselen etter boliger i byene fører til stigende priser og økt press på innbyggere.
+Menneskene trekkes mot områdene i utkant av storbytene i søken etter rimeligere boliger med akseptabel pendleravstand inn til storbyene som igjen har høyere arbeidsvekst.
+I Norge ser vi et godt eksempel på dette da region 1 synger samtidig som region 4 øker.
+Region 4 i Norge vil være "towns/suburbs" i følge @fig-stolpediagram2.
 
-I region 3, som i Norge representerer mindre byer eller forsteder, og i Sverige og Danmark fortsatt representerer «cities», ser vi en relativt stabil utvikling i gjennomsnittlig befolkningsvekst.
-Denne stabiliseringen kan være et resultat av lav arbeidsvekst, som indikerer begrensninger i veksten av nye jobber i disse områdene.
-Dette kan skyldes en stagnert økonomi, manglende innovasjon eller begrensede investeringer i næringslivet.
+For Svergie og Danmark vil region 3 fortsatt være innenfor "cities", og her ser vi en økning i gjennomsnittelig befolkningsvekst.
+Befolkningens vekst i region 3, til tross for dens klassifisering som "høy U, lav △E, høy H", kan forklares ved å anta at det fortsatt er en urban setting, men muligens med lavere levekostnader sammenlignet med region 1.
+Selv om det er lav arbeidsvekst, kan tilgjengeligheten av arbeidsplasser, kulturelle fasiliteter eller andre attraktive trekk gjøre region 3 til et tiltalende sted å bo.
+Dette fenomenet kan indikere at folk søker etter urbane områder med lavere levekostnader, og det kan være interessant å utforske nærmere hvilke faktorer som bidrar til befolkningsveksten i denne regionen.
 
-En annen viktig faktor i «cities» er høye boligpriser og høy arbeidsledighet.
-Urbanisering spiller en sentral rolle, da store byer tiltrekker seg en stor befolkning på grunn av jobbmuligheter, kulturelle aktiviteter og annen infrastruktur.
-Den resulterende høye befolkningskonsentrasjonen fører imidlertid til økt konkurranse om både jobber og boliger.
-Urban gentrifisering, hvor økt etterspørsel etter sentralt beliggende boliger fører til økte priser, kan ytterligere bidra til presset på lokale innbyggere, som kan oppleve økonomisk utfordringer i lys av denne dynamikken.
+I Danmark er det stor variasjon i kategori 6, som i Danmark indikere "towns/suburbs" i følge @fig-stolpediagram2 .
+Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststå argumenter for utviklingen da den variere så stort.
+
+**I region 3, som i Norge representerer mindre byer eller forsteder, og i Sverige og Danmark fortsatt representerer «cities», men da med klassifiseringen "**høy U, lav △E, høy H", **ser vi en relativt stabil utvikling i gjennomsnittlig befolkningsvekst. Denne stabiliseringen kan være et resultat av lav arbeidsvekst, som indikerer begrensninger i veksten av nye jobber i disse områdene. Dette kan skyldes en stagnert økonomi, manglende innovasjon eller begrensede investeringer i næringslivet.**
+
+**En annen viktig faktor i «cities» er høye boligpriser og høy arbeidsledighet. Urbanisering spiller en sentral rolle, da store byer tiltrekker seg en stor befolkning på grunn av jobbmuligheter, kulturelle aktiviteter og annen infrastruktur. Den resulterende høye befolkningskonsentrasjonen fører imidlertid til økt konkurranse om både jobber og boliger. Urban gentrifisering, hvor økt etterspørsel etter sentralt beliggende boliger fører til økte priser, kan ytterligere bidra til presset på lokale innbyggere, som kan oppleve økonomisk utfordringer i lys av denne dynamikken.**
 
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
@@ -660,6 +677,25 @@ plot(tidsserie_data, type = "l", main = "Befolkningsvekst over tid", xlab = "År
 
 ```
 
+```{r}
+# Antar at datasettet ditt er main_data
+# Hvis ikke, erstatt main_data med riktig datasett navn
+
+# Opprett en ny variabel for konjunktur basert på obs_value (kan tilpasses)
+maindata$konjunktur <- ifelse(maindata$OBS_VALUE > mean(maindata$OBS_VALUE), "Høykonjunktur", "Lavkonjunktur")
+
+# Visualiser konjunkturforholdene for hvert land
+library(ggplot2)
+ggplot(maindata, aes(x = TIME_PERIOD, y = OBS_VALUE, color = konjunktur)) +
+  geom_point() +
+  facet_wrap(~ geo, scales = "free_y", ncol = 1) +
+  labs(title = "Konjunkturforhold over tid",
+       x = "Tidsperiode",
+       y = "Observasjonsverdi") +
+  theme_minimal()
+
+```
+
 -\> Basert på visualiseringene og trendanalysen, drøft konjunkturutviklingen og identifiser perioder med økonomisk vekst, nedgang eller stabilitet.
 
 Eksempel:
@@ -683,5 +719,3 @@ Eksempel:
     -   Redusert aktivitet på arbeidsmarkedet.
 
     -   Muligens nedgang i investeringer og forbruk.
-
-    ghlplp
