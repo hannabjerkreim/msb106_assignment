@@ -402,6 +402,21 @@ I tillegg til mange likheter, har også disse landene sine egne særtrekk.
 
 @fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) i de skandinaviske landene Danmark, Norge og Sverige.
 
+```{r}
+#| label: fig-stolpediagram2
+#| fig-cap: "Urbaniseringsgradene cities, towns/suburbs og rural areas fordelt på kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) for landene Danmark, Norge og Sverige."
+
+stolpediagram2 <- ggplot(filter(maindata, geo %in% c("NO", "SE", "DK")), aes(x = as.factor(classification_nr), fill = deg_urb)) +
+  geom_bar(position = "dodge", stat = "count") +
+  labs(x = "Kategori",
+       y = "Antall", 
+       fill = "Urbaniseringsgrad") +
+  theme_minimal() +
+  facet_wrap(~ geo, scales = "free_y")
+
+print(stolpediagram2)
+```
+
 Kort beskrivelse av hva vi ser i stolpediagrammet:
 
 **I Danmark** ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3;høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
