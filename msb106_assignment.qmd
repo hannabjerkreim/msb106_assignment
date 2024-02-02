@@ -566,7 +566,7 @@ Vi vet at kategori 8 også inneholder "towns og suburbs"-regioner og det kan spe
 **Økonomiske faktorer:** Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
 
 **År med markert endring:** Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
-[**(var dette det samme som i @fig-gjsnitt-befolkning ???)**]{.underline}
+[(var dette det samme som i @fig-gjsnitt-befolkning]{.underline}
 
 **Regionale karakteristika:** Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
 

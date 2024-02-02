@@ -1,5 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.28)  2 FEB 2024 12:54
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.28)  2 FEB 2024 12:59
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.28)  2 FEB 2024 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1352,8 +1351,8 @@ LaTeX Warning: Reference `{fig-gjsnitt-befolkning}' on page 13 undefined on inpu
 ! Argument of \T@ref has an extra }.
 <inserted text> 
                 \par 
-l.890 Figure~\ref{fig-gjsnitt-befolkning} ???)}}
-                                                 
+l.890 Figure~\ref{fig-gjsnitt-befolkning}}
+                                           
 Here is how much of TeX's memory you used:
  37878 strings out of 476864
  793396 string characters out of 5802419
