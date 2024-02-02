@@ -383,7 +383,7 @@ I @fig-linjediagram er ikke kategori 7 representert i det hele tatt, mens linjen
 Det vil ikke bli lagt særlig vekt på disse to kategoriene videre.
 Kategori 1 som hovedsakelig inneholder "cities"-regioner og er karakterisert høy arbeidsledighet, høy arbeidsvekt og høye boligpriser er representert med den røde linjen i diagrammet.
 Linjen viser en synkende befolkningsvekst over perioden.
-Dette mønsteret ligner på utviklingen vi ser for "cities"-regioner i figuren fra første del av oppgaven (@fig-gjsnitt-befolkning) .
+Dette mønsteret ligner på utviklingen vi ser for "cities"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
 Vi kan ikke trekke samme parallell for kategori 3 og 5, som også hovedsaklig består av "cities"-regioner.
 Kategori 3 og 5 har i motsetning til kategori 1 ikke en synkende befolkningsvekst i perioden.
 I kategori 6 som er sterkt representert av både "rural areas"-regioner og "towns/suburbs"-regioner kan vi se en økende trend i løpet av perioden, på samme måte som vi ser en befolkningsvekst i "towns/suburbs"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
