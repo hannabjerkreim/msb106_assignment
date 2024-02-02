@@ -662,15 +662,9 @@ plot(tidsserie_data, type = "l", main = "Befolkningsvekst over tid", xlab = "År
 ```
 
 ```{r}
-# Antar at datasettet ditt er main_data
-# Hvis ikke, erstatt main_data med riktig datasett navn
-
-# Opprett en ny variabel for konjunktur basert på obs_value (kan tilpasses)
 maindata$konjunktur <- ifelse(maindata$OBS_VALUE > mean(maindata$OBS_VALUE), "Høykonjunktur", "Lavkonjunktur")
 
-# Visualiser konjunkturforholdene for hvert land
-library(ggplot2)
-ggplot(maindata, aes(x = TIME_PERIOD, y = OBS_VALUE, color = konjunktur)) +
+ggplot(maindata, aes(x = TIME_PERIOD, y = OBS_VALUE, color = )) +
   geom_point() +
   facet_wrap(~ geo, scales = "free_y", ncol = 1) +
   labs(title = "Konjunkturforhold over tid",
