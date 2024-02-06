@@ -590,6 +590,8 @@ Urbanisering refererer til prosessen med økende andel av befolkningen som bor i
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
 Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
 
+Forskjellen mellom urbanisering og sentralisering ligger i at urbanisering refererer til økningen i bybefolkningen og utviklingen av byområder, mens sentralisering handler om konsentrasjonen av ressurser og makt i spesifikke sentrale områder, som ofte er byer eller hovedsteder.
+
 Vi har valgt å se på urbanisering og sentralisering i de skandinaviske landene, Norge, Sverige og Danmark.
 Felles for alle disse tre landene er at de opplever en viss grad av sentralisering, hvor hovedstadsområdene spiller en dominerende rolle i økonomi, politikk og kultur.Urbanisering er mer uttalt i de større byområdene, mens landlige områder kan oppleve utfordringer knyttet til avfolkning og tjenestetilgjengelighet.
 
