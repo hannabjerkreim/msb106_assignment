@@ -610,7 +610,7 @@ Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategorie
 https://snl.no/byregion
 
 \
-I følge Capello (Kilde) er lokaliseringsvalg for husholdninger bestemt av tilgang til et sentralt forretningsdistrikt, arbeidsplasser og et bredt spekter av rekreasjonstjenester.
+I følge **Capello (Kilde)** er lokaliseringsvalg for husholdninger bestemt av tilgang til et sentralt forretningsdistrikt, arbeidsplasser og et bredt spekter av rekreasjonstjenester.
 Bud-rente-teorien foreslår at en husstand kan velge å ofre boligareal for å flytte nærmere sentrum.
 Den nære beliggenheten til CBS (centrum business district) reduserer transportkostnadene for pendling, og denne besparelsen blir ofte veid opp mot det mindre boligarealet som er tilgjengelig der.
 Bud-leie-kurven illustrerer de ulike helningene på budsjettlinjen for ulike avstander fra sentrum, og den viser en trade-off mellom transportkostnader og boligkonsum.
