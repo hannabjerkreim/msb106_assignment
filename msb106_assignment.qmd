@@ -100,7 +100,8 @@ Dette mønsteret samsvarer med bud-rente-teorien, som fastslår at husholdninger
 Dette fører til at områdene i utkanten av byene blir attraktive.
 "Towns and surbubs"-regionene tilbyr lavere boligpriser med akseptabel pendleravstand til byene.
 
-For å forstå disse befolkningsmønsterene dypere, presenteres deskriptive statistikker i @tbl-summary-degurb. Tabellen gir et innblikk i variasjonene i befolkningen mellom "cities", "towns and suburbs" og "rural areas" gjennom de statistiske målene minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
+For å forstå disse befolkningsmønsterene dypere, presenteres deskriptive statistikker i @tbl-summary-degurb.
+Tabellen gir et innblikk i variasjonene i befolkningen mellom "cities", "towns and suburbs" og "rural areas" gjennom de statistiske målene minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
 
 ```{r}
 #| echo: false
@@ -543,7 +544,7 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
-#### Befolningsmønster
+#### Befolkningsmønster
 
 I første del av oppgaven kommer det tydelig frem at befolkningsveksten i de europeiske regionene i tiden etter 2011 hovedsakelig har vært konsentrert i «towns/suburbs»-regionene.
 Mennesker har i økende grad valgt å bosette seg i disse regionene, samtidig som de har flyttet bort fra «cities» og «rural areas».
@@ -560,18 +561,13 @@ Dette forsterker hypotesen vår om at befolkningsveksten utvikles i samsvar med 
 Kategori 8, som hovedsaklig inneholder "rural areas"-regioner har hatt en variert men økende befolkningsvekst i perioden.
 Vi vet at kategori 8 også inneholder "towns og suburbs"-regioner og det kan spekuleres i om disse er med på å dra opp befolkningsveksten i denne kategorien.
 
-**Generelle mønstre og refleksjoner fra @fig-skandinavia :**
-
-**Økonomiske faktorer:** Befolkningsveksten ser ut til å være nært knyttet til økonomiske forhold som arbeidsmarkedet og boligprisene.
-
-**År med markert endring:** Flere regioner, spesielt i Danmark og Sverige, viser markerte endringer i befolkningsvekst etter visse år (f.eks. 2010, 2012), som kan være knyttet til nasjonale eller globale økonomiske hendelser.
-[(var dette det samme som i @fig-gjsnitt-befolkning]{.underline}
-
-**Regionale karakteristika:** Høy arbeidsledighet og høye boligpriser ser ut til å være negativt korrelert med befolkningsvekst, mens positive endringer i arbeidsmarkedet kan føre til økt tilflytting.
-
-**I de skandinaviske landene fra @fig-skandinavia er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene. Region 1, som i Sverige, Danmark og Norge inkludere "cities" som vi kan se i @fig-stolpediagram2, viser en nedgang i gjennomsnittlig befolkningsvekst. Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser. Vi ser en antydning til folk har en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.** Dette fenomenet kan forstås i lys av budrenteteorien, hvor den høye etterspørselen etter boliger i byene fører til stigende priser og økt press på innbyggere.
+I de skandinaviske landene fra @fig-skandinavia er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene.
+Region 1, som i Sverige, Danmark og Norge inkludere "cities" som vi kan se i @fig-stolpediagram2, viser en nedgang i gjennomsnittlig befolkningsvekst.
+Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser.
+Vi ser en antydning til folk har en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.
+Dette fenomenet kan forstås i lys av budrenteteorien, hvor den høye etterspørselen etter boliger i byene fører til stigende priser og økt press på innbyggere.
 Menneskene trekkes mot områdene i utkant av storbytene i søken etter rimeligere boliger med akseptabel pendleravstand inn til storbyene som igjen har høyere arbeidsvekst.
-I Norge ser vi et godt eksempel på dette da region 1 synger samtidig som region 4 øker.
+I Norge ser vi et godt eksempel på dette da region 1 synker samtidig som region 4 øker.
 Region 4 i Norge vil være "towns/suburbs" i følge @fig-stolpediagram2.
 
 For Svergie og Danmark vil region 3 fortsatt være innenfor "cities", og her ser vi en økning i gjennomsnittelig befolkningsvekst.
@@ -580,11 +576,10 @@ Selv om det er lav arbeidsvekst, kan tilgjengeligheten av arbeidsplasser, kultur
 Dette fenomenet kan indikere at folk søker etter urbane områder med lavere levekostnader, og det kan være interessant å utforske nærmere hvilke faktorer som bidrar til befolkningsveksten i denne regionen.
 
 I Danmark er det stor variasjon i kategori 6, som i Danmark indikere "towns/suburbs" i følge @fig-stolpediagram2 .
-Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststå argumenter for utviklingen da den variere så stort.
+Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststlå argumenter for utviklingen da den variere så stort.
 
-**I region 3, som i Norge representerer mindre byer eller forsteder, og i Sverige og Danmark fortsatt representerer «cities», men da med klassifiseringen "**høy U, lav △E, høy H", **ser vi en relativt stabil utvikling i gjennomsnittlig befolkningsvekst. Denne stabiliseringen kan være et resultat av lav arbeidsvekst, som indikerer begrensninger i veksten av nye jobber i disse områdene. Dette kan skyldes en stagnert økonomi, manglende innovasjon eller begrensede investeringer i næringslivet.**
-
-**En annen viktig faktor i «cities» er høye boligpriser og høy arbeidsledighet. Urbanisering spiller en sentral rolle, da store byer tiltrekker seg en stor befolkning på grunn av jobbmuligheter, kulturelle aktiviteter og annen infrastruktur. Den resulterende høye befolkningskonsentrasjonen fører imidlertid til økt konkurranse om både jobber og boliger. Urban gentrifisering, hvor økt etterspørsel etter sentralt beliggende boliger fører til økte priser, kan ytterligere bidra til presset på lokale innbyggere, som kan oppleve økonomisk utfordringer i lys av denne dynamikken.**
+For kategori 4 i Sverige ser vi en stor økning gjennom årene.
+I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "towns/suburbs"
 
 #### **Litteratur integrasjon**
 
