@@ -100,7 +100,8 @@ Dette mønsteret samsvarer med bud-rente-teorien, som fastslår at husholdninger
 Dette fører til at områdene i utkanten av byene blir attraktive.
 "Towns and surbubs"-regionene tilbyr lavere boligpriser med akseptabel pendleravstand til byene.
 
-For å forstå disse befolkningsmønsterene dypere, presenteres deskriptive statistikker i @tbl-summary-degurb. Tabellen gir et innblikk i variasjonene i befolkningen mellom "cities", "towns and suburbs" og "rural areas" gjennom de statistiske målene minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
+For å forstå disse befolkningsmønsterene dypere, presenteres deskriptive statistikker i @tbl-summary-degurb.
+Tabellen gir et innblikk i variasjonene i befolkningen mellom "cities", "towns and suburbs" og "rural areas" gjennom de statistiske målene minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
 
 ```{r}
 #| echo: false
@@ -543,7 +544,7 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 
 ### Oppgave 4 - Tolking og forhold til kurslitteratur
 
-#### Befolningsmønster
+#### Befolkningsmønster
 
 I første del av oppgaven kommer det tydelig frem at befolkningsveksten i de europeiske regionene i tiden etter 2011 hovedsakelig har vært konsentrert i «towns/suburbs»-regionene.
 Mennesker har i økende grad valgt å bosette seg i disse regionene, samtidig som de har flyttet bort fra «cities» og «rural areas».
@@ -588,14 +589,6 @@ Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststå
 
 #### **Litteratur integrasjon**
 
-Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
-
-Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
-De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
-Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
-
-https://snl.no/byregion
-
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
@@ -610,6 +603,13 @@ Felles for alle disse tre landene er at de opplever en viss grad av sentraliseri
 <https://snl.no/urbanisering>
 
 <https://snl.no/sentralisering>
+
+Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
+Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
+De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
+Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
+
+https://snl.no/byregion
 
 #### Kristisk evaluering
 
