@@ -409,6 +409,9 @@ I tillegg til mange likheter, har også disse landene sine egne særtrekk.
 @fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) i de skandinaviske landene Danmark, Norge og Sverige.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 #| label: fig-stolpediagram2
 #| fig-cap: "Urbaniseringsgradene cities, towns/suburbs og rural areas fordelt på kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) for landene Danmark, Norge og Sverige."
 
