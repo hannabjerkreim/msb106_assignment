@@ -423,7 +423,7 @@ stolpediagram2 <- ggplot(filter(maindata, geo %in% c("NO", "SE", "DK")), aes(x =
 print(stolpediagram2)
 ```
 
-I Danmark ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3; høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
+I Danmark ser vi at urbaniseringsgraden "Cities" har mest data for kategori 3; høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.
 Når det kommer til "Towns/Suburbs" har Danmark flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris.
@@ -436,7 +436,7 @@ Lav arbeidsdelighet kan forklares ved at det ved mindre befolkede områder er ko
 Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
 Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
 
-I Norge ser vi urbaniseringsgraden "Cities" har mest data for klassifisering 1: høy arbeisledighet, høy arbeidsvekst, høy huspris.
+I Norge ser vi urbaniseringsgraden "Cities" har mest data for kategori 1: høy arbeisledighet, høy arbeidsvekst, høy huspris.
 Dette kan forklares med at det ofte er høy arbeidsledighet i byer da det er mange som bor her.
 Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
 Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
@@ -445,15 +445,15 @@ Boligkostnader spiller her en vesentlig rolle, hvor lavere boligpriser sammenlig
 Pendling utgjør en annen viktig faktor, da tettsteder og forsteder ofte gir innbyggerne muligheten til å pendle til byene for arbeid eller andre aktiviteter.
 Dette utgjør et kompromiss mellom å bo i et roligere område og dra nytte av jobbmuligheter og urbane tjenester i byen.
 Tilslutt har vi "Rural Areas" i Norge som har flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris og kategori 8; lav arbeisledighet, lav arbeidsvekst, lav huspris.
-Lav arbeidsdelighet som er felles for klasse 6 og 8 kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
+Lav arbeidsdelighet som er felles for kategori 6 og 8 kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
 Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
 Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
 Dette forklarer videre hvorfor det er lav huspris i disse områdene.
 Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
 Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
-Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, klasssifisering 8.
+Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, kategori 8.
 
-I Sverige ser vi at urbaniseringsgraden "Cities" har mest data for klassifisering 3; høym arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
+I Sverige ser vi at urbaniseringsgraden "Cities" har mest data for kategori 3; høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
 Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
@@ -562,22 +562,21 @@ Kategori 8, som hovedsaklig inneholder "rural areas"-regioner har hatt en varier
 Vi vet at kategori 8 også inneholder "towns og suburbs"-regioner og det kan spekuleres i om disse er med på å dra opp befolkningsveksten i denne kategorien.
 
 I de skandinaviske landene fra @fig-skandinavia er det tydelige mønstre i befolkningsutviklingen, spesielt i forhold til arbeidsmarkedet og boligprisene.
-Region 1, som i Sverige, Danmark og Norge inkludere "cities" som vi kan se i @fig-stolpediagram2, viser en nedgang i gjennomsnittlig befolkningsvekst.
+Kategori 1, som i Sverige, Danmark og Norge inkludere "cities" som vi kan se i @fig-stolpediagram2, viser en nedgang i gjennomsnittlig befolkningsvekst.
 Dette sannsynligvis på grunn av utfordringer som høy arbeidsledighet og økte boligpriser.
 Vi ser en antydning til folk har en tendens til å flytte ut av byene og heller mot mindre byer eller forsteder.
 Dette fenomenet kan forstås i lys av budrenteteorien, hvor den høye etterspørselen etter boliger i byene fører til stigende priser og økt press på innbyggere.
 Menneskene trekkes mot områdene i utkant av storbytene i søken etter rimeligere boliger med akseptabel pendleravstand inn til storbyene som igjen har høyere arbeidsvekst.
-I Norge ser vi et godt eksempel på dette da region 1 synker samtidig som region 4 øker.
-Region 4 i Norge vil være "towns/suburbs" i følge @fig-stolpediagram2.
+I Norge ser vi et godt eksempel på dette da kategori 1 synker samtidig som region 4 øker.
+Kategori 4 i Norge vil være "towns/suburbs" i følge @fig-stolpediagram2.
 
-For Svergie og Danmark vil region 3 fortsatt være innenfor "cities", og her ser vi en økning i gjennomsnittelig befolkningsvekst.
-Befolkningens vekst i region 3, til tross for dens klassifisering som "høy U, lav △E, høy H", kan forklares ved å anta at det fortsatt er en urban setting, men muligens med lavere levekostnader sammenlignet med region 1.
-Selv om det er lav arbeidsvekst, kan tilgjengeligheten av arbeidsplasser, kulturelle fasiliteter eller andre attraktive trekk gjøre region 3 til et tiltalende sted å bo.
-Dette fenomenet kan indikere at folk søker etter urbane områder med lavere levekostnader, og det kan være interessant å utforske nærmere hvilke faktorer som bidrar til befolkningsveksten i denne regionen.
+For Svergie og Danmark vil kategori 3 fortsatt være innenfor "cities", og her ser vi en økning i gjennomsnittelig befolkningsvekst.
+Befolkningens vekst i kategori 3, til tross for dens klassifisering som "høy U, lav △E, høy H", kan forklares ved å anta at det fortsatt er en urban setting, men muligens med lavere levekostnader sammenlignet med kategori 1.
+Selv om det er lav arbeidsvekst, kan tilgjengeligheten av arbeidsplasser, kulturelle fasiliteter eller andre attraktive trekk gjøre kategori 3 til et tiltalende sted å bo.
+Dette fenomenet kan indikere at folk søker etter urbane områder med lavere levekostnader, og det kan være interessant å utforske nærmere hvilke faktorer som bidrar til befolkningsveksten i denne kategorien.
 
 I Danmark er det stor variasjon i kategori 6, som i Danmark indikere "towns/suburbs" i følge @fig-stolpediagram2 .
 Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststlå argumenter for utviklingen da den variere så stort.
-
 For kategori 4 i Sverige ser vi en stor økning gjennom årene.
 I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "towns/suburbs"
 
