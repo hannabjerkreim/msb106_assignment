@@ -438,7 +438,6 @@ Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, n
 Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
 
 I Norge ser vi urbaniseringsgraden "Cities" har mest data for kategori 1: høy arbeisledighet, høy arbeidsvekst, høy huspris.
-Dette kan forklares med at det ofte er høy arbeidsledighet i byer da det er mange som bor her.
 Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
 Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
 Når det kommer til "Towns/Suburbs" har Norge flest observasjoner i kategori 4; høy arbeisledighet, lav arbeidsvekst, lav huspris.
@@ -468,7 +467,7 @@ Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb u
 Dette forklarer videre hvorfor det er lav huspris i disse områdene.
 Samlet sett i Skandinavia ser vi likheter mellom landene etter hvilken urbaniseringsgrad som befinner seg i hviken kategori.
 
-@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinavi ske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023).
+@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinavi ske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andersson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
