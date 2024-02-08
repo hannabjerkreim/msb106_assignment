@@ -262,8 +262,7 @@ maindata <- join1 |>
 
 ### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
 
-Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
-Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
+Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen @andersson Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
 Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 1.  høy U, høy △E, høy H
@@ -277,6 +276,7 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 Lave verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er høyere en landsgjennomsnittet.
 Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde.
+@andersson
 
 ```{r}
 #| echo: false
@@ -497,22 +497,6 @@ maindata %>%
 
 ```
 
-```{r}
-# Antar at datasettet ditt heter main_data
-# Hvis ikke, erstatt main_data med riktig datasett navn
-
-gjennomsnitt_kat6_danmark <- maindata %>%
-  filter(geo == "DK" & classification_nr == 6) %>%
-  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
-  pull(mean_value)
-
-# Skriv ut gjennomsnittet for kategori 6 i Danmark
-print(paste("Gjennomsnitt av observasjoner i kategori 6 for Danmark: ", gjennomsnitt_kat6_danmark))
-
-
-
-```
-
 Fra Danmark ser vi kategori 6 som klassifiserer "l*av U, høy △E, lav H*", som har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra ca. 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
 Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
 I år 2015 har sannsynligvis regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
@@ -589,7 +573,8 @@ I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "t
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
-Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023. Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
+Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023.
+Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
 Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
 @butenschon2020a
@@ -636,74 +621,4 @@ Spesielt i skandinavisk kontekst, har vi identifisert en interessant dynamikk me
 Det bør imidlertid understrekes at Norge, med kun én by som representerer kategorien "Cities", har en annen representasjon enn Sverige og Danmark, som har flere byer i samme kategori.
 Dette kan potensielt påvirke sammenligningene og krever forsiktighet ved generalisering til hele regionen.
 
-# TEST : HØY OG LAV KONJUKTURER
-
-En lavkonjunktur refererer til en økonomisk fase preget av lav økonomisk aktivitet, høy arbeidsledighet og generelt dårlig økonomisk ytelse.
-Under en lavkonjunktur er produksjonen og sysselsettingen lavere enn potensialet, og bedrifter opplever ofte redusert etterspørsel etter varer og tjenester.
-Dette kan føre til nedgang i inntektene, økt arbeidsledighet og lavere forbruk.
-
-Høykonjunktur refererer til en økonomisk fase preget av sterk økonomisk aktivitet, lav arbeidsledighet, høy produksjon og generelt positiv økonomisk ytelse.
-Under høykonjunktur er økonomien ofte i god form, og det er høy etterspørsel etter varer og tjenester.
-Bedrifter opplever økt produksjon, høy sysselsetting og generelt gode økonomiske resultater.
-
-```{r}
-# Bruk tidsseriefunksjoner i R, for eksempel ts() for å konvertere dataene til en tidsserieobjekt.
-tidsserie_data <- ts(data$OBS_VALUE, start = c(2003, 1), end = c(2022, 12), frequency = 12)
-
-```
-
-```{r}
-# Utfør en enkel trendanalyse for å identifisere eventuelle langsiktige mønstre i befolkningsveksten.
-trend <- decompose(tidsserie_data)
-plot(trend)
-```
-
-```{r}
-# Hvis det er sesongvariasjoner i dataene, kan du bruke sesongjusteringsmetoder som seasonal fra forecast-pakken.
-sesongjustert <- stl(tidsserie_data, s.window = "periodic")
-plot(sesongjustert)
-
-```
-
-```{r}
-# Opprett et enkelt tidsserieplot for å visualisere konjunkturutviklingen over tid.
-plot(tidsserie_data, type = "l", main = "Befolkningsvekst over tid", xlab = "År", ylab = "Befolkningsvekst")
-
-```
-
-```{r}
-maindata$konjunktur <- ifelse(maindata$OBS_VALUE > mean(maindata$OBS_VALUE), "Høykonjunktur", "Lavkonjunktur")
-
-ggplot(maindata, aes(x = TIME_PERIOD, y = OBS_VALUE, color = )) +
-  geom_point() +
-  facet_wrap(~ geo, scales = "free_y", ncol = 1) +
-  labs(title = "Konjunkturforhold over tid",
-       x = "Tidsperiode",
-       y = "Observasjonsverdi") +
-  theme_minimal()
-
-```
-
--\> Basert på visualiseringene og trendanalysen, drøft konjunkturutviklingen og identifiser perioder med økonomisk vekst, nedgang eller stabilitet.
-
-Eksempel:
-
--   **Høy konjunktur (f.eks., 2005):**
-
-    -   Sterk økonomisk vekst.
-
-    -   Lav arbeidsledighet.
-
-    -   Økt aktivitet på arbeidsmarkedet.
-
-    -   Muligens økning i investeringer og forbruk.
-
--   **Lav konjunktur (f.eks., 2010):**
-
-    -   Lav eller negativ økonomisk vekst.
-
-    -   Høy arbeidsledighet.
-
-    -   Redusert aktivitet på arbeidsmarkedet.
-
-    -   Muligens nedgang i investeringer og forbruk.
+# Referanser
