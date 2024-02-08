@@ -1,11 +1,9 @@
 ---
-title: "msb106_assignment"
+title: "Landskap i utvikling: En analyse av urbane og rurale områder i Europa"
 format: pdf
 editor: visual
 bibliography: references.bib
 ---
-
-# Landskap i utvikling: En analyse av urbane og rurale områder i Europa
 
 **MSB106 Anvendt by- og regionaløkonomi\
 Hanna Sundal Bjerkreim, Ingrid Strømme og Emilie Hansen Sørhaug**
@@ -22,7 +20,7 @@ library(ggplot2)
 library(flextable)
 ```
 
-Formålet med denne oppgaven er å presentere og undersøke potensielle faktorer som bidrar til skillet mellom urbane og rurale områder i Europa.
+Formålet med denne oppgaven er å utforske og analysere potensielle faktorer som bidrar til skillet mellom urbane og rurale områder i Europa.
 Vi skal undersøke hvordan arbeidsledighet, arbeidsvekst og boligpris påvirker mønstre for befolkningsfordeling på tvers av ulike europeiske landskap.
 
 ## Del 1: Datainnsamling og innledende analyse
@@ -56,23 +54,16 @@ data <- data |>
 
 ### Data analyse
 
-Vi skal nå se på befolkningsutviklingen i ulike europeiske regioner i perioden 2003 til 2022.
+Vi skal nå undersøke befolkningsutviklingen i ulike europeiske regioner.
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
-Målet er å undersøke befolkningsutviklingen i hver av disse regioninndelingene og forstå mønstrene for befolkningsvekst over tid.
-Hypotesen vår et at befolkningsveksten vil utvikle seg i tråd med bud-rente-teorien.
-Hypotesen vår antar at både befolkningsvekst og arbeidsledighetsrater vil følge bud-rente-teorien.
+Vår hypotese er at befolkningsveksten og arbeidsledighetsrater vil følge bud-rente-teorien.
 Befolkningsveksten forventes å være konsentrert i tettsteder og forsteder (towns/suburbs) på grunn av rimeligere boligpriser kombinert med akseptabel pendleravstand til byene.
-Samtidig forventes arbeidsledighetsraten å være relatert til tilgjengeligheten av høyere lønnede jobber og pendlingsmuligheter til sentrene.
+Samtidig forventes arbeidsledighetsraten å være relatert til tilgjengeligheten av høyere lønnede jobber og pendlingsmuligheter til sentrumene.
 Områder med mer differensierte arbeidsmarkeder og høyere lønnede jobber, som byområder, forventes å ha høyere arbeidsledighetsrater sammenlignet med pendlerområder.
 
-@fig-gjsnitt-befolkning illustrerer den gjennomsittlige befolkningsveksten i "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
-Vi ser bort i fra dataen som er i perioden 2003-2005 da dette indikerer dårlig/svak data.
-Fra figuren ser vi at "cities"-regionene opplevde en betydelig befolkningsvekst de to første årene, etterfulgt av en relativ stabil vekst frem til 2012.
-"Rural areas"-regionene opplevde også en befolkningsvekst de to første årene, men denne var ikke like betydelig som i "cities"-regionene.
-Fra 2005 til 2011 ser vi en jevn nedgang i befolkningen i "rural areas"-regionene.
-I 2012, i motsetning til "cities"-regionene, var det en vekst i befolkningen, men den var kortvarig.
-Deretter ser vi en tydelig nedadgående trend i befolkningsveksten for "rural areas" helt frem til 2022, med unntak av en liten vekst i perioden 2014 til 2015.
-De rurale områdene er generelt sett den regioninndelingen som har opplevd størst nedgang i befolkningsvekst i perioden.
+@fig-gjsnitt-befolkning illustrerer den gjennomsittlige befolkningsveksten i perioden 2003 til 2022.
+Vi har valgt å utelate dataene fra perioden 2003-2005 i analysen på grunn av mistanke om svakheter i datakvaliteten.
+Dette valget er gjort for å sikre nøyaktighet og pålitelighet i våre resultater.
 
 ```{r}
 #| echo: false
@@ -93,16 +84,16 @@ data %>%
 
 ```
 
-Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden etter 2005 og befolkningen øker gradvis frem til 2011.
-Deretter setter befolkningsveksten fart og øker kraftig helt frem til 2022.
+Fra @fig-gjsnitt-befolkning ser vi at "cities"-regionene opplevde en relativ stabil befolkningsvekst fra 2005 til 2012.
+Videre svinger befolkningen mellom vekst og nedgang, men totalt sett er det en synkende befolkningstrend i "cities"-regionene i perioden etter 2012.
+"Rural areas"-regionene opplevde en jevn nedgang i befolkningen fra 2005 til 2011.
+I 2012, var det i motsetning til "cities"-regionene, en vekst i befolkningen, men denne var kortvarig.
+Videre ser vi en tydelig nedadgående trend i befolkningsveksten for "rural areas"-regionene helt frem til 2022, med unntak av en liten vekst i perioden 2014 til 2015.
+De rurale områdene er den regioninndelingen som har opplevd størst nedgang i befolkningsvekst i perioden.
+Befolkningen i "towns and suburbs"-regionene øker gradvis fra 2005 til 2011, før den setter fart og øker kraftig helt frem til 2022.
 Det kommer tydlig frem fra @fig-gjsnitt-befolkning at den dominerende befolkningsveksten i perioden etter 2011 har vært konsentrert i "towns and suburbs"-regionene.
-Figuren viser tydlig at folk har blitt trukket mot tettsteder og forsteder, og flyttet bort fra byer og rurale områder i siste del av perioden.
 Dette mønsteret samsvarer med bud-rente-teorien, som fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til arbeidsplasser.
 Dette fører til at områdene i utkanten av byene blir attraktive.
-"Towns and surbubs"-regionene tilbyr lavere boligpriser med akseptabel pendleravstand til byene.
-
-For å forstå disse befolkningsmønsterene dypere, presenteres deskriptive statistikker i @tbl-summary-degurb.
-Tabellen gir et innblikk i variasjonene i befolkningen mellom "cities", "towns and suburbs" og "rural areas" gjennom de statistiske målene minimumsverdi, median, gjennomsnitt, maksimumsverdi, varians og standardavvik.
 
 ```{r}
 #| echo: false
@@ -167,34 +158,31 @@ summary_degurb <- bind_rows(
 summary_degurb
 ```
 
-Fra @tbl-summary-degurb ser vi at "cities"-regionene har en høy og variasjonsrik befolkning som varierer fra et minimum på 13.00% til et maksimum på 90.40%.
-Medianen for "cities"-regionene ligger på 39.50% og gjennomsnittet på 40.16%, med en varians på 195.97% og et standardavvik på 14.00%.
-Innenfor urbaniseringsgraden "Towns and suburbs" spenner befolkningen fra 0.00% til 55.30%, med en median på 29.50%.
-Gjennomsnittet ligger på 27.32%, og variasjonen er reflektert gjennom en varians på 138.83% og et standardavvik på 11.78%.
-For regionene som tilhører "rural areas" varierte befolkningen fra et minimum på 0.10% til et maksimum på 66.60%.
-Medianverdien ligger på 33.00%, mens gjennomsnittet ligger på 32.51%.
-Variansen ligger på 216.36% og standardavviket på 14.71%.
-"Cities"-regionene har høyest median og gjennomsnitt blant de tre regioninndelingene, noe som indikerer høyere befolkningsandel sammenlignet med "towns/suburbs" og "rural areas".
-Det forventes høy befolkningstetthet nær bykjernen, noe som gjenspeiles i de høye befolkningsprosentene for "cities"-regionene.
-"Towns and suburbs"-regionene viser moderat befolkningsprosent, mens "rural areas"-regionene har de laveste befolkningsprosentene.
-Dette viser hvordan befolkningen fordeler seg basert på avstand fra bykjernen.
-Det forventes høy befolkningstetthet nærmere sentrum på grunn av økt tilgjengelighet til tjenester, arbeidsplasser og andre urbane fasiliteter.
-"Rural areas" og "cities" viser høyere variabilitet (indikert av standardavvik og varians) sammenlignet med "towns/suburbs".
-Dette antyder mer markante forskjeller i befolkningsprosentene innenfor "rural areas" og "cities".
-"Rural Areas" har lavest median og gjennomsnitt, noe som samsvarer med de observerte nedgangene i befolkningsvekst.\
+\
+For å få en bedre forståelse av disse befolkningsmønsterene, presenteres deskriptive statistikker i @tbl-summary-degurb.
+"Cities"-regionene har høyest gjennomsnitt (39.50%) og median (40.16%), etterfulgt av "rural areas"-regionene med en gjennomsnittlig befolkning på 32.51% og en medianbefolkning på 33%.
+"Towns/Suburbs"-regionene har lavest gjennomsnitt (27.32%) og median (29.50%).
+Det forventes høy befolkningstetthet nær bykjernen på grunn av økt tilgjenglighet til tjenester, arbeidsplasser og andre urbane fasiliteter, noe som gjenspeiles i de høye befolkningsprosentene for "cities"-regionene.
+Det er imidlertid overraskende at både median- og gjennomsnittsverdiene er høyere for "rural areas" enn for "Towns/Suburbs"-regionene.
+Det høye standardavviket og den høye variansen for "rural areas" indikerer betydelig variasjon i befolkningsstørrelsen blant disse områdene.
+Denne variasjonen kan forklare hvorfor medianen og gjennomsnittet er høyere for "rural areas" enn for "towns/suburbs".
+Det kan være noen få områder med høy befolkningstetthet som trekker opp gjennomsnittet og medianen for "rural areas".
+I "rural areas"-regionene spenner befolkningen fra et minimum på 0.10% til et maksimum på 66.60%.
+Maksimumsverdien antyder at denne urbaniseringsgraden inneholder noen høyt befolkede områder.
+"Cities"-regionene har derimot en befolkning som varierer fra et minimum på 13.00% til et maksimum på 90.40%, noe som antyder en diversifisert befolkningsspredning med både høy og lav befolkningstetthet.
+\
 
 ## Del 2: Avansert analyse - Virkningen av økonomiske faktorer på befolkningsvekst
 
 I denne delen av oppgaven skal vi utvide dataene fra første del av oppgaven ved å inkludere flere økonomiske faktorer.
-Analysen vil fokusere på hvordan arbeidsledighet, arbeidsvekst og huspris påvirker befolkningsveksten i ulike regioner, ved bruk av klassifiseringsmetodikken til Andersson, Håkansson og Thorsen (2023).
+Analysen vil fokusere på hvordan arbeidsledighet, arbeidsvekst og huspris påvirker befolkningsveksten i ulike regioner, ved bruk av klassifiseringsmetodikken til @andersson.
 
 ### Innsamling av tilleggsdata
 
 Vi brukte tre forskjellige datasett ved innkludering av flere økonomiske faktorer i vårt opprinnelige datasett.
 Vi lastet ned data for de tre økonomiske faktorene *arbeidsvekst*, *arbeidsledighet* og *boligpris* fra Eurostat.
 Dataene er hentet fra perioden 2003 til 2022 og innkluderer de samme landene og urbaniseringsgradene som for befolkningsdataene.
-Datasettet for arbeidsvekst heter *"Employment rates by sex, age, educational attainment level, citizenship and degree of urbanisation",* mens datasettet for arbeidsledighet har navnet *"Unemployment rates by sex, age and degree of urbanisation (%)"* .
-Datasettet som gir informasjon om boligpris heter "*Housing cost overburden rate by degree of urbanisation - EU-SILC survey***".** Alle de tre datasettene oppgir de økonomiske faktorene i prosent.
+Alle de tre datasettene oppgir de økonomiske faktorene i prosent.
 
 ```{r}
 #| echo: false
@@ -262,7 +250,7 @@ maindata <- join1 |>
 
 ### Anvendelse av klassifiseringsmetodikk
 
-Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen @andersson Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
+Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken til @andersson. Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
 Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 1.  høy U, høy △E, høy H
@@ -274,9 +262,8 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 7.  lav U, lav △E, høy H
 8.  lav U, lav △E, høy H
 
-Lave verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er høyere en landsgjennomsnittet.
-Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde.
-@andersson
+Lave verdier indikerer at kriteriet er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet er høyere en landsgjennomsnittet.
+Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde [@andersson].
 
 ```{r}
 #| echo: false
@@ -327,17 +314,13 @@ maindata <- maindata %>%
 
 Vår hypotese for den videre analysen er at de økonomiske faktorene arbeidsledighet, arbeidsvekst og huspris vil forsterke hypotesen vår om at befolkningsveksten utvikles i samsvar med bud-rente-teorien.
 I tillegg vil vi utforske og inkludere simulerte romlige arbeidsledighetsforskjeller i analysen.
-
 Bakgrunnen for denne utvidelsen av hypotesen kan finnes i Marstons (1985) modell, der fokuset ikke bare er på lønnssatsen, men også på hvordan arbeidere vurderer den totale nytten av å bo i en bestemt region.
-Vi foreslår derfor at ved å inkludere romlige arbeidsledighetsforskjeller i vår analyse, kan vi bedre forstå hvordan slike regionale variabler kan påvirke befolkningsveksten i tråd med bud-rente-teorien.
-@mcarthur2010
+Vi foreslår derfor at ved å inkludere romlige arbeidsledighetsforskjeller i vår analyse, kan vi bedre forstå hvordan slike regionale variabler kan påvirke befolkningsveksten i tråd med bud-rente-teorien [@mcarthur2010].
 
 #### Sammenligning av klassifiseringsmetodikk og befolkningsvekst
 
-Vi skal undersøke om klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) er forskjellig fra den oprinnelige regioninndelingen "cities", "towns/suburbs" og "rural areas".
+Vi skal undersøke om klassifiseringsmetodikken til @andersson er forskjellig fra den oprinnelige regioninndelingen "cities", "towns/suburbs" og "rural areas".
 Vi skal studere om befolkningsmønstrene er forskjellig mellom disse klassifiseringene av regioner.
-
-@fig-stolpediagram visualiserer hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
@@ -355,18 +338,18 @@ stolpediagram <- ggplot(maindata, aes(x = as.factor(classification_nr), fill = d
 print(stolpediagram)
 ```
 
-Fra @fig-stolpediagram ser vi at "cities"-regionene fordeler seg hovedsakelig på kategori 1, 3 og 5.
+@fig-stolpediagram visualiserer hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av @andersson. Fra figuren ser vi at "cities"-regionene fordeler seg hovedsakelig på kategori 1, 3 og 5.
 Kategori 1 med høy arbeidsledighet, høy arbeidsvekst og høye boligpriser representerer typiske vekstmotorer i økonomien.
 Kategori 3 har høy arbeidsledighet, lav arbeidsvekst og høye boligpriser.
-Her kan vi trekke inn Marton (1985) sin modell som støtter under hvorfor "Cities" kan ha høy arbeidsledighet med at fokuset ikke bare er på lønnssatsen, men også på hvordan arbeidere vurderer den totale nytten av å bo i en bestemt region.
-@mcarthur2010 Kategori 5 representerer regioner uten store økonomiske utfordringer med lav arbeisledighet, høy arbeidsvekt og høye boligpriser.
+Her kan vi trekke inn Marton (1985) sin modell som støtter under hvorfor "Cities" kan ha høy arbeidsledighet med at fokuset ikke bare er på lønnssatsen, men også på hvordan arbeidere vurderer den totale nytten av å bo i en bestemt region [@mcarthur2010].
+Kategori 5 representerer regioner uten store økonomiske utfordringer med lav arbeisledighet, høy arbeidsvekt og høye boligpriser.
 Kategori 1, 3 og 5 finnes med andre ord i sentrale områder.
 Fra @fig-stolpediagram ser vi at kategori 4 og 8 hovedsakelig består av "rural areas"-regioner, med lave boligpriser og en uheldig utvikling i antall arbeidsplasser.
 Kategori 4 er typisk utsatte områder med høy arbeidsledighet, lav arbeidsvekst og lave boligpriser.
 Kategori 8 har lav arbeidsledighet, lav arbeidsvektst og høye boligproser.
 Kategori 6 med lav arbeidsledighet, høy arbeidsvekst og lave boligpriser har også et flertall av "rural-areas"-regioner, men "towns/suburbs"-regionene er også høyt representert i denne kategorien.
 "Towns/suburbs"-regionene er også sterkt representert i kategori 4.
-Det kommer tydlig frem fra figuren at både kategori 2 og 7 har svært få observasjoner.
+Både kategori 2 og 7 har svært få observasjoner.
 
 ```{r}
 #| echo: false
@@ -386,34 +369,26 @@ maindata %>%
   theme_minimal()
 ```
 
-I @fig-linjediagram får vi en oversikt over utviklingen av den gjennomsnittlige befolkningsveksten i de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023) i perioden 2002 til 2023.
+I @fig-linjediagram får vi en oversikt over utviklingen av den gjennomsnittlige befolkningsveksten i de åtte forskjellige kategoriene i klassifiseringsmetodikken til @andersson i perioden 2002 til 2023.
 Som vi tidligere har nevnt er det svært få observasjoner i kategori 2 og 7.
-I @fig-linjediagram er ikke kategori 7 representert i det hele tatt, mens linjen til kategori 2 er oppstykket og manglende på grunn av de få observasjonene.
 Det vil ikke bli lagt særlig vekt på disse to kategoriene videre.
-Kategori 1 som hovedsakelig inneholder "cities"-regioner og er karakterisert høy arbeidsledighet, høy arbeidsvekt og høye boligpriser er representert med den røde linjen i diagrammet.
+Kategori 1 som hovedsakelig inneholder "cities"-regioner er representert med den røde linjen i diagrammet.
 Linjen viser en synkende befolkningsvekst over perioden.
 Dette mønsteret samsvarer med utviklingen vi ser for "cities"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
 Vi kan ikke trekke samme parallell for kategori 3 og 5, som også hovedsaklig består av "cities"-regioner.
-Kategori 3 og 5 har i motsetning til kategori 1 ikke en synkende befolkningsvekst.
-Befolkningen ligger relativt stabilt for kategori 3 og 5 i perioden.
+Kategori 3 og 5 har i motsetning til kategori 1 ikke en synkende befolkningsvekst, den ligger derimot relativt stabilt i perioden.
 I kategori 6 som er sterkt representert av både "rural areas"-regioner og "towns/suburbs"-regioner ser vi en økende trend i løpet av perioden, på samme måte som vi ser en befolkningsvekst i "towns/suburbs"-regioner i @fig-gjsnitt-befolkning fra første del av oppgaven.
-Dette styrker det tidligere omtalte poenget om bud-rente-teorien.
-Bud-rente-teorien fastslår at husholdninger søker den optimale kombinasjonen av rimlige boligpriser og akseptabel pendleravstand til byene, noe som fører til at "towns og suburbs"-regionene blir attraktive.
+Dette styrker hypotesen om at befolkningen utvikler seg i tråd med bud-rente-teorien.
 Fra @fig-linjediagram ser vi at kategori 8, som hovedsaklig inneholder "rural areas"-regioner, har en betydelig variasjon i befolkningsvekst i perioden.
-Dette er den kategorien som er oppe i høyeste maksimumsverdier for befolkningsvekst.
 Vi vet at kategori 8 også inneholder en god del "towns og suburbs"-regioner og det kan derfor spekuleres i om disse er med på å dra opp befolkningstallene i denne kategorien.
 
 #### Befolkningsutvikling i skandinavia
 
 Videre har vi valgt å se nærmere på befolkningsutviklingen i de skandinaviske landene Danmark, Norge og Sverige.
-Vi skal se på hvordan befolkningsveksten i de ulike klassifiseringskategoriene (1-8) har utviklet seg over tid for å få en mer detaljert forståelse av de underliggende faktorene som påvirker befolkningsendringene.
-Norge, Sverige og Danmark deler mange likheter når det gjelder for eksempel kultur, historie og geografi, noe som kan gjøre det lettere å sammenligne og trekke paraleller.
-Norge, Sverige og Danmark er velstående økonomier med sterke veldferdssystemer, noe som potensielt kan ha påvirket befolkningsutviklingen på andre måter enn land med mindre økonomisk stabilitet.
-Norge, Sverige og Danmark er kjent for å praktisere en skandinavisk velferdsmodell som inkluderer likhet i tilgang til tjenester som helsevesen og utdanning.
-I tillegg til mange likheter, har også disse landene sine egne særtrekk.
+Disse landene er velstående økonomier som er kjent for å praktisere en skandinavisk velferdsmodell, noe som potensielt kan ha påvirket befolkningsutviklingen på andre måter enn land med mindre økonomisk stabilitet.
 Å se nærmere på befolkningsutviklingen i disse tre landene gir muligheten til å identifisere felles trender, men også ulikheter i befolkningsmønster.
 
-@fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken av Andresson, Håkonsen og Thorsen (2023) i de skandinaviske landene Danmark, Norge og Sverige.
+@fig-stolpediagram2 viser hvordan de ulike regionsinndelingene "Cities", "Towns/Suburbs" og "Rural areas" er fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til @andersson i de skandinaviske landene Danmark, Norge og Sverige.
 
 ```{r}
 #| echo: false
@@ -433,50 +408,39 @@ stolpediagram2 <- ggplot(filter(maindata, geo %in% c("NO", "SE", "DK")), aes(x =
 print(stolpediagram2)
 ```
 
-I Danmark ser vi at urbaniseringsgraden "Cities" har mest data for kategori 3; høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2 .
+I Danmark ser vi at urbaniseringsgraden "Cities" har mest data for kategori 3; høy arbeisledighet, lav arbeidsvekst, høy boligpris, i @fig-stolpediagram2 .
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
-Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.
-Når det kommer til "Towns/Suburbs" har Danmark flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris.
-Boligkostnader spiller en vesentlig rolle, hvor lavere boligpriser sammenlignet med byområdene tiltrekker mange mennesker til tettsteder og forsteder.
+Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet og høy etterspørsel.
+Når det kommer til "Towns/Suburbs" har Danmark flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav boligpris.
+Lavere boligpriser sammenlignet med byområdene tiltrekker mange mennesker til tettsteder og forsteder.
 Dette gir en mulighet til å nyte rimelige boligpriser samtidig som man opprettholder tilgangen til urbane fasiliteter.
-Pendling utgjør en annen viktig faktor, da tettsteder og forsteder ofte gir innbyggerne muligheten til å pendle til byene for arbeid eller andre aktiviteter.
-Dette utgjør et kompromiss mellom å bo i et roligere område og dra nytte av jobbmuligheter og urbane tjenester i byen.
+Pendling utgjør en annen viktig faktor, da tettsteder og forsteder ofte gir innbyggerne muligheten til å pendle til byene.
 Tilslutt har vi "Rural Areas" som i Danmark har flest observasjoner i kategori 8; lav arbeisledighet, lav arbeidsvekst, lav huspris.
 Lav arbeidsdelighet kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
 Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
 Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
 
-I Norge ser vi urbaniseringsgraden "Cities" har mest data for kategori 1: høy arbeisledighet, høy arbeidsvekst, høy huspris.
+I Norge ser vi urbaniseringsgraden "Cities" har mest data for kategori 1: høy arbeisledighet, høy arbeidsvekst, høy boligpris.
 Byene i kategori 1 kan være attraktive for bosetting på grunn av tilgjengelighet til utdanning, helsetjenester, kulturelle arrangementer og andre fasiliteter.
 Denne attraktiviteten kan føre til en høyere etterspørsel etter boliger, som igjen påvirker husprisene.
 Når det kommer til "Towns/Suburbs" har Norge flest observasjoner i kategori 4; høy arbeisledighet, lav arbeidsvekst, lav huspris.
-Boligkostnader spiller her en vesentlig rolle, hvor lavere boligpriser sammenlignet med byområdene tiltrekker mange mennesker til tettsteder og forsteder.
-Pendling utgjør en annen viktig faktor, da tettsteder og forsteder ofte gir innbyggerne muligheten til å pendle til byene for arbeid eller andre aktiviteter.
-Dette utgjør et kompromiss mellom å bo i et roligere område og dra nytte av jobbmuligheter og urbane tjenester i byen.
-Tilslutt har vi "Rural Areas" i Norge som har flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris og kategori 8; lav arbeisledighet, lav arbeidsvekst, lav huspris.
+"Rural Areas" i Norge som har flest observasjoner i kategori 6; lav arbeisledighet, høy arbeidsvekst, lav huspris og kategori 8; lav arbeisledighet, lav arbeidsvekst, lav huspris.
 Lav arbeidsdelighet som er felles for kategori 6 og 8 kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
-Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
-Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
-Dette forklarer videre hvorfor det er lav huspris i disse områdene.
-Det kan altså være et resultat av lav etterspørsel og begrenset tilbud.
+Husprisen i disse områdene er lav, som et resultat av lav etterspørsel og begrenset tilbud.
 Mangelen på økonomisk aktivitet og arbeidsmuligheter kan påvirke boligmarkedet og gjøre boligprisene lavere.
-Arbeidsveksten kan som vi ser variere i slike rurale områder, noen steder er arbeidsveksten høy- typisk om en arbeidsplass som gir arbeid til flere tusen stykker blir bygget på et slikt sted, eller så har vi de rurale områdene hvor det ikke er særlig med store næringer, kategori 8.
 
 I Sverige ser vi at urbaniseringsgraden "Cities" har mest data for kategori 3; høy arbeisledighet, lav arbeidsvekst, høy huspris, i @fig-stolpediagram2.
 Høy avhengighet av bransjer som er utsatt for økonomiske svingninger eller omstilling, fører til høyere arbeidsledighet og lavere arbeidsvekst.
-Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
+Høye boligpriser i byene i kategori 3 kan være resultatet av både begrenset tilgjengelighet av boliger og høy etterspørsel.
+Urbaniseringstrender kan føre til overbelastning i bysentre, dette skaper konkurranse om boliger og driver prisene opp.
 Dette kan igjen påvirke arbeidsledigheten, spesielt for de som flytter til byer uten klare jobbmuligheter.
 Når det kommer til "Towns/Suburbs" har Sverige flest observasjoner i kategori 4; høy arbeisledighet, lav arbeidsvekst, lav huspris.
 Boligkostnader spiller en vesentlig rolle, hvor lavere boligpriser sammenlignet med byområdene tiltrekker mange mennesker til tettsteder og forsteder.
-Dette gir en mulighet til å nyte rimelige boligpriser samtidig som man opprettholder tilgangen til urbane fasiliteter.
-Til slutt har vi "Rural Areas" som har flest observasjoner i kategori 6 i Sverige; lav arbeisledighet, høy arbeidsvekst, lav huspris.
-Lav arbeidsleidighet kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv sammenlignet med større byområder.
-Mange mennesker velger å bo i rurale områder på grunn av høy livskvalitet, nærhet til naturen og et roligere liv.
-Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb utenfor området.
-Dette forklarer videre hvorfor det er lav huspris i disse områdene.
+"Rural Areas" har flest observasjoner i kategori 6 i Sverige; lav arbeisledighet, høy arbeidsvekst, lav huspris.
+Lav arbeidsleidighet kan forklares ved at det ved mindre befolkede områder er konkurransen om arbeidsplasser ofte mindre intensiv.
 Samlet sett i Skandinavia ser vi likheter mellom landene etter hvilken urbaniseringsgrad som befinner seg i hviken kategori.
 
-@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinavi ske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andersson, Håkonsen og Thorsen (2023).
+@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinavi ske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til @andersson.
 
 ```{r}
 #| echo: false
@@ -505,32 +469,27 @@ maindata %>%
 Fra Danmark ser vi kategori 6 som klassifiserer "l*av U, høy △E, lav H*", som har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra ca. 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
 Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
 I år 2015 har sannsynligvis regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
-
 Kategori 3, klassifisert som "*høy U, lav △E, høy H*" viser en relativt stabil utvikling gjennom årene.
 Gjennomsnittlig befolkningsvekst økte moderat fra omtrent 1 til 1,15.
 Dette indikerer at til tross for høy arbeidsledighet, begrenset arbeidsvekst og høye huspriser, opplevde kategorien en moderat økning i befolkningsveksten.
-Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring
-
+Det kan være flere faktorer som bidrar til denne stabile utviklingen, og en mer detaljert analyse av lokale forhold ville være nødvendig for å gi en fullstendig forklaring.
 For kategori 1, klassifisert som "*høy U, høy △E, høy H*" har vi bare observasjoner for perioden rundt 2010 til ca.
 2016.
 I løpet av denne tiden faller gjennomsnittlig befolkningsvekst fra litt over 1 til litt over 0,5.
 Årsakene til denne nedgangen kan inkludere økonomisk usikkerhet på grunn av høy arbeidsledighet, boligpriser som potensielt hindrer tilflytting, endringer i arbeidsmarkedet, demografiske faktorer eller regionale utfordringer
 
 Fra Norge ser vi først region 3 "*høy U, lav △E, høy H*" har vi bare observasjon i 2005 og 2010 og her holder den seg nokså stabilt.
-
 Kategori 4, klassifisert som "*høy U, lav △E, lav H*," viser en betydelig økning i gjennomsnittlig befolkningsvekst fra omtrent 1 rundt 2011 til ca.
 2,5 ved neste observasjon i 2015.
 Dette nivået opprettholdes deretter i de påfølgende årene.
 Denne økningen kan tilskrives forbedringer i arbeidsmarkedet, til tross for høy arbeidsledighet, samt lav arbeidsvekst og lave boligpriser som gjør regionen mer attraktiv for tilflytting.
 Dette kan ha en sammenheng med at kategori 1 har en nedgang i gjennomsnittlig befolkningsvekst.
-
 Kategori 1 , klassifisert som "høy U, høy △E, høy H," opplever en nedgang i gjennomsnittlig befolkningsvekst fra 1 i 2013 til 0,5 i 2015.
 Deretter forblir befolkningsveksten stabil på dette lavere nivået i de påfølgende årene.
 Denne nedgangen kan forklares ut fra karakteristikkene til regionen, inkludert høy arbeidsledighet, høy arbeidsvekst og høye boligpriser.
 
 Fra Svergie har vi blandt annet kategori 2 og 5, men disse har så og si ingen observasjoner så det er ikke nødvendig å kommentere.
 Hos kategori 1 har vi også veldig få observasjoner, men vi ser at denne kategorien starter med en nedgang.
-
 Men vi ser derrimot at både kategori 3 (høy U, lav △E, høy H) og 4 (høy U, lav △E, lav H) utvikler seg nokså likt gjennom årene.
 Begge to starter nokså lavt med en gjennomsnittlig befolkningsvekst på rundt 1, men øker drastisk i årene 2012 ca.
 fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsnittlig befolkningsvekst på mellom 2,25 - 2,5!
@@ -541,8 +500,8 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 
 I første del av oppgaven kommer det tydelig frem at befolkningsveksten i de europeiske regionene i tiden etter 2011 hovedsakelig har vært konsentrert i «towns/suburbs»-regionene.
 Mennesker har i økende grad valgt å bosette seg i disse regionene, samtidig som de har flyttet bort fra «cities» og «rural areas».
-Observasjonene i @fig-gjsnitt-befolkning stemmer godt overens med hypotesen om at befolkningsutviklingen har endret seg i tråd med bud-rente-teorien, og at de registrerte befolkningsendringene også synes å reflektere arbeidstakeres beslutninger påvirket av regionale fasiliteter og egenskaper i følge Martons modell.
-@mcarthur2010\
+Observasjonene i @fig-gjsnitt-befolkning stemmer godt overens med hypotesen om at befolkningsutviklingen har endret seg i tråd med bud-rente-teorien, og at de registrerte befolkningsendringene også synes å reflektere arbeidstakeres beslutninger påvirket av regionale fasiliteter og egenskaper i følge Martons modell [@mcarthur2010].\
+
 \
 I andre del av oppgaven ser vi hvordan befolkningsveksten i Europa har utviklet seg i perioden 2003 til 2011 inndelt etter Andersson, Håkonsen og Thorsens klassifiseringsmetodikk som klassifiserer regionene etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpris.
 Kategori 1, preget av høy arbeidsledighet, høy arbeidsvekst og høye boligpriser viser synkende befolkningsvekst over perioden.
@@ -566,7 +525,6 @@ For Svergie og Danmark vil kategori 3 fortsatt være innenfor "cities", og her s
 Befolkningens vekst i kategori 3, til tross for dens klassifisering som "høy U, lav △E, høy H", kan forklares ved å anta at det fortsatt er en urban setting, men muligens med lavere levekostnader sammenlignet med kategori 1.
 Selv om det er lav arbeidsvekst, kan tilgjengeligheten av arbeidsplasser, kulturelle fasiliteter eller andre attraktive trekk gjøre kategori 3 til et tiltalende sted å bo.
 Dette fenomenet kan indikere at folk søker etter urbane områder med lavere levekostnader, og det kan være interessant å utforske nærmere hvilke faktorer som bidrar til befolkningsveksten i denne kategorien.
-
 I Danmark er det stor variasjon i kategori 6, som i Danmark indikere "towns/suburbs" i følge @fig-stolpediagram2 .
 Ut i fra observasjonene fra datasette er det vanskelig å kommentere og faststlå argumenter for utviklingen da den variere så stort.
 For kategori 4 i Sverige ser vi en stor økning gjennom årene.
@@ -577,38 +535,33 @@ I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "t
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
-Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023.
+Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner [@hansen2023].
 Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
-Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
-@butenschon2020a
-
+Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder [@butenschon2020a].
 Forskjellen mellom urbanisering og sentralisering ligger i at urbanisering refererer til økningen i bybefolkningen og utviklingen av byområder, mens sentralisering handler om konsentrasjonen av ressurser og makt i spesifikke sentrale områder, som ofte er byer eller hovedsteder.
 
 Vi har valgt å se på urbanisering og sentralisering i de skandinaviske landene, Norge, Sverige og Danmark.
-Felles for alle disse tre landene er at de opplever en viss grad av sentralisering, hvor hovedstadsområdene spiller en dominerende rolle i økonomi, politikk og kultur.Urbanisering er mer uttalt i de større byområdene, mens landlige områder kan oppleve utfordringer knyttet til avfolkning og tjenestetilgjengelighet.
-
+Felles for alle disse tre landene er at de opplever en viss grad av sentralisering, hvor hovedstadsområdene spiller en dominerende rolle i økonomi, politikk og kultur.
+Urbanisering er mer uttalt i de større byområdene, mens landlige områder kan oppleve utfordringer knyttet til avfolkning og tjenestetilgjengelighet.
 Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
 Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
-De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
+De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser [@hansen2023a].
 Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
-@hansen2023a
 
 \
 I følge @capello2016 er lokaliseringsvalg for husholdninger bestemt av tilgang til et sentralt forretningsdistrikt, arbeidsplasser og et bredt spekter av rekreasjonstjenester.
 Bud-rente-teorien foreslår at en husstand kan velge å ofre boligareal for å flytte nærmere sentrum.
 Den nære beliggenheten til CBS (centrum business district) reduserer transportkostnadene for pendling, og denne besparelsen blir ofte veid opp mot det mindre boligarealet som er tilgjengelig der.
-Bud-leie-kurven illustrerer de ulike helningene på budsjettlinjen for ulike avstander fra sentrum, og den viser en trade-off mellom transportkostnader og boligkonsum.
+Bud-rente-kurven illustrerer de ulike helningene på budsjettlinjen for ulike avstander fra sentrum, og den viser en trade-off mellom transportkostnader og boligkonsum.
 Prisen på land reduseres vanligvis med avstanden fra et bysenter, og denne reduksjonen øker når avstanden fra bysenteret øker.
-Dette tiltrekker folk til områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til attraktive jobbmuligheter.
-@capello2016
-
+Dette tiltrekker folk til områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til attraktive jobbmuligheter [@capello2016].
 Analysen i første del av oppgaven støtter seg bud-rente-teorien i forklaringen av husholdningers lokaliseringsvalg.
 Den økte befolkningsveksten i "towns/suburbs"-regionene, som observert i perioden etter 2011, kan tolkes som en konsekvens av folks preferanser for å bosette seg nærmere sentrum, noe som samsvarer med bud-rente-teorien.
 Dette innebærer at mennesker i større grad velger å bosette seg i områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til arbeidsplasser og andre tjenester som tilbys i sentrumsområdene.I andre del av oppgaven blir bud-rente-teorien videre styrket gjennom analysen av befolkningsveksten i europeiske regioner, klassifisert etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpriser.
 Kategoriene som inneholder både "rural areas" og "towns/suburbs"-regioner har en positiv befolkningsvekst over perioden.
 Dette støtter opp om ideen om at folk i økende grad søker mot områder som tilbyr lavere boligpriser og kortere reiseavstander til arbeidsplasser og rekreasjonstilbud, som igjen er i samsvar med bud-rente-teorien.
-Vi kan konkludere med at funnene i analysen bekrefter hypotesen om at befolkningsveksten i europeiske regioner endrer seg i tråd med bud-rente-teorien og at denne endringen også synes å være påvirket av regionale faktorer, slik som arbeidsledighet og fasiliteter @capello2016 @mcarthur2010
+Vi kan konkludere med at funnene i analysen bekrefter hypotesen om at befolkningsveksten i europeiske regioner endrer seg i tråd med bud-rente-teorien og at denne endringen også synes å være påvirket av regionale faktorer, slik som arbeidsledighet og fasiliteter [@capello2016, @mcarthur2010].
 
 #### Kristisk evaluering
 
