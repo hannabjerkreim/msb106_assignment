@@ -471,7 +471,7 @@ Dette kan føre til lavere arbeidsledighet da færre innbyggere kan søke jobb u
 Dette forklarer videre hvorfor det er lav huspris i disse områdene.
 Samlet sett i Skandinavia ser vi likheter mellom landene etter hvilken urbaniseringsgrad som befinner seg i hviken kategori.
 
-@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinaviske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023).
+@fig-skandinavia viser den gjennomsnittlige befolkningsveksten i de skandinavi ske landene Danmark, Sverige og Norge i perioden 2002 til 2023 fordelt på de åtte forskjellige kategoriene i klassifiseringsmetodikken til Andresson, Håkonsen og Thorsen (2023).
 
 ```{r}
 #| echo: false
