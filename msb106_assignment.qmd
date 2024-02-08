@@ -2,6 +2,7 @@
 title: "msb106_assignment"
 format: pdf
 editor: visual
+bibliography: references.bib
 ---
 
 # Landskap i utvikling: En analyse av urbane og rurale områder i Europa
@@ -588,26 +589,38 @@ I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "t
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
-Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner.
-Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
+Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023. Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
 Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
+@butenschon2020a
 
 Forskjellen mellom urbanisering og sentralisering ligger i at urbanisering refererer til økningen i bybefolkningen og utviklingen av byområder, mens sentralisering handler om konsentrasjonen av ressurser og makt i spesifikke sentrale områder, som ofte er byer eller hovedsteder.
 
 Vi har valgt å se på urbanisering og sentralisering i de skandinaviske landene, Norge, Sverige og Danmark.
 Felles for alle disse tre landene er at de opplever en viss grad av sentralisering, hvor hovedstadsområdene spiller en dominerende rolle i økonomi, politikk og kultur.Urbanisering er mer uttalt i de større byområdene, mens landlige områder kan oppleve utfordringer knyttet til avfolkning og tjenestetilgjengelighet.
 
-<https://snl.no/urbanisering>
-
-<https://snl.no/sentralisering>
-
 Sentralstedteorien, utviklet av Walter Christaller i 1933, gir en innsikt i hvordan sentrale steder, spesielt byer, organiseres hierarkisk for å maksimere tilgjengeligheten og effektiviteten i økonomien.
 Byene, som er i kategorier 1; høy arbeidsvekst, høy arbeidsledighet og høy huspriser, antas å ha en sentral rolle i økonomien.
 De er strategisk plassert for å betjene et bredt marked og gi optimal tilgjengelighet til økonomiske ressurser.
 Dette gjenspeiler seg i våre observasjoner av høyere verdier i disse kategoriene.
+@hansen2023a
 
-https://snl.no/byregion
+\
+I følge @capello2016 er lokaliseringsvalg for husholdninger bestemt av tilgang til et sentralt forretningsdistrikt, arbeidsplasser og et bredt spekter av rekreasjonstjenester.
+Bud-rente-teorien foreslår at en husstand kan velge å ofre boligareal for å flytte nærmere sentrum.
+Den nære beliggenheten til CBS (centrum business district) reduserer transportkostnadene for pendling, og denne besparelsen blir ofte veid opp mot det mindre boligarealet som er tilgjengelig der.
+Bud-leie-kurven illustrerer de ulike helningene på budsjettlinjen for ulike avstander fra sentrum, og den viser en trade-off mellom transportkostnader og boligkonsum.
+Prisen på land reduseres vanligvis med avstanden fra et bysenter, og denne reduksjonen øker når avstanden fra bysenteret øker.
+Dette tiltrekker folk til områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til attraktive jobbmuligheter.
+@capello2016
+
+Analysen i første del av oppgaven støtter seg bud-rente-teorien i forklaringen av husholdningers lokaliseringsvalg.
+Den økte befolkningsveksten i "towns/suburbs"-regionene, som observert i perioden etter 2011, kan tolkes som en konsekvens av folks preferanser for å bosette seg nærmere sentrum, noe som samsvarer med bud-rente-teorien.
+Dette innebærer at mennesker i større grad velger å bosette seg i områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til arbeidsplasser og andre tjenester som tilbys i sentrumsområdene.I andre del av oppgaven blir bud-rente-teorien videre styrket gjennom analysen av befolkningsveksten i europeiske regioner, klassifisert etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpriser.
+Kategoriene som inneholder både "rural areas" og "towns/suburbs"-regioner har en positiv befolkningsvekst over perioden.
+Dette støtter opp om ideen om at folk i økende grad søker mot områder som tilbyr lavere boligpriser og kortere reiseavstander til arbeidsplasser og rekreasjonstilbud, som igjen er i samsvar med bud-rente-teorien.
+Vi kan konkludere med at funnene i analysen bekrefter hypotesen om at befolkningsveksten i europeiske regioner endrer seg i tråd med bud-rente-teorien.
+@capello2016
 
 #### Kristisk evaluering
 
