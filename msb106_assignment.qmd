@@ -29,7 +29,7 @@ Vi skal undersøke hvordan arbeidsledighet, arbeidsvekst og boligpris påvirker 
 
 Den første delen av oppgaven gir en gjennomgang av prosessen for innhenting av data, etterfulgt av en analyse av befolkningsutviklingen i ulike europeiske regioner.
 
-### Oppgave 1 -- Datainnsamling
+### Datainnsamling
 
 Vi hentet datasettet "*Distribution of population by degree of urbanisation, dwelling type and income group - EU-SILC survey*" fra Eurostat.
 Dette datasettet gir befolkning i prosent etter urbaniseringsgradene "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
@@ -54,7 +54,7 @@ data <- data |>
   ))
 ```
 
-### Oppgave 2 - Data analyse
+### Data analyse
 
 Vi skal nå se på befolkningsutviklingen i ulike europeiske regioner i perioden 2003 til 2022.
 Vi bruker Eurostat sin regioninndeling, som omfatter "cities" (byer), "towns and suburbs" (tettsteder og forsteder), og "rural areas" (rurale områder).
@@ -63,9 +63,8 @@ Hypotesen vår et at befolkningsveksten vil utvikle seg i tråd med bud-rente-te
 I følge denne teorien vil befolkningsveksten være konsentrert i tettsteder og forsteder (towns/suburbs) som følge av rimeligere boligpriser kombinert med akseptabel pendleravstand inn til byene. 
 
 @fig-gjsnitt-befolkning illustrerer den gjennomsittlige befolkningsveksten i "cities", "towns and suburbs" og "rural areas" i perioden 2003 til 2022.
+Vi ser bort i fra dataen som er i perioden 2003-2005 da dette indikerer dårlig/svak data.
 Fra figuren ser vi at "cities"-regionene opplevde en betydelig befolkningsvekst de to første årene, etterfulgt av en relativ stabil vekst frem til 2012.
-I 2012 oppstod en markant nedgang i befolkningen, etterfulgt av en beskjeden økning før en ny nedgang frem til 2015.
-Etter dette var det en stabil befolkningsvekst i "cities"-regionene frem til 2021, hvor befolkningen igjen viste en nedgang.
 "Rural areas"-regionene opplevde også en befolkningsvekst de to første årene, men denne var ikke like betydelig som i "cities"-regionene.
 Fra 2005 til 2011 ser vi en jevn nedgang i befolkningen i "rural areas"-regionene.
 I 2012, i motsetning til "cities"-regionene, var det en vekst i befolkningen, men den var kortvarig.
@@ -91,8 +90,6 @@ data %>%
 
 ```
 
-I @fig-gjsnitt-befolkning ser vi at "towns and suburbs"-regionene, i kontrast til de to andre regionsinndelingene, har en betydelig nedgang i befolkningen de to første årene.
-Dette kan tyde på at folk flyttet fra tettsteder og forsteder, spesielt til byer, men også til rurale områder i denne perioden.
 Når vi ser nærmere på "towns og suburbs"-regioner, snur trenden etter 2005 og befolkningen øker gradvis frem til 2011.
 Deretter setter befolkningsveksten fart og øker kraftig helt frem til 2022.
 Det kommer tydlig frem fra @fig-gjsnitt-befolkning at den dominerende befolkningsveksten i perioden etter 2011 har vært konsentrert i "towns and suburbs"-regionene.
@@ -188,7 +185,7 @@ Dette antyder mer markante forskjeller i befolkningsprosentene innenfor "rural a
 I denne delen av oppgaven skal vi utvide dataene fra første del av oppgaven ved å inkludere flere økonomiske faktorer.
 Analysen vil fokusere på hvordan arbeidsledighet, arbeidsvekst og huspris påvirker befolkningsveksten i ulike regioner, ved bruk av klassifiseringsmetodikken til Andersson, Håkansson og Thorsen (2023).
 
-### Oppgave 1 -- Innsamling av tilleggsdata
+### Innsamling av tilleggsdata
 
 Vi brukte tre forskjellige datasett ved innkludering av flere økonomiske faktorer i vårt opprinnelige datasett.
 Vi lastet ned data for de tre økonomiske faktorene *arbeidsvekst*, *arbeidsledighet* og *boligpris* fra Eurostat.
@@ -260,7 +257,7 @@ maindata <- join1 |>
   select(geo, deg_urb, TIME_PERIOD, OBS_VALUE, arbeidsledig, arbeidsvekst, huspris)
 ```
 
-### Oppgave 2 - Anvendelse av klassifiseringsmetodikk
+### Anvendelse av klassifiseringsmetodikk
 
 Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
 Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
@@ -323,7 +320,7 @@ maindata <- maindata %>%
   select(geo, deg_urb, TIME_PERIOD, OBS_VALUE, arbeidsledig, arbeidsvekst, huspris, arb.ledig.geo.mean, arb.vekst.geo.mean, huspris.geo.mean, classification_nr, classification)
 ```
 
-### Oppgave 3 - Analyse og visualisering
+### Analyse og visualisering
 
 Vår hypotese for den videre analysen er at de økonomiske faktorene arbeidsledighet, arbeidsvekst og huspris vil forsterke hypotesen vår om at befolkningsveksten utvikles i samsvar med bud-rente-teorien.
 
@@ -546,7 +543,7 @@ Men vi ser derrimot at både kategori 3 (høy U, lav △E, høy H) og 4 (høy U,
 Begge to starter nokså lavt med en gjennomsnittlig befolkningsvekst på rundt 1, men øker drastisk i årene 2012 ca.
 fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsnittlig befolkningsvekst på mellom 2,25 - 2,5!
 
-### Oppgave 4 - Tolking og forhold til kurslitteratur
+### Tolking og forhold til kurslitteratur
 
 #### Befolkningsmønster
 
@@ -589,7 +586,8 @@ I følge @fig-stolpediagram2 vil kategori 4 i Svergie innebære for det meste "t
 Sentralisering og urbanisering representerer to viktige trender i sammfunnsutvikling, hvor begge påvirker hvordan befolkningen fordeler seg geografisk, økonomisk og sosialt.
 
 Sentralisering refererer til en tendens der økonomisk, politisk eller kulturell aktivitet blir konsentrert rundt et sentralt område eller punkt.
-Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023. Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
+Dette sentrale punktet, ofte en hovedstad eller et stort økonomisk senter, trekker til seg ressurser, arbeidskraft og investeringer, noe som fører til en ubalanse i utviklingen mellom det sentrale området og perifere regioner @hansen2023.
+Urbanisering refererer til prosessen med økende andel av befolkningen som bor i byområder, og det inkluderer ofte vekst og utvikling av byer.
 Dette fenomenet følger ofte industrialisering, økonomisk vekst og endringer i samfunnsstrukturer.
 Byene tiltrekker seg mennesker på jakt etter arbeid, utdanning og bedre livskvalitet, og dette fører til en økning i befolkningskonsentrasjonen i urbane områder.
 @butenschon2020a
@@ -636,74 +634,4 @@ Spesielt i skandinavisk kontekst, har vi identifisert en interessant dynamikk me
 Det bør imidlertid understrekes at Norge, med kun én by som representerer kategorien "Cities", har en annen representasjon enn Sverige og Danmark, som har flere byer i samme kategori.
 Dette kan potensielt påvirke sammenligningene og krever forsiktighet ved generalisering til hele regionen.
 
-# TEST : HØY OG LAV KONJUKTURER
-
-En lavkonjunktur refererer til en økonomisk fase preget av lav økonomisk aktivitet, høy arbeidsledighet og generelt dårlig økonomisk ytelse.
-Under en lavkonjunktur er produksjonen og sysselsettingen lavere enn potensialet, og bedrifter opplever ofte redusert etterspørsel etter varer og tjenester.
-Dette kan føre til nedgang i inntektene, økt arbeidsledighet og lavere forbruk.
-
-Høykonjunktur refererer til en økonomisk fase preget av sterk økonomisk aktivitet, lav arbeidsledighet, høy produksjon og generelt positiv økonomisk ytelse.
-Under høykonjunktur er økonomien ofte i god form, og det er høy etterspørsel etter varer og tjenester.
-Bedrifter opplever økt produksjon, høy sysselsetting og generelt gode økonomiske resultater.
-
-```{r}
-# Bruk tidsseriefunksjoner i R, for eksempel ts() for å konvertere dataene til en tidsserieobjekt.
-tidsserie_data <- ts(data$OBS_VALUE, start = c(2003, 1), end = c(2022, 12), frequency = 12)
-
-```
-
-```{r}
-# Utfør en enkel trendanalyse for å identifisere eventuelle langsiktige mønstre i befolkningsveksten.
-trend <- decompose(tidsserie_data)
-plot(trend)
-```
-
-```{r}
-# Hvis det er sesongvariasjoner i dataene, kan du bruke sesongjusteringsmetoder som seasonal fra forecast-pakken.
-sesongjustert <- stl(tidsserie_data, s.window = "periodic")
-plot(sesongjustert)
-
-```
-
-```{r}
-# Opprett et enkelt tidsserieplot for å visualisere konjunkturutviklingen over tid.
-plot(tidsserie_data, type = "l", main = "Befolkningsvekst over tid", xlab = "År", ylab = "Befolkningsvekst")
-
-```
-
-```{r}
-maindata$konjunktur <- ifelse(maindata$OBS_VALUE > mean(maindata$OBS_VALUE), "Høykonjunktur", "Lavkonjunktur")
-
-ggplot(maindata, aes(x = TIME_PERIOD, y = OBS_VALUE, color = )) +
-  geom_point() +
-  facet_wrap(~ geo, scales = "free_y", ncol = 1) +
-  labs(title = "Konjunkturforhold over tid",
-       x = "Tidsperiode",
-       y = "Observasjonsverdi") +
-  theme_minimal()
-
-```
-
--\> Basert på visualiseringene og trendanalysen, drøft konjunkturutviklingen og identifiser perioder med økonomisk vekst, nedgang eller stabilitet.
-
-Eksempel:
-
--   **Høy konjunktur (f.eks., 2005):**
-
-    -   Sterk økonomisk vekst.
-
-    -   Lav arbeidsledighet.
-
-    -   Økt aktivitet på arbeidsmarkedet.
-
-    -   Muligens økning i investeringer og forbruk.
-
--   **Lav konjunktur (f.eks., 2010):**
-
-    -   Lav eller negativ økonomisk vekst.
-
-    -   Høy arbeidsledighet.
-
-    -   Redusert aktivitet på arbeidsmarkedet.
-
-    -   Muligens nedgang i investeringer og forbruk.
+# 
