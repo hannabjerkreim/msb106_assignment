@@ -259,8 +259,7 @@ maindata <- join1 |>
 
 ### Anvendelse av klassifiseringsmetodikk
 
-Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen (2023).
-Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
+Vi skal videre i oppgaven benytte oss av klassifiseringsmetodikken beskrevet i kapittel 5 av Andersson, Håkansson og Thorsen @andersson Klassifiseringen er basert på de tre kriteriene *arbeidsledighet* (U), *arbeidsvekst* (△E) og *huspris* (H).
 Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 1.  høy U, høy △E, høy H
@@ -274,6 +273,7 @@ Kombinasjonen av de tre kriteriene gir oss følgende 8 kategorier:
 
 Lave verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er lavere enn gjennomsnittet for landet, mens høye verdier indikerer at kriteriet (arbeidsledighet, arbeidsvekst eller huspris) er høyere en landsgjennomsnittet.
 Arbeidsledighet og arbeidsvekst gir informasjon om utviklingen i etterspørselen etter arbeidskraft, mens data om boligpriser gjenspeiler attraktiviteten som boligområde.
+@andersson
 
 ```{r}
 #| echo: false
@@ -494,22 +494,6 @@ maindata %>%
 
 ```
 
-```{r}
-# Antar at datasettet ditt heter main_data
-# Hvis ikke, erstatt main_data med riktig datasett navn
-
-gjennomsnitt_kat6_danmark <- maindata %>%
-  filter(geo == "DK" & classification_nr == 6) %>%
-  summarise(mean_value = mean(OBS_VALUE, na.rm = TRUE)) %>%
-  pull(mean_value)
-
-# Skriv ut gjennomsnittet for kategori 6 i Danmark
-print(paste("Gjennomsnitt av observasjoner i kategori 6 for Danmark: ", gjennomsnitt_kat6_danmark))
-
-
-
-```
-
 Fra Danmark ser vi kategori 6 som klassifiserer "l*av U, høy △E, lav H*", som har en betydelig vekst i gjennomsnittlig befolkningsvekst de første årene (fra ca. 1 til 1,4), dette sannsynligvis på grunn av et sterkt arbeidsmarked, høy arbeidsvekst, og rimelige boligpriser.
 Fra år 2010 ser vi en drastisk nedgang som kan komme av negative økonomiske påvirkninger og redusert attraktivitet i området.
 I år 2015 har sannsynligvis regionen forbedredet de økonomiske forholdene da befolkningsveksten øker opp til ca 1,2.
@@ -634,4 +618,8 @@ Spesielt i skandinavisk kontekst, har vi identifisert en interessant dynamikk me
 Det bør imidlertid understrekes at Norge, med kun én by som representerer kategorien "Cities", har en annen representasjon enn Sverige og Danmark, som har flere byer i samme kategori.
 Dette kan potensielt påvirke sammenligningene og krever forsiktighet ved generalisering til hele regionen.
 
+<<<<<<< HEAD
 # 
+=======
+# Referanser
+>>>>>>> 01cd90d69d5a1c795b23fb45b6003c76b4c94a17
