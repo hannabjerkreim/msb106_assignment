@@ -618,8 +618,6 @@ Spesielt i skandinavisk kontekst, har vi identifisert en interessant dynamikk me
 Det bør imidlertid understrekes at Norge, med kun én by som representerer kategorien "Cities", har en annen representasjon enn Sverige og Danmark, som har flere byer i samme kategori.
 Dette kan potensielt påvirke sammenligningene og krever forsiktighet ved generalisering til hele regionen.
 
-<<<<<<< HEAD
 # 
-=======
+
 # Referanser
->>>>>>> 01cd90d69d5a1c795b23fb45b6003c76b4c94a17
