@@ -330,7 +330,7 @@ I tillegg vil vi utforske og inkludere simulerte romlige arbeidsledighetsforskje
 
 Bakgrunnen for denne utvidelsen av hypotesen kan finnes i Marstons (1985) modell, der fokuset ikke bare er på lønnssatsen, men også på hvordan arbeidere vurderer den totale nytten av å bo i en bestemt region.
 Vi foreslår derfor at ved å inkludere romlige arbeidsledighetsforskjeller i vår analyse, kan vi bedre forstå hvordan slike regionale variabler kan påvirke befolkningsveksten i tråd med bud-rente-teorien.
-**KILDE ARTIKKEL**
+@mcarthur2010
 
 #### Sammenligning av klassifiseringsmetodikk og befolkningsvekst
 
@@ -359,7 +359,7 @@ Fra @fig-stolpediagram ser vi at "cities"-regionene fordeler seg hovedsakelig p�
 Kategori 1 med høy arbeidsledighet, høy arbeidsvekst og høye boligpriser representerer typiske vekstmotorer i økonomien.
 Kategori 3 har høy arbeidsledighet, lav arbeidsvekst og høye boligpriser.
 Her kan vi trekke inn Marton (1985) sin modell som støtter under hvorfor "Cities" kan ha høy arbeidsledighet med at fokuset ikke bare er på lønnssatsen, men også på hvordan arbeidere vurderer den totale nytten av å bo i en bestemt region.
-**KILDE ARTIKKEL** Kategori 5 representerer regioner uten store økonomiske utfordringer med lav arbeisledighet, høy arbeidsvekt og høye boligpriser.
+@mcarthur2010 Kategori 5 representerer regioner uten store økonomiske utfordringer med lav arbeisledighet, høy arbeidsvekt og høye boligpriser.
 Kategori 1, 3 og 5 finnes med andre ord i sentrale områder.
 Fra @fig-stolpediagram ser vi at kategori 4 og 8 hovedsakelig består av "rural areas"-regioner, med lave boligpriser og en uheldig utvikling i antall arbeidsplasser.
 Kategori 4 er typisk utsatte områder med høy arbeidsledighet, lav arbeidsvekst og lave boligpriser.
@@ -542,7 +542,7 @@ fra 2012 og utovere til i 2022 har begge regionene ligget høyt oppe i gjennomsn
 I første del av oppgaven kommer det tydelig frem at befolkningsveksten i de europeiske regionene i tiden etter 2011 hovedsakelig har vært konsentrert i «towns/suburbs»-regionene.
 Mennesker har i økende grad valgt å bosette seg i disse regionene, samtidig som de har flyttet bort fra «cities» og «rural areas».
 Observasjonene i @fig-gjsnitt-befolkning stemmer godt overens med hypotesen om at befolkningsutviklingen har endret seg i tråd med bud-rente-teorien, og at de registrerte befolkningsendringene også synes å reflektere arbeidstakeres beslutninger påvirket av regionale fasiliteter og egenskaper i følge Martons modell.
-**KILDE ARTIKKEL**\
+@mcarthur2010\
 \
 I andre del av oppgaven ser vi hvordan befolkningsveksten i Europa har utviklet seg i perioden 2003 til 2011 inndelt etter Andersson, Håkonsen og Thorsens klassifiseringsmetodikk som klassifiserer regionene etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpris.
 Kategori 1, preget av høy arbeidsledighet, høy arbeidsvekst og høye boligpriser viser synkende befolkningsvekst over perioden.
@@ -608,7 +608,7 @@ Den økte befolkningsveksten i "towns/suburbs"-regionene, som observert i period
 Dette innebærer at mennesker i større grad velger å bosette seg i områder som tilbyr en gunstig kombinasjon av boligpriser og reisetid til arbeidsplasser og andre tjenester som tilbys i sentrumsområdene.I andre del av oppgaven blir bud-rente-teorien videre styrket gjennom analysen av befolkningsveksten i europeiske regioner, klassifisert etter de økonomiske faktorene arbeidsledighet, arbeidsvekst og boligpriser.
 Kategoriene som inneholder både "rural areas" og "towns/suburbs"-regioner har en positiv befolkningsvekst over perioden.
 Dette støtter opp om ideen om at folk i økende grad søker mot områder som tilbyr lavere boligpriser og kortere reiseavstander til arbeidsplasser og rekreasjonstilbud, som igjen er i samsvar med bud-rente-teorien.
-Vi kan konkludere med at funnene i analysen bekrefter hypotesen om at befolkningsveksten i europeiske regioner endrer seg i tråd med bud-rente-teorien og at denne endringen også synes å være påvirket av regionale faktorer, slik som arbeidsledighet og fasiliteter @capello2016 **KILDE ARTIKKEL**
+Vi kan konkludere med at funnene i analysen bekrefter hypotesen om at befolkningsveksten i europeiske regioner endrer seg i tråd med bud-rente-teorien og at denne endringen også synes å være påvirket av regionale faktorer, slik som arbeidsledighet og fasiliteter @capello2016 @mcarthur2010
 
 #### Kristisk evaluering
 
@@ -623,7 +623,5 @@ Det er et vidt spekter fra det fattigste landet til det rikeste landet vi har me
 Spesielt i skandinavisk kontekst, har vi identifisert en interessant dynamikk mellom Norge, Sverige og Danmark.
 Det bør imidlertid understrekes at Norge, med kun én by som representerer kategorien "Cities", har en annen representasjon enn Sverige og Danmark, som har flere byer i samme kategori.
 Dette kan potensielt påvirke sammenligningene og krever forsiktighet ved generalisering til hele regionen.
-
-# 
 
 # Referanser
